@@ -1,0 +1,6 @@
+{
+  "name": "Gaia Pulse OS",
+  "description": "Master Baseline Architecture v3.2, Automated Telemetry Merge, The Immutable Truth Protocol, Quantum Bridge Visualizer, Sovereignty & Sanctuary Protocol, Anti-WMD Disarmament, and Whistleblower Safe Harbor Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,495 @@
+import React, { useState, useMemo } from 'react';
+import { motion } from 'motion/react';
+import { 
+  Search, 
+  Filter, 
+  Layers, 
+  Binary, 
+  Activity, 
+  ShieldCheck, 
+  Sparkles, 
+  ArrowUpRight, 
+  Compass, 
+  Cpu, 
+  Telescope, 
+  Flame, 
+  TreePine, 
+  HeartHandshake, 
+  SlidersHorizontal,
+  Zap,
+  Radio,
+  Orbit
+} from 'lucide-react';
+import { useAutomatedUpdate } from '../context/AutomatedUpdateContext';
+import { GaiaModule, PhaseCategory, DomainCategory } from '../types';
+import { ModuleDetailModal } from './ModuleDetailModal';
+
+interface ModuleRegistryProps {
+  onSelectForGateway: (moduleId: string) => void;
+  selectedModuleIdForAudit: string | null;
+  onClearAuditSelection: () => void;
+}
+
+export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({ 
+  onSelectForGateway,
+  selectedModuleIdForAudit,
+  onClearAuditSelection
+}) => {
+  const { modules, scanningModuleIndex } = useAutomatedUpdate();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedPhase, setSelectedPhase] = useState<PhaseCategory | 'ALL'>('ALL');
+  const [selectedDomain, setSelectedDomain] = useState<DomainCategory | 'ALL'>('ALL');
+  const [activeModalModule, setActiveModalModule] = useState<GaiaModule | null>(null);
+
+  // Auto-open modal if prop selectedModuleIdForAudit is passed
+  React.useEffect(() => {
+    if (selectedModuleIdForAudit) {
+      const found = modules.find(m => m.id === selectedModuleIdForAudit);
+      if (found) {
+        setActiveModalModule(found);
+      }
+    }
+  }, [selectedModuleIdForAudit, modules]);
+
+  const allDomains: DomainCategory[] = [
+    'Systems Engineering',
+    'Ecology & Biosphere',
+    'Data Science & Telemetry',
+    'Clinical & Neurobiology',
+    'Thermodynamics & Energy',
+    'Astrophysics & Deep Cosmos',
+    'Commons Governance',
+    'Thermodynamic Justice & Conflict Resolution',
+    'Absolute Biospheric Protection & Disarmament',
+    'Transparency & Node Protection',
+    'Sovereignty & Sanctuary (Anti-Exploitation)',
+    'Biospheric Kinship & Inter-Species Sanctuary',
+    'GO (Gaia Open) & Collaborative Telemetry',
+    'Cosmological Scaling & Universal Anchoring',
+    'Distributed Great Filter & Ingestion',
+    'Decentralized Consensus & Baseline Testing'
+  ];
+
+  const filteredModules = useMemo(() => {
+    return modules.filter(module => {
+      const matchesSearch = 
+        module.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        module.thesis.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        module.number.toString().includes(searchQuery) ||
+        module.domains.some(d => d.toLowerCase().includes(searchQuery.toLowerCase()));
+
+      const matchesPhase = selectedPhase === 'ALL' || module.phase === selectedPhase;
+      const matchesDomain = selectedDomain === 'ALL' || module.domains.includes(selectedDomain as DomainCategory);
+
+      return matchesSearch && matchesPhase && matchesDomain;
+    });
+  }, [modules, searchQuery, selectedPhase, selectedDomain]);
+
+  return (
+    <section id="registry" className="py-20 md:py-28 relative bg-[#05070a]/70 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/[0.03] border border-[#00ff95]/40 text-[#00ff95] font-mono text-[10px] uppercase tracking-widest font-semibold mb-3">
+              <Layers className="w-3.5 h-3.5" />
+              <span>THE OPEN-SOURCE CORE (MASTER REGISTRY v3.2)</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-light text-white tracking-tight">
+              Master Module Registry
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-400 max-w-2xl mt-2 font-mono">
+              Total Nodes: {modules.length} Registry Checkpoints (29 Master Modules across 16 Phases + Modules 50 & 53 Expansion). Dynamically synchronized with continuous automated telemetry scans.
+            </p>
+          </div>
+
+          {/* Quick Counter */}
+          <div className="flex items-center gap-3 bg-white/[0.02] border border-white/10 p-3 rounded">
+            <div className="text-right">
+              <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Total Checkpoints</div>
+              <div className="text-lg font-bold font-mono text-[#00ff95]">{modules.length} Master Modules</div>
+            </div>
+            <div className="h-8 w-px bg-white/10" />
+            <div className="text-right">
+              <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Adapted / Synced</div>
+              <div className="text-lg font-bold font-mono text-[#4da6ff]">
+                {modules.filter(m => m.syncStatus === 'ADAPTED').length} Adapted
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Search and Filters Bar */}
+        <div className="p-4 rounded bg-white/[0.02] border border-white/10 shadow-xl mb-10 space-y-4">
+          <div className="flex flex-col md:flex-row gap-3">
+            {/* Search input */}
+            <div className="relative flex-1">
+              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                placeholder="Search module by title, thesis, domain (e.g. Electromagnetic, Clear Node, Roman, Lake Vostok)..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full bg-[#05070a] border border-white/10 focus:border-[#00ff95] rounded pl-10 pr-4 py-2.5 text-xs font-mono text-slate-100 placeholder:text-slate-500 focus:outline-none transition-colors"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-slate-400 hover:text-white"
+                >
+                  CLEAR
+                </button>
+              )}
+            </div>
+
+            {/* Phase Selector */}
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
+              <button
+                onClick={() => setSelectedPhase('ALL')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'ALL'
+                    ? 'bg-[#00ff95] text-[#05070a] font-bold'
+                    : 'bg-white/[0.03] text-slate-300 hover:bg-white/[0.08] border border-white/10'
+                }`}
+              >
+                All Phases ({modules.length})
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_I_III')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_I_III'
+                    ? 'bg-[#00ff95] text-[#05070a] font-bold'
+                    : 'bg-white/[0.03] text-slate-300 hover:bg-white/[0.08] border border-white/10'
+                }`}
+              >
+                Phase I-III (01-11)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_IV_V')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_IV_V'
+                    ? 'bg-[#00ff95] text-[#05070a] font-bold'
+                    : 'bg-white/[0.03] text-slate-300 hover:bg-white/[0.08] border border-white/10'
+                }`}
+              >
+                Phase IV-V (12-16)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_VI_VII')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_VI_VII'
+                    ? 'bg-[#00ff95] text-[#05070a] font-bold'
+                    : 'bg-white/[0.03] text-slate-300 hover:bg-white/[0.08] border border-white/10'
+                }`}
+              >
+                Phase VI-VII: Resonance (17-18)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_VIII')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_VIII'
+                    ? 'bg-[#a855f7] text-[#05070a] font-bold'
+                    : 'bg-purple-500/10 text-purple-300 hover:bg-purple-500/20 border border-purple-500/30'
+                }`}
+              >
+                Phase VIII: Quantum Bridge (19)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_IX')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_IX'
+                    ? 'bg-[#ffb703] text-[#05070a] font-bold'
+                    : 'bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 border border-amber-500/30'
+                }`}
+              >
+                Phase IX: P.O.W.E.R. (20)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_X')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_X'
+                    ? 'bg-[#00f0ff] text-[#05070a] font-bold'
+                    : 'bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20 border border-cyan-500/30'
+                }`}
+              >
+                Phase X: Node Security (21)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_XI')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_XI'
+                    ? 'bg-[#10b981] text-[#05070a] font-bold'
+                    : 'bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 border border-emerald-500/30'
+                }`}
+              >
+                Phase XI: Restorative Justice (22)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_XII')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_XII'
+                    ? 'bg-[#00ff95] text-[#05070a] font-bold'
+                    : 'bg-[#00ff95]/10 text-[#00ff95] hover:bg-[#00ff95]/20 border border-[#00ff95]/30'
+                }`}
+              >
+                Phase XII: Sovereign Boundaries (23)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_XIII')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_XIII'
+                    ? 'bg-[#10b981] text-[#05070a] font-bold'
+                    : 'bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 border border-emerald-500/30'
+                }`}
+              >
+                Phase XIII: Biospheric Kinship (24)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_XIV')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_XIV'
+                    ? 'bg-[#8b5cf6] text-[#05070a] font-bold'
+                    : 'bg-purple-500/10 text-purple-300 hover:bg-purple-500/20 border border-purple-500/30'
+                }`}
+              >
+                Phase XIV: GO & Multi-Scalar Reality (25-26)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_XV')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_XV'
+                    ? 'bg-[#10b981] text-[#05070a] font-bold'
+                    : 'bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 border border-emerald-500/30'
+                }`}
+              >
+                Phase XV: Distributed Great Filter (27)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_XVI')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_XVI'
+                    ? 'bg-[#f43f5e] text-[#05070a] font-bold'
+                    : 'bg-rose-500/10 text-rose-300 hover:bg-rose-500/20 border border-rose-500/30'
+                }`}
+              >
+                Phase XVI: Anti-WMD Disarmament (28)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_XVII')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_XVII'
+                    ? 'bg-[#38bdf8] text-[#05070a] font-bold'
+                    : 'bg-sky-500/10 text-sky-300 hover:bg-sky-500/20 border border-sky-500/30'
+                }`}
+              >
+                Phase XVII: Safe Harbor & Whistleblower (29-30)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_EXPANSION')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 flex items-center gap-1.5 ${
+                  selectedPhase === 'PHASE_EXPANSION'
+                    ? 'bg-[#00ff95] text-[#05070a] font-bold'
+                    : 'bg-[#00ff95]/10 text-[#00ff95] hover:bg-[#00ff95]/20 border border-[#00ff95]/40'
+                }`}
+              >
+                <Zap className="w-3 h-3" />
+                <span>Expansion: Mod 50 & 53</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Domain Chips */}
+          <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-white/5">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 mr-2 flex items-center gap-1">
+              <SlidersHorizontal className="w-3 h-3 text-[#00ff95]" />
+              Domain Filter:
+            </span>
+            <button
+              onClick={() => setSelectedDomain('ALL')}
+              className={`px-2.5 py-1 rounded text-[10px] font-mono uppercase tracking-wider transition-colors ${
+                selectedDomain === 'ALL'
+                  ? 'bg-[#4da6ff]/20 text-[#4da6ff] border border-[#4da6ff]/60 font-semibold'
+                  : 'bg-white/[0.02] text-slate-400 hover:text-white border border-white/5'
+              }`}
+            >
+              All Domains
+            </button>
+            {allDomains.map((dom) => (
+              <button
+                key={dom}
+                onClick={() => setSelectedDomain(dom)}
+                className={`px-2.5 py-1 rounded text-[10px] font-mono uppercase tracking-wider transition-colors ${
+                  selectedDomain === dom
+                    ? 'bg-[#4da6ff]/20 text-[#4da6ff] border border-[#4da6ff]/60 font-semibold'
+                    : 'bg-white/[0.02] text-slate-400 hover:text-white border border-white/5'
+                }`}
+              >
+                {dom}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Modules Grid - Immersive UI node cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filteredModules.map((module, index) => {
+            const isScanning = scanningModuleIndex !== null && modules[scanningModuleIndex]?.id === module.id;
+            const isAdapted = module.syncStatus === 'ADAPTED';
+
+            // Determine left border accent color based on category/phase
+            const getBorderAccent = () => {
+              if (isScanning) return 'border-l-2 border-l-[#00ff95] shadow-[0_0_15px_rgba(0,255,149,0.3)]';
+              if (isAdapted) return 'border-l-2 border-l-[#00ff95]';
+              if (module.number === 19) return 'border-l-2 border-l-[#a855f7] shadow-[0_0_12px_rgba(168,85,247,0.25)]';
+              if (module.number === 20) return 'border-l-2 border-l-[#ffb703] shadow-[0_0_12px_rgba(255,183,3,0.25)]';
+              if (module.number === 21) return 'border-l-2 border-l-[#00f0ff] shadow-[0_0_12px_rgba(0,240,255,0.25)]';
+              if (module.number === 22) return 'border-l-2 border-l-[#10b981] shadow-[0_0_12px_rgba(16,185,129,0.25)]';
+              if (module.number === 23) return 'border-l-2 border-l-[#14b8a6] shadow-[0_0_12px_rgba(20,184,166,0.25)]';
+              if (module.number === 24) return 'border-l-2 border-l-[#f43f5e] shadow-[0_0_15px_rgba(244,63,94,0.3)]';
+              if (module.number === 25) return 'border-l-2 border-l-[#38bdf8] shadow-[0_0_15px_rgba(56,189,248,0.3)]';
+              if (module.number === 26) return 'border-l-2 border-l-[#6366f1] shadow-[0_0_15px_rgba(99,102,241,0.3)]';
+              if ([50, 53].includes(module.number)) return 'border-l-2 border-l-[#00ff95] shadow-[0_0_12px_rgba(0,255,149,0.15)]';
+              if ([2, 3, 16, 17, 18].includes(module.number)) return 'border-l-2 border-l-[#00ff95]';
+              if ([6, 7, 8, 11].includes(module.number)) return 'border-l-2 border-l-[#4da6ff]';
+              if ([12, 14, 15].includes(module.number)) return 'border-l-2 border-l-[#ff4e00]';
+              return 'border-l-2 border-l-white/20';
+            };
+
+            return (
+              <motion.div
+                key={module.id}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35 }}
+                onClick={() => setActiveModalModule(module)}
+                className={`group cursor-pointer rounded bg-white/[0.03] border ${isScanning ? 'border-[#00ff95] bg-[#00ff95]/5' : 'border-white/10'} ${getBorderAccent()} hover:border-[#00ff95]/50 p-4 sm:p-5 flex flex-col justify-between transition-all duration-200 hover:bg-white/[0.06] relative overflow-hidden`}
+              >
+                {isScanning && (
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#00ff95] animate-pulse" />
+                )}
+
+                <div>
+                  {/* Module Number & Phase */}
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="text-[10px] font-mono text-white/40 tracking-wider">
+                      {module.number.toString().padStart(2, '0')} // CHECKPOINT
+                    </span>
+                    
+                    <div className="flex items-center gap-1.5">
+                      {isScanning ? (
+                        <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-[#00ff95] text-slate-950 font-bold uppercase">
+                          SCANNING
+                        </span>
+                      ) : isAdapted ? (
+                        <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-[#00ff95]/10 text-[#00ff95] border border-[#00ff95]/30 uppercase">
+                          ADAPTED ({module.adaptationCount || 1})
+                        </span>
+                      ) : (
+                        <span className="text-[9px] font-mono uppercase tracking-widest text-slate-400">
+                          {module.phase === 'PHASE_I_III' 
+                            ? 'I-III FOUNDATIONS' 
+                            : module.phase === 'PHASE_IV_V' 
+                            ? 'IV-V COMMONS' 
+                            : module.phase === 'PHASE_VI_VII'
+                            ? 'VI-VII RESONANCE'
+                            : module.phase === 'PHASE_VIII'
+                            ? 'VIII QUANTUM BRIDGE'
+                            : module.phase === 'PHASE_IX'
+                            ? 'IX P.O.W.E.R.'
+                            : module.phase === 'PHASE_X'
+                            ? 'X NODE SECURITY'
+                            : module.phase === 'PHASE_XI'
+                            ? 'XI RESTORATIVE'
+                            : module.phase === 'PHASE_XII'
+                            ? 'XII ANTI-WMD PROTOCOL'
+                            : module.phase === 'PHASE_XIII'
+                            ? 'XIII TRANSPARENCY & SAFE HARBOR'
+                            : module.phase === 'PHASE_EXPANSION'
+                            ? 'EXPANSION 50 & 53'
+                            : 'VI HEROES'}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Module Title */}
+                  <h3 className="text-sm font-semibold text-white group-hover:text-[#00ff95] transition-colors mb-2 leading-snug">
+                    {module.title}
+                  </h3>
+
+                  {/* Thesis Statement */}
+                  <p className="text-[11px] text-slate-300 opacity-80 leading-relaxed mb-3 line-clamp-3">
+                    {module.thesis}
+                  </p>
+
+                  {/* Domain Badges */}
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {module.domains.map((d, i) => (
+                      <span 
+                        key={i} 
+                        className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-white/[0.03] text-slate-400 border border-white/5"
+                      >
+                        {d}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bottom Telemetry Baseline Card */}
+                <div className="pt-2.5 border-t border-white/5 mt-2 flex items-center justify-between text-[10px] font-mono">
+                  <div>
+                    <span className="text-slate-500 text-[9px] block uppercase">{module.telemetryMetricName}</span>
+                    <span className="text-[#00ff95] font-semibold">
+                      {module.liveTelemetryValue !== undefined ? module.liveTelemetryValue : module.telemetryBaseline} {module.telemetryUnit}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-1 text-slate-400 group-hover:text-[#00ff95] font-mono text-[10px] uppercase">
+                    <span>Audit Logic</span>
+                    <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {filteredModules.length === 0 && (
+          <div className="text-center py-16 bg-white/[0.02] rounded border border-white/10 p-8">
+            <p className="text-slate-400 text-xs font-mono mb-3 uppercase tracking-wider">No master modules match the selected filter criteria.</p>
+            <button
+              onClick={() => {
+                setSearchQuery('');
+                setSelectedPhase('ALL');
+                setSelectedDomain('ALL');
+              }}
+              className="px-4 py-2 rounded bg-[#00ff95]/10 text-[#00ff95] border border-[#00ff95]/40 text-xs font-mono uppercase tracking-widest hover:bg-[#00ff95]/20"
+            >
+              Reset Filters
+            </button>
+          </div>
+        )}
+
+      </div>
+
+      {/* Detail Modal */}
+      {activeModalModule && (
+        <ModuleDetailModal
+          module={activeModalModule}
+          onClose={() => {
+            setActiveModalModule(null);
+            onClearAuditSelection();
+          }}
+          onSelectForGateway={(modId) => {
+            onSelectForGateway(modId);
+            setActiveModalModule(null);
+            onClearAuditSelection();
+          }}
+        />
+      )}
+    </section>
+  );
+};
+
