@@ -1,6 +1,6 @@
 {
-  "name": "Gaia Pulse OS",
-  "description": "Master Baseline Architecture v3.2, Automated Telemetry Merge, The Immutable Truth Protocol, Quantum Bridge Visualizer, Sovereignty & Sanctuary Protocol, Anti-WMD Disarmament, and Whistleblower Safe Harbor Engine",
+  "name": "GO (Gaia Open)",
+  "description": "Living map for planetary repair and peer-reviewed exploration. No operating system. No command centre. Locked spine: modules 2, 11, 17, 19–27.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
