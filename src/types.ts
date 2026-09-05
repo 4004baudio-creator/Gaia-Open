@@ -1,5 +1,9 @@
 export type PhaseCategory = 'PHASE_I_III' | 'PHASE_IV_V' | 'PHASE_VI_VII' | 'PHASE_VI' | 'PHASE_VIII' | 'PHASE_IX' | 'PHASE_X' | 'PHASE_XI' | 'PHASE_XII' | 'PHASE_XIII' | 'PHASE_XIV' | 'PHASE_XV' | 'PHASE_XVI' | 'PHASE_XVII' | 'PHASE_EXPANSION';
 
+export type SpineTier = 'LOCKED' | 'SUPPORTING' | 'EXPANSION';
+
+export type KnowledgeLayer = 'ANCHORED' | 'PLAUSIBLE' | 'IMAGINED' | 'OPEN_FIELD';
+
 export type DomainCategory = 
   | 'Systems Engineering'
   | 'Ecology & Biosphere'
@@ -13,8 +17,6 @@ export type DomainCategory =
   | 'Transparency & Node Protection'
   | 'Sovereignty & Sanctuary (Anti-Exploitation)'
   | 'Biospheric Kinship & Inter-Species Sanctuary'
-  | 'GOOS & Collaborative Telemetry'
-  | 'GO & Collaborative Telemetry'
   | 'GO (Gaia Open) & Collaborative Telemetry'
   | 'Cosmological Scaling & Universal Anchoring'
   | 'Distributed Great Filter & Ingestion'
@@ -51,9 +53,9 @@ export interface FactVerificationAuditEntry {
     | 'PRUNED_FALSEHOOD';
   subject: string;
   claimVerified: string;
-  verificationStatus: 'VERIFIED_PHYSICAL_REALITY' | 'PRUNED_HALLUCINATION' | 'CALIBRATED_METRIC';
+  verificationStatus: 'ANCHORED' | 'PLAUSIBLE' | 'IMAGINED' | 'OPEN_FIELD' | 'VERIFIED_PHYSICAL_REALITY' | 'PRUNED_HALLUCINATION' | 'CALIBRATED_METRIC';
   objectivePhysicalBaseline: string;
-  confidenceScore: number; // e.g. 0.999
+  confidenceScore: number;
   cryptographicHash: string;
   auditorNode: string;
   ruleAnchor?: string;
@@ -76,7 +78,8 @@ export interface GaiaModule {
   telemetryBaseline: number;
   realWorldAnchors: string[];
   operationalDirectives: string[];
-  // Dynamic Automated Update Protocol fields
+  spineTier?: SpineTier;
+  knowledgeLayer?: KnowledgeLayer;
   liveTelemetryValue?: number;
   syncStatus?: ModuleSyncStatus;
   adaptationCount?: number;
@@ -104,14 +107,14 @@ export interface SpecialistNode {
 
 export interface TelemetryFeed {
   timestamp: string;
-  thermodynamicEquilibriumRatio: number; // returned / friction
-  neutrinoFluxRate: number; // 10^10 / cm^2 / s
-  romanIRObservationalDepth: number; // parsecs
-  biosphericBaselineHealth: number; // 0 - 100%
-  darkDataPurgedRate: number; // GB / hour
-  cognitiveBandwidthProtectionIndex: number; // 0 - 1.0
+  thermodynamicEquilibriumRatio: number;
+  neutrinoFluxRate: number;
+  romanIRObservationalDepth: number;
+  biosphericBaselineHealth: number;
+  darkDataPurgedRate: number;
+  cognitiveBandwidthProtectionIndex: number;
   activeNodesCount: number;
-  kardashevProgress: number; // e.g. 0.732
+  kardashevProgress: number;
 }
 
 export interface HeroProfile {
@@ -154,6 +157,7 @@ export type ProtocolTriggerSource =
   | 'SAFE_HARBOR_VAULT'
   | 'SOVEREIGNTY_SANCTUARY_SHIELD'
   | 'INTER_SPECIES_SANCTUARY'
+  | 'GO_COLLABORATIVE_STREAM'
   | 'GOOS_COLLABORATIVE_STREAM'
   | 'COSMOLOGICAL_DEEP_ANCHOR';
 
@@ -168,7 +172,7 @@ export interface AutomatedUpdateEvent {
   affectedModuleNumbers: number[];
   prunedRedundancies: string[];
   expandedDirectives: string[];
-  entropyDelta: number; // e.g. -0.042 (negative entropy = higher order)
+  entropyDelta: number;
   checksum: string;
   latencyMs: number;
   status: 'COMMITTED' | 'MERGING' | 'VALIDATING';
@@ -201,7 +205,7 @@ export interface WhistleblowerEvidenceVault {
   cid: string;
   zkProofHash: string;
   originBlinded: boolean;
-  metadataEntropy: number; // 0.00 bits
+  metadataEntropy: number;
   shardsCount: number;
   economicShieldActive: boolean;
   espionageOverrideCertified: boolean;
@@ -210,12 +214,12 @@ export interface WhistleblowerEvidenceVault {
 }
 
 export interface SovereignSanctuaryTelemetry {
-  biologicalAutonomyIndex: number; // 0 - 100%
-  digitalConsentScore: number; // 0 - 100%
+  biologicalAutonomyIndex: number;
+  digitalConsentScore: number;
   quarantinedExploitationVectors: number;
   starvedBandwidthPacketsTotal: number;
   generationalShieldStatus: 'ENGAGED_MAX_PRUNING' | 'MONITORING_EQUILIBRIUM';
-  sanctuaryReparationComputeAllocated: number; // TFlops
+  sanctuaryReparationComputeAllocated: number;
   predatoryLoopsDismantled: number;
 }
 
@@ -230,4 +234,6 @@ export interface SovereignExploitationVector {
   originDetails: string;
 }
 
-
+/** Locked spine module numbers from GO_SPINE.md */
+export const LOCKED_SPINE_NUMBERS = [2, 11, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27] as const;
+export const EXPANSION_NUMBERS = [50, 53] as const;
