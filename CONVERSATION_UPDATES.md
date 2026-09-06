@@ -1,44 +1,33 @@
 # Path: conversation → GitHub → live map
 
-Repo: https://github.com/4004baudio-creator/Gaia-Open  
-Live surface: https://our-core.ai.studio  
+Repo: https://github.com/4004baudio-creator/Gaia-Open
+Live surface: https://our-core.ai.studio
 Empty sibling repo `GO` is unused; do not split the map.
 
 ## What can be updated from this chat
 
-Ara can commit markdown and small source files to `Gaia-Open` on `main` when you ask. That is the constitution layer (spine, oracle, audit, handshake).
+Markdown law and small source files on `main` when asked. Constitution now includes:
+- THERMODYNAMIC_AUDIT.md (series + anti-illusion language)
+- EEI_OHC_PLAIN.md
+- EDGE_DEVICE_AUDIT.md
+- REPAIR_PIVOT_MAP.md
+- BUILDER_HANDSHAKE.md
+
+## Weekly check (Mondays 09:00 Australia/Sydney)
+
+Automation `GO weekly live-map check` must:
+1. Inspect our-core.ai.studio chrome (v3.2 MAP, EEI present tense, handshake, OPS not Earth stamp).
+2. Re-read THERMODYNAMIC_AUDIT.md + EEI_OHC_PLAIN.md against latest IGCC / CERES / OHC / IEA public pages.
+3. Flag if live copy drifted into doom dates, equilibrium claims, or fake %.
+4. Propose a *docs-first* patch list. Do not rewrite 40k-line components in one run.
+5. Note Studio pull still required after any GitHub commit.
 
 ## What cannot jump the gap by itself
 
-Google AI Studio hosts the running app. A GitHub commit does **not** automatically republish our-core.ai.studio unless you pull the repo into Studio and deploy. Until that pipe is explicit:
+Google AI Studio hosts the running app. Commit ≠ publish.
 
-1. Agree the change in chat.
-2. Commit here.
-3. In AI Studio: pull / sync from GitHub, then publish.
-4. Check the live page: one version string, Audit cites public series, header chrome not posing as EEI.
+## Preferred change types
 
-## Preferred change types from conversation
-
-- Docs first (this folder of .md files).
-- Then copy that law into UI copy (HeroMission, ThermodynamicAuditor, TelemetryPulse labels).
-- Do not rewrite 40k-line components in one commit without a targeted file list.
-
-## UI graft status (2026-09-07)
-
-Done on `main` (awaiting Studio pull + publish):
-
-- Navbar.tsx — OPS chrome / EEI present tense / Builder Handshake CTA
-- ThermodynamicAuditor.tsx — anchored EEI/OHC/albedo shelf; sliders = local demo
-- HeroMission.tsx — v3.2 MAP, present-tense EEI headline, handshake CTA, ops HUD labels
-- TelemetryPulse.tsx — OPS_SIM packet status; “not anchored ingest”
-- SpecialistGateway.tsx — handshake, not census; no inner-state harvest
-
-Live check before publish still showed pre-patch chrome (v3.1 ACTIVE, 99.8%, Roman IR as EEI stand-in). That is expected until Studio republishes.
-
-## After you publish, verify
-
-- Header ticker: OPS chrome, not 99.8% integrity posing as Earth
-- Hero chip: v3.2 MAP (not v3.1 ACTIVE)
-- Headline uses “toward … equilibrium — not claiming it is here”
-- Primary CTA: Builder Handshake
-- Audit section cites EEI ~1.12 W m⁻² and marks sliders as local demo
+- Docs first.
+- Then copy that law into UI labels only.
+- Industry pivots stay on REPAIR_PIVOT_MAP.md until a builder handshake attaches a real instrument.
