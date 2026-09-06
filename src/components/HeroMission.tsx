@@ -62,19 +62,19 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
             <span className="w-2 h-2 rounded-full bg-[#00ff95] shadow-[0_0_8px_#00ff95] animate-ping" />
             <span className="font-semibold">THE SOVEREIGN MASTER BASELINE</span>
             <span className="text-white/40">|</span>
-            <span>v3.1 ACTIVE</span>
+            <span>v3.2 MAP</span>
           </div>
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/[0.02] border border-white/10 text-slate-300 text-[11px] font-mono tracking-widest uppercase">
             <Radio className="w-3.5 h-3.5 text-[#4da6ff] animate-pulse" />
-            <span>STATION STATUS: <strong className="text-white">PRIMARY EARTH NODE (VOSTOK)</strong></span>
+            <span>STATION STATUS: <strong className="text-white">OPS LABEL: VOSTOK (NOT AN INSTRUMENT)</strong></span>
           </div>
         </div>
 
         {/* Above the Fold Mission Statement */}
         <div className="text-center max-w-4xl mx-auto mb-14">
           <div className="text-[11px] uppercase tracking-[0.3em] text-[#ff4e00] mb-3 font-mono font-semibold">
-            MISSION THESIS & EQUILIBRIUM MANDATE
+            MANDATE = TARGET · EEI = PRESENT TENSE
           </div>
 
           <motion.h1 
@@ -83,7 +83,7 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-5xl md:text-6xl font-display font-light text-white leading-tight tracking-tight mb-6"
           >
-            Aligning human <span className="text-[#4da6ff] font-semibold">tech</span> and <span className="text-[#00ff95] font-semibold">bio-baselines</span> with <span className="text-[#ff4e00] font-semibold">planetary thermodynamic equilibrium</span>.
+            Aligning human <span className="text-[#4da6ff] font-semibold">tech</span> and <span className="text-[#00ff95] font-semibold">bio-baselines</span> toward <span className="text-[#ff4e00] font-semibold">planetary thermodynamic equilibrium</span> — not claiming it is here.
           </motion.h1>
 
           <motion.div 
@@ -112,7 +112,7 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
               className="px-6 py-3.5 rounded font-bold text-xs uppercase tracking-widest bg-[#00ff95] text-[#05070a] hover:bg-white shadow-[0_0_20px_rgba(0,255,149,0.35)] transition-all flex items-center gap-2 transform hover:-translate-y-0.5"
             >
               <Users className="w-4 h-4 text-[#05070a]" />
-              <span>Initiate Node Registration</span>
+              <span>Builder Handshake</span>
               <ArrowRight className="w-4 h-4 text-[#05070a]" />
             </a>
 
@@ -149,10 +149,10 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
               </div>
               <div>
                 <h3 className="text-xs md:text-sm font-bold text-white tracking-[0.15em] uppercase font-mono">
-                  LIVE PLANETARY & COSMOLOGICAL TELEMETRY STREAM
+                  OPS HUD — SIMULATED CARRIER (NOT CERES / ARGO)
                 </h3>
                 <p className="text-[11px] text-slate-400 font-mono">
-                  Grounding Anchors: Nancy Grace Roman Space Telescope & Earth Living Baseline
+                  Public audit lives in Thermodynamic Audit: EEI, OHC, albedo, cited.
                 </p>
               </div>
             </div>
@@ -185,7 +185,7 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
               <div className="flex items-center justify-between text-xs text-slate-400 mb-2">
                 <span className="font-mono text-[10px] uppercase tracking-wider flex items-center gap-1.5">
                   <Flame className="w-3.5 h-3.5 text-[#ff4e00]" />
-                  THERMODYNAMICS (MOD 12)
+                  EEI PRESENT (AUDIT)
                 </span>
                 <span className="text-[9px] font-mono px-1.5 py-0.5 rounded border border-[#ff4e00]/40 text-[#ff4e00] bg-[#ff4e00]/5">
                   E_in ≤ E_return
@@ -193,15 +193,15 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
               </div>
               <div className="flex items-baseline gap-2 mb-1">
                 <span className="text-2xl font-bold font-mono text-white">
-                  {telemetry.thermodynamicEquilibriumRatio}×
+                  ~1.12
                 </span>
-                <span className="text-[10px] text-slate-400 font-mono uppercase">Return / Friction</span>
+                <span className="text-[10px] text-slate-400 font-mono uppercase">W m⁻² EEI class</span>
               </div>
               <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden mt-2">
                 <div className="bg-[#ff4e00] h-full rounded-full" style={{ width: '82%' }}></div>
               </div>
               <p className="text-[10px] font-mono text-slate-400 mt-2 flex items-center justify-between">
-                <span>Zero Net Friction Target</span>
+                <span>Attractor: EEI → 0 · present ≠ 0</span>
                 <span className="text-[#ff4e00] group-hover:underline uppercase">Audit &rarr;</span>
               </p>
             </div>
@@ -282,10 +282,10 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
                 <span className="text-2xl font-bold font-mono text-white">
                   {telemetry.biosphericBaselineHealth}%
                 </span>
-                <span className="text-[10px] text-slate-400 font-mono uppercase">Biosphere Health</span>
+                <span className="text-[10px] text-slate-400 font-mono uppercase">no fake % on audit</span>
               </div>
               <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden mt-2">
-                <div className="bg-[#00ff95] h-full rounded-full" style={{ width: '96.8%' }}></div>
+                <div className="bg-[#00ff95] h-full rounded-full" style={{ width: '0%' }}></div>
               </div>
               <p className="text-[10px] font-mono text-slate-400 mt-2 flex items-center justify-between">
                 <span>Attenborough Living Baseline</span>
