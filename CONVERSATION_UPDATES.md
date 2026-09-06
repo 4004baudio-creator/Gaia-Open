@@ -23,9 +23,22 @@ Google AI Studio hosts the running app. A GitHub commit does **not** automatical
 - Then copy that law into UI copy (HeroMission, ThermodynamicAuditor, TelemetryPulse labels).
 - Do not rewrite 40k-line components in one commit without a targeted file list.
 
-## Next UI targets (when you say go)
+## UI graft status (2026-09-07)
 
-- ThermodynamicAuditor.tsx — bind to the series table in THERMODYNAMIC_AUDIT.md
-- TelemetryPulse.tsx / Navbar — label simulated chrome as OPS, not Earth
-- HeroMission.tsx — present tense: EEI not at equilibrium
-- SpecialistGateway.tsx — handshake links, not a staff roster
+Done on `main` (awaiting Studio pull + publish):
+
+- Navbar.tsx — OPS chrome / EEI present tense / Builder Handshake CTA
+- ThermodynamicAuditor.tsx — anchored EEI/OHC/albedo shelf; sliders = local demo
+- HeroMission.tsx — v3.2 MAP, present-tense EEI headline, handshake CTA, ops HUD labels
+- TelemetryPulse.tsx — OPS_SIM packet status; “not anchored ingest”
+- SpecialistGateway.tsx — handshake, not census; no inner-state harvest
+
+Live check before publish still showed pre-patch chrome (v3.1 ACTIVE, 99.8%, Roman IR as EEI stand-in). That is expected until Studio republishes.
+
+## After you publish, verify
+
+- Header ticker: OPS chrome, not 99.8% integrity posing as Earth
+- Hero chip: v3.2 MAP (not v3.1 ACTIVE)
+- Headline uses “toward … equilibrium — not claiming it is here”
+- Primary CTA: Builder Handshake
+- Audit section cites EEI ~1.12 W m⁻² and marks sliders as local demo
