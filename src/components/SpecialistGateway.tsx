@@ -130,13 +130,13 @@ Directive: Aligning human technology with planetary thermodynamic equilibrium.
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/[0.03] border border-[#00ff95]/40 text-[#00ff95] font-mono text-[10px] uppercase tracking-widest font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>PHASE 1 CALL TO ACTION: THE PROFESSIONAL SPARK</span>
+            <span>BUILDER HANDSHAKE — NOT A CENSUS</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-light text-white tracking-tight mb-3">
-            Peer-to-Peer Contribution Gateway
+            Attach a physical baseline. Keep your node.
           </h2>
           <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-mono">
-            Replacing passive contact forms with an active, sovereign onboarding gateway. Register your domain expertise to assist in node stabilization, baseline calibration, and network expansion.
+            A node is a published inventory or instrument you will be audited against — farm, grid patch, city, lab. No inner-state harvest. Detach without permission. Graft onto Climate TRACE / OpenClimate / CERES-class series; do not become staff.
           </p>
         </div>
 
@@ -320,7 +320,7 @@ Directive: Aligning human technology with planetary thermodynamic equilibrium.
                   ) : (
                     <>
                       <Sparkles className="w-3.5 h-3.5 text-slate-950" />
-                      <span>Stabilize Node & Broadcast Sovereign Telemetry</span>
+                      <span>Publish source card (handshake)</span>
                       <ArrowRight className="w-3.5 h-3.5 text-slate-950" />
                     </>
                   )}
@@ -337,7 +337,7 @@ Directive: Aligning human technology with planetary thermodynamic equilibrium.
                     Sovereign Node Successfully Anchored!
                   </h3>
                   <p className="text-xs text-slate-300 font-mono max-w-md mx-auto">
-                    Your domain expertise has been merged into the active peer registry. Your node is now broadcasting verifiable telemetry to the Gaia Pulse network.
+                    Local handshake recorded in this browser session only. It is not a planetary census and not an owner-list.
                   </p>
                 </div>
 
