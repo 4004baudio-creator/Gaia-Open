@@ -31,7 +31,8 @@ Stamp each packet: source, time, hash, licence, knowledgeLayer = ANCHORED or PLA
 
 - A node’s offered story, drawing, or lived report — stays IMAGINED / OPEN_FIELD unless that node asks it onto the map.
 - Design equations and mnemonics already in modules — labelled as design, not as lab results.
-- News and commentary — at most PLAUSIBLE, never auto-promoted to ANCHORED.
+- News and commentary — at most PLAUSIBLE, never auto-promoted to ANCHORED. Promotion requires MEDIA_CLAIM_AUDIT.md (named claim, time window, rival packet, open challenge, versioning). An account tick is not a claim tick.
+- Second inventories (Climate TRACE and peers) — sit beside national files per MODULE_32_INVENTORY_TETHER.md. They do not outrank delayed-mode instruments.
 
 ## Must refuse
 

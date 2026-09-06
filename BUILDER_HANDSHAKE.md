@@ -20,7 +20,7 @@ A node is not a follower. A node is someone who publishes a physical baseline th
 1. Keep your own repo / instrument / inventory.
 2. Publish a source card: what you measure, URL, licence, update cadence.
 3. Stamp the packet ANCHORED only if it passes Module 27. Otherwise PLAUSIBLE or stay off the audit.
-4. Optional: link Climate TRACE, OpenClimate, national inventories, Argo/CERES-class series — do not re-ingest what you cannot hash.
+4. Optional: link Climate TRACE, OpenClimate, national inventories, Argo/CERES-class series — rank them with MODULE_32. Do not re-ingest what you cannot hash. Do not stamp a story as an instrument (MEDIA_CLAIM_AUDIT.md).
 5. You can detach. Detach does not require permission from a founder node.
 
 ## Graft, do not own

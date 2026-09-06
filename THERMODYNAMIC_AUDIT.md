@@ -5,7 +5,7 @@ Shelf rule: this page is ANCHORED numbers only. Header chrome (signal integrity 
 Mandate (attractor): drive Earth's Energy Imbalance toward zero.
 Present (2025–26 instruments): the planet is still accumulating heat.
 
-Plain terms: see EEI_OHC_PLAIN.md. Edge sensors: see EDGE_DEVICE_AUDIT.md. Repair staffing: see REPAIR_PIVOT_MAP.md.
+Plain terms: see EEI_OHC_PLAIN.md. Edge sensors: see EDGE_DEVICE_AUDIT.md. Stories: see MEDIA_CLAIM_AUDIT.md. Inventories: see MODULE_32_INVENTORY_TETHER.md. Repair staffing: see REPAIR_PIVOT_MAP.md.
 
 ## Series that may appear on the Audit
 

@@ -28,4 +28,13 @@ Argo delayed-mode (pressure → thermal mass → salinity drift vs reference) is
 
 On-device inference may *flag* quality (spike, frozen sensor, out-of-range). It may not author a public narrative. Narrative is a separate shelf and must stay unmarked.
 
-Tether: device → signed packet → public baseline (Climate TRACE / OpenClimate / CERES-class / Argo GDAC / national inventory) → audit row. If the tether breaks, the packet sits beside the map until it earns a shelf. It is never banned for being unexplained. It is never sold as fact.
+Tether: device → signed packet → public baseline → audit row.
+
+Rank when choosing a baseline (see MODULE_32_INVENTORY_TETHER.md):
+calibrated in-situ / delayed-mode (Argo GDAC) > CERES-class flux > national inventory > Climate TRACE / OpenClimate second inventory > statistical downscale > unsigned model.
+
+Climate TRACE may challenge a self-report. It may not wear a sensor badge.
+
+If the tether breaks, the packet sits beside the map until it earns a shelf. It is never banned for being unexplained. It is never sold as fact.
+
+Stories about the device follow MEDIA_CLAIM_AUDIT.md, not this file.

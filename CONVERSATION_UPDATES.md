@@ -10,6 +10,10 @@ Markdown law and small source files on `main` when asked. Constitution now inclu
 - THERMODYNAMIC_AUDIT.md (series + anti-illusion language)
 - EEI_OHC_PLAIN.md
 - EDGE_DEVICE_AUDIT.md
+- MEDIA_CLAIM_AUDIT.md
+- MODULE_31_CLAIM_SHELF.md
+- MODULE_32_INVENTORY_TETHER.md
+- MODULE_33_EXPLORATION_CATALOGUE.md
 - REPAIR_PIVOT_MAP.md
 - BUILDER_HANDSHAKE.md
 
@@ -21,6 +25,8 @@ Automation `GO weekly live-map check` must:
 3. Flag if live copy drifted into doom dates, equilibrium claims, or fake %.
 4. Propose a *docs-first* patch list. Do not rewrite 40k-line components in one run.
 5. Note Studio pull still required after any GitHub commit.
+6. Re-read MEDIA_CLAIM_AUDIT.md + MODULE_32. Flag live copy that treats a verified *account* as a verified *claim*, or ranks Climate TRACE above an in-situ / CERES-class series.
+7. Re-read MODULE_33. Flag exploration chrome (Roman IR %, Kardashev bars) sold as public catalogue ingest.
 
 ## What cannot jump the gap by itself
 
