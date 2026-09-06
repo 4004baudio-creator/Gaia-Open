@@ -30,7 +30,7 @@ interface StreamingPacket {
   channel: string;
   value: string;
   freq: string;
-  status: 'VERIFIED' | 'STREAMING' | 'MERGED';
+  status: 'OPS_SIM' | 'STREAMING' | 'MERGED';
   timestamp: string;
 }
 
@@ -50,9 +50,9 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
 
   // Streaming packets ticker state
   const [packets, setPackets] = useState<StreamingPacket[]>([
-    { id: 'PKT-849', source: 'L2_ROMAN_WFI', channel: 'IR_DEPTH', value: '0.281 deg²', freq: '7.83 Hz', status: 'VERIFIED', timestamp: 'NOW' },
+    { id: 'PKT-849', source: 'L2_ROMAN_WFI', channel: 'IR_DEPTH', value: '0.281 deg²', freq: '7.83 Hz', status: 'OPS_SIM', timestamp: 'NOW' },
     { id: 'PKT-848', source: 'VOSTOK_STATION', channel: 'SUBGLACIAL_EXERGY', value: '3,768m CLEAN', freq: '7.83 Hz', status: 'MERGED', timestamp: '-1s' },
-    { id: 'PKT-847', source: 'DSCOVR_NOAA', channel: 'IMF_BZ_FLUX', value: '-3.2 nT COHERENT', freq: '14.3 Hz', status: 'VERIFIED', timestamp: '-2s' },
+    { id: 'PKT-847', source: 'DSCOVR_NOAA', channel: 'IMF_BZ_FLUX', value: '-3.2 nT COHERENT', freq: '14.3 Hz', status: 'OPS_SIM', timestamp: '-2s' },
     { id: 'PKT-846', source: 'PEER_COMMONS', channel: 'HRV_AUTONOMIC', value: '0.94 COHERENCE', freq: '0.10 Hz', status: 'MERGED', timestamp: '-3s' },
   ]);
 
@@ -84,7 +84,7 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
         channel: randomSrc.channel,
         value: randomSrc.value,
         freq: randomSrc.freq,
-        status: Math.random() > 0.3 ? 'VERIFIED' : 'MERGED',
+        status: Math.random() > 0.3 ? 'OPS_SIM' : 'MERGED',
         timestamp: 'NOW'
       };
 
@@ -255,7 +255,7 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
               <h4 className="text-xs sm:text-sm font-bold text-white font-mono tracking-wider uppercase flex items-center gap-1.5">
                 <span>TELEMETRY PULSE</span>
                 <span className="text-[#00ff95]">&bull;</span>
-                <span className="text-slate-300 font-normal">REAL-TIME DATA STREAM</span>
+                <span className="text-slate-300 font-normal">OPS SIMULATION — NOT ANCHORED INGEST</span>
               </h4>
               <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-[#00ff95]/10 text-[#00ff95] border border-[#00ff95]/30 uppercase font-semibold">
                 7.83 Hz CARRIER LOCK
@@ -426,7 +426,7 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
               Ingress Telemetry Packets (Verified Stream):
             </span>
             <span className="text-[#00ff95] font-bold">
-              100% S/N INTEGRITY
+              OPS SHELF ONLY
             </span>
           </div>
 
@@ -449,7 +449,7 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
 
                 <div className="text-right">
                   <span className={`inline-flex items-center gap-1 text-[8px] font-bold px-1.5 py-0.5 rounded border ${
-                    pkt.status === 'VERIFIED'
+                    pkt.status === 'OPS_SIM'
                       ? 'bg-[#00ff95]/10 text-[#00ff95] border-[#00ff95]/30'
                       : 'bg-[#4da6ff]/10 text-[#4da6ff] border-[#4da6ff]/30'
                   }`}>
