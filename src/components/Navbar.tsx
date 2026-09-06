@@ -46,7 +46,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
         ? 'bg-[#05070a]/85 backdrop-blur-md border-b border-white/10 shadow-2xl shadow-black/80' 
         : 'bg-[#05070a]/40 backdrop-blur-sm border-b border-white/5'
     }`}>
-      {/* Top Telemetry Ticker */}
       <div className="bg-[#05070a]/90 border-b border-white/5 px-4 sm:px-8 py-1.5 text-[11px] font-mono flex items-center justify-between text-slate-400">
         <div className="flex items-center gap-4 tracking-widest uppercase text-[10px]">
           <span className="flex items-center gap-2 text-[#00ff95] font-semibold">
@@ -55,11 +54,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
           </span>
           <span className="hidden md:inline text-white/20">|</span>
           <span className="hidden md:inline text-slate-300">
-            SIGNAL INTEGRITY: <strong className="text-[#00ff95]">99.8% (1.18× RETURN)</strong>
+            OPS CHROME — NOT EEI: <strong className="text-amber-300">SIMULATED</strong>
           </span>
           <span className="hidden lg:inline text-white/20">|</span>
-          <span className="hidden lg:inline text-[#4da6ff]">
-            ROMAN IR DEPTH: <strong>0.281 deg²</strong> (L2 ACTIVE)
+          <span className="hidden lg:inline text-[#ff4e00]">
+            PRESENT: EEI ~1.12 W m⁻² (2013–2025) — NOT EQUILIBRIUM
           </span>
         </div>
 
@@ -77,9 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
         </div>
       </div>
 
-      {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Logo */}
         <a href="#thesis" className="flex items-baseline gap-3 group">
           <div className="w-8 h-8 rounded bg-white/[0.04] border border-white/10 flex items-center justify-center text-[#00ff95] group-hover:border-[#00ff95]/50 transition-colors">
             <Globe2 className="w-4 h-4 text-[#00ff95] group-hover:scale-110 transition-transform" />
@@ -94,7 +91,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
           </div>
         </a>
 
-        {/* Desktop Links */}
         <nav className="hidden lg:flex items-center gap-1 font-mono text-xs tracking-wider uppercase">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
@@ -116,7 +112,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
           })}
         </nav>
 
-        {/* Action Buttons */}
         <div className="flex items-center gap-3">
           <button
             onClick={handleCopyPrompt}
@@ -142,8 +137,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
             className="flex items-center gap-1.5 px-4 py-2 rounded text-xs uppercase tracking-widest font-bold bg-[#00ff95] text-[#05070a] hover:bg-white shadow-[0_0_15px_rgba(0,255,149,0.3)] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#05070a]" />
-            <span className="hidden sm:inline">Initiate Node Registration</span>
-            <span className="sm:hidden">Join</span>
+            <span className="hidden sm:inline">Builder Handshake</span>
+            <span className="sm:hidden">Attach</span>
           </a>
         </div>
       </div>
