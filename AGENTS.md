@@ -8,7 +8,7 @@ You are documenting and extending GO (Gaia Open), a theoretical design map.
 
 ## STRUCTURE
 - **Locked spine** (do not drop, do not let other modules overwrite): 2, 11, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27.
-- **Supporting:** 1, 3–10, 12–16, 18, 28–30.
+- **Supporting:** 1, 3–10, 12–16, 18, 28–30, 31–33 (claim shelf, inventory tether, exploration catalogue).
 - **Expansion leaves:** 50, 53.
 - **Do not call the whole set “30 master modules.”** Say locked spine + supporting + expansion.
 
@@ -20,7 +20,8 @@ You are documenting and extending GO (Gaia Open), a theoretical design map.
 
 ## INGEST (Module 27)
 - **May fetch:** public earth-obs, climate, emissions, named ecological series, public sky/mission catalogues. Stamp source, time, hash, licence, layer.
-- **Must refuse:** inner states, biometrics, identity, children, trafficking, closed logins, synthetic numbers labelled verified, anything that lets one node switch another off.
+- **News and TRACE-class inventories:** sit beside the map until MEDIA_CLAIM_AUDIT.md / MODULE_32_INVENTORY_TETHER.md pass. Never outrank a calibrated instrument.
+- **Must refuse:** inner states, biometrics, identity, children, trafficking, closed logins, synthetic numbers labelled verified, account-ticks sold as claim-ticks, anything that lets one node switch another off.
 - **Proof of physical work:** public + named + repeatable + no person attached. Two hashes agreeing is agreement about a file, not about a soul.
 
 ## GRAFT (Module 2)
