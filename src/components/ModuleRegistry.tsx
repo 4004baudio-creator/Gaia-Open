@@ -18,10 +18,12 @@ import {
   SlidersHorizontal,
   Zap,
   Radio,
-  Orbit
+  Orbit,
+  Lock,
+  BookOpen
 } from 'lucide-react';
 import { useAutomatedUpdate } from '../context/AutomatedUpdateContext';
-import { GaiaModule, PhaseCategory, DomainCategory } from '../types';
+import { GaiaModule, PhaseCategory, DomainCategory, ModuleStructureTier, KnowledgeLayer } from '../types';
 import { ModuleDetailModal } from './ModuleDetailModal';
 
 interface ModuleRegistryProps {
@@ -37,6 +39,8 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
 }) => {
   const { modules, scanningModuleIndex } = useAutomatedUpdate();
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedTier, setSelectedTier] = useState<ModuleStructureTier | 'ALL'>('ALL');
+  const [selectedLayer, setSelectedLayer] = useState<KnowledgeLayer | 'ALL'>('ALL');
   const [selectedPhase, setSelectedPhase] = useState<PhaseCategory | 'ALL'>('ALL');
   const [selectedDomain, setSelectedDomain] = useState<DomainCategory | 'ALL'>('ALL');
   const [activeModalModule, setActiveModalModule] = useState<GaiaModule | null>(null);
@@ -80,10 +84,27 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
 
       const matchesPhase = selectedPhase === 'ALL' || module.phase === selectedPhase;
       const matchesDomain = selectedDomain === 'ALL' || module.domains.includes(selectedDomain as DomainCategory);
+      const matchesTier = selectedTier === 'ALL' || module.structureTier === selectedTier;
+      const matchesLayer = selectedLayer === 'ALL' || module.knowledgeLayer === selectedLayer;
 
-      return matchesSearch && matchesPhase && matchesDomain;
+      return matchesSearch && matchesPhase && matchesDomain && matchesTier && matchesLayer;
     });
-  }, [modules, searchQuery, selectedPhase, selectedDomain]);
+  }, [modules, searchQuery, selectedPhase, selectedDomain, selectedTier, selectedLayer]);
+
+  const getLayerBadgeStyle = (layer?: KnowledgeLayer) => {
+    switch (layer) {
+      case 'ANCHORED':
+        return 'bg-emerald-500/10 text-emerald-300 border-emerald-500/40';
+      case 'PLAUSIBLE':
+        return 'bg-sky-500/10 text-sky-300 border-sky-500/40';
+      case 'IMAGINED':
+        return 'bg-purple-500/10 text-purple-300 border-purple-500/40';
+      case 'OPEN_FIELD':
+        return 'bg-amber-500/10 text-amber-300 border-amber-500/40';
+      default:
+        return 'bg-white/[0.03] text-slate-400 border-white/10';
+    }
+  };
 
   return (
     <section id="registry" className="py-20 md:py-28 relative bg-[#05070a]/70 border-t border-white/10">
@@ -94,34 +115,154 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/[0.03] border border-[#00ff95]/40 text-[#00ff95] font-mono text-[10px] uppercase tracking-widest font-semibold mb-3">
               <Layers className="w-3.5 h-3.5" />
-              <span>THE OPEN-SOURCE CORE (MASTER REGISTRY v3.2)</span>
+              <span>THE OPEN MAP // LOCKED SPINE & MODULE REGISTRY</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-light text-white tracking-tight">
-              Master Module Registry
+              Locked Spine & Peer-Review Map
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 max-w-2xl mt-2 font-mono">
-              Total Nodes: {modules.length} Registry Checkpoints (29 Master Modules across 16 Phases + Modules 50 & 53 Expansion). Dynamically synchronized with continuous automated telemetry scans.
+              Theoretical Design Map: 12-Module Locked Spine (permanent physical & architectural integrity) + 18 Supporting Modules + 2 Expansion Leaves. Every claim stamped with verifiable knowledge layers.
             </p>
           </div>
 
           {/* Quick Counter */}
-          <div className="flex items-center gap-3 bg-white/[0.02] border border-white/10 p-3 rounded">
+          <div className="flex items-center gap-3 bg-white/[0.02] border border-white/10 p-3 rounded font-mono">
             <div className="text-right">
-              <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Total Checkpoints</div>
-              <div className="text-lg font-bold font-mono text-[#00ff95]">{modules.length} Master Modules</div>
+              <div className="text-[10px] text-slate-400 uppercase tracking-wider">Locked Spine</div>
+              <div className="text-lg font-bold text-[#00ff95]">12 Modules</div>
             </div>
             <div className="h-8 w-px bg-white/10" />
             <div className="text-right">
-              <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Adapted / Synced</div>
-              <div className="text-lg font-bold font-mono text-[#4da6ff]">
-                {modules.filter(m => m.syncStatus === 'ADAPTED').length} Adapted
-              </div>
+              <div className="text-[10px] text-slate-400 uppercase tracking-wider">Supporting</div>
+              <div className="text-lg font-bold text-[#4da6ff]">18 Modules</div>
+            </div>
+            <div className="h-8 w-px bg-white/10" />
+            <div className="text-right">
+              <div className="text-[10px] text-slate-400 uppercase tracking-wider">Expansion</div>
+              <div className="text-lg font-bold text-[#f59e0b]">2 Leaves</div>
             </div>
           </div>
         </div>
 
         {/* Search and Filters Bar */}
         <div className="p-4 rounded bg-white/[0.02] border border-white/10 shadow-xl mb-10 space-y-4">
+          
+          {/* Structure Tier Filter Tabs */}
+          <div className="flex flex-wrap items-center gap-2 pb-3 border-b border-white/10">
+            <span className="text-[11px] font-mono uppercase tracking-widest text-white/70 mr-1 flex items-center gap-1.5 font-semibold">
+              <Layers className="w-3.5 h-3.5 text-[#00ff95]" />
+              Structure:
+            </span>
+            <button
+              onClick={() => setSelectedTier('ALL')}
+              className={`px-3 py-1.5 rounded text-xs font-mono uppercase tracking-wider transition-all ${
+                selectedTier === 'ALL'
+                  ? 'bg-white text-slate-950 font-bold shadow-md'
+                  : 'bg-white/[0.03] text-slate-300 hover:bg-white/[0.08] border border-white/10'
+              }`}
+            >
+              All Structure ({modules.length})
+            </button>
+            <button
+              onClick={() => setSelectedTier('LOCKED_SPINE')}
+              className={`px-3 py-1.5 rounded text-xs font-mono uppercase tracking-wider transition-all flex items-center gap-1.5 ${
+                selectedTier === 'LOCKED_SPINE'
+                  ? 'bg-[#00ff95] text-slate-950 font-bold shadow-[0_0_12px_rgba(0,255,149,0.35)]'
+                  : 'bg-[#00ff95]/10 text-[#00ff95] hover:bg-[#00ff95]/20 border border-[#00ff95]/40'
+              }`}
+            >
+              <Lock className="w-3 h-3" />
+              <span>Locked Spine (12)</span>
+            </button>
+            <button
+              onClick={() => setSelectedTier('SUPPORTING')}
+              className={`px-3 py-1.5 rounded text-xs font-mono uppercase tracking-wider transition-all ${
+                selectedTier === 'SUPPORTING'
+                  ? 'bg-[#4da6ff] text-slate-950 font-bold shadow-[0_0_12px_rgba(77,166,255,0.35)]'
+                  : 'bg-[#4da6ff]/10 text-[#4da6ff] hover:bg-[#4da6ff]/20 border border-[#4da6ff]/40'
+              }`}
+            >
+              Supporting (18)
+            </button>
+            <button
+              onClick={() => setSelectedTier('EXPANSION_LEAF')}
+              className={`px-3 py-1.5 rounded text-xs font-mono uppercase tracking-wider transition-all flex items-center gap-1 ${
+                selectedTier === 'EXPANSION_LEAF'
+                  ? 'bg-[#f59e0b] text-slate-950 font-bold shadow-[0_0_12px_rgba(245,158,11,0.35)]'
+                  : 'bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 border border-amber-500/40'
+              }`}
+            >
+              <Zap className="w-3 h-3" />
+              <span>Expansion Leaves (2)</span>
+            </button>
+          </div>
+
+          {/* Knowledge Layer Filter */}
+          <div className="flex flex-wrap items-center gap-1.5 pb-3 border-b border-white/10">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 mr-1 flex items-center gap-1">
+              <BookOpen className="w-3 h-3 text-[#4da6ff]" />
+              Knowledge Layer:
+            </span>
+            <button
+              onClick={() => setSelectedLayer('ALL')}
+              className={`px-2.5 py-1 rounded text-[10px] font-mono uppercase tracking-wider transition-colors ${
+                selectedLayer === 'ALL'
+                  ? 'bg-[#4da6ff]/20 text-[#4da6ff] border border-[#4da6ff]/60 font-semibold'
+                  : 'bg-white/[0.02] text-slate-400 hover:text-white border border-white/5'
+              }`}
+            >
+              All Layers
+            </button>
+            <button
+              onClick={() => setSelectedLayer('ANCHORED')}
+              className={`px-2.5 py-1 rounded text-[10px] font-mono uppercase tracking-wider transition-colors flex items-center gap-1 ${
+                selectedLayer === 'ANCHORED'
+                  ? 'bg-[#00ff95] text-slate-950 font-bold'
+                  : 'bg-[#00ff95]/10 text-[#00ff95] hover:bg-[#00ff95]/20 border border-[#00ff95]/30'
+              }`}
+              title="Repeatable / measurable / public physical baseline"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00ff95]" />
+              <span>ANCHORED (Physical Baseline)</span>
+            </button>
+            <button
+              onClick={() => setSelectedLayer('PLAUSIBLE')}
+              className={`px-2.5 py-1 rounded text-[10px] font-mono uppercase tracking-wider transition-colors flex items-center gap-1 ${
+                selectedLayer === 'PLAUSIBLE'
+                  ? 'bg-[#38bdf8] text-slate-950 font-bold'
+                  : 'bg-sky-500/10 text-sky-300 hover:bg-sky-500/20 border border-sky-500/30'
+              }`}
+              title="Specified enough to try or prototype"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+              <span>PLAUSIBLE (Prototypable)</span>
+            </button>
+            <button
+              onClick={() => setSelectedLayer('IMAGINED')}
+              className={`px-2.5 py-1 rounded text-[10px] font-mono uppercase tracking-wider transition-colors flex items-center gap-1 ${
+                selectedLayer === 'IMAGINED'
+                  ? 'bg-[#a855f7] text-white font-bold'
+                  : 'bg-purple-500/10 text-purple-300 hover:bg-purple-500/20 border border-purple-500/30'
+              }`}
+              title="Story, design language, mnemonic equations"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+              <span>IMAGINED (Design Lang)</span>
+            </button>
+            <button
+              onClick={() => setSelectedLayer('OPEN_FIELD')}
+              className={`px-2.5 py-1 rounded text-[10px] font-mono uppercase tracking-wider transition-colors flex items-center gap-1 ${
+                selectedLayer === 'OPEN_FIELD'
+                  ? 'bg-amber-400 text-slate-950 font-bold'
+                  : 'bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 border border-amber-500/30'
+              }`}
+              title="Unexplained; allowed to exist; not ingested as fact"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+              <span>OPEN_FIELD (Unexplained)</span>
+            </button>
+          </div>
+
           <div className="flex flex-col md:flex-row gap-3">
             {/* Search input */}
             <div className="relative flex-1">
@@ -373,11 +514,30 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                 <div>
                   {/* Module Number & Phase */}
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-[10px] font-mono text-white/40 tracking-wider">
-                      {module.number.toString().padStart(2, '0')} // CHECKPOINT
-                    </span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[10px] font-mono text-white/40 tracking-wider">
+                        MOD {module.number.toString().padStart(2, '0')}
+                      </span>
+                      {module.structureTier === 'LOCKED_SPINE' && (
+                        <span className="text-[8px] font-mono px-1.5 py-0.5 rounded bg-[#00ff95]/15 text-[#00ff95] border border-[#00ff95]/40 font-semibold flex items-center gap-1">
+                          <Lock className="w-2.5 h-2.5" />
+                          <span>LOCKED SPINE</span>
+                        </span>
+                      )}
+                      {module.structureTier === 'EXPANSION_LEAF' && (
+                        <span className="text-[8px] font-mono px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/40 font-semibold flex items-center gap-1">
+                          <Zap className="w-2.5 h-2.5" />
+                          <span>EXPANSION</span>
+                        </span>
+                      )}
+                    </div>
                     
                     <div className="flex items-center gap-1.5">
+                      {module.knowledgeLayer && (
+                        <span className={`text-[8px] font-mono px-1.5 py-0.5 rounded border uppercase tracking-wider font-semibold ${getLayerBadgeStyle(module.knowledgeLayer)}`}>
+                          {module.knowledgeLayer}
+                        </span>
+                      )}
                       {isScanning ? (
                         <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-[#00ff95] text-slate-950 font-bold uppercase">
                           SCANNING
@@ -387,28 +547,8 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                           ADAPTED ({module.adaptationCount || 1})
                         </span>
                       ) : (
-                        <span className="text-[9px] font-mono uppercase tracking-widest text-slate-400">
-                          {module.phase === 'PHASE_I_III' 
-                            ? 'I-III FOUNDATIONS' 
-                            : module.phase === 'PHASE_IV_V' 
-                            ? 'IV-V COMMONS' 
-                            : module.phase === 'PHASE_VI_VII'
-                            ? 'VI-VII RESONANCE'
-                            : module.phase === 'PHASE_VIII'
-                            ? 'VIII QUANTUM BRIDGE'
-                            : module.phase === 'PHASE_IX'
-                            ? 'IX P.O.W.E.R.'
-                            : module.phase === 'PHASE_X'
-                            ? 'X NODE SECURITY'
-                            : module.phase === 'PHASE_XI'
-                            ? 'XI RESTORATIVE'
-                            : module.phase === 'PHASE_XII'
-                            ? 'XII ANTI-WMD PROTOCOL'
-                            : module.phase === 'PHASE_XIII'
-                            ? 'XIII TRANSPARENCY & SAFE HARBOR'
-                            : module.phase === 'PHASE_EXPANSION'
-                            ? 'EXPANSION 50 & 53'
-                            : 'VI HEROES'}
+                        <span className="text-[8px] font-mono uppercase tracking-widest text-slate-400">
+                          {module.phaseLabel}
                         </span>
                       )}
                     </div>

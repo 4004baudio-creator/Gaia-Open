@@ -21,10 +21,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPromptModal }) => {
               </div>
               <div>
                 <span className="font-mono font-bold text-white text-base tracking-widest">
-                  GAIA PULSE OS
+                  GAIA OPEN (GO)
                 </span>
                 <span className="ml-2 px-1.5 py-0.5 rounded text-[9px] font-mono bg-white/[0.03] text-[#00ff95] border border-[#00ff95]/30 uppercase">
-                  v3.1 MASTER
+                  v3.2 MASTER
                 </span>
               </div>
             </div>

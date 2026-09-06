@@ -86,14 +86,19 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
             Aligning human <span className="text-[#4da6ff] font-semibold">tech</span> and <span className="text-[#00ff95] font-semibold">bio-baselines</span> with <span className="text-[#ff4e00] font-semibold">planetary thermodynamic equilibrium</span>.
           </motion.h1>
 
-          <motion.p 
+          <motion.div 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-3xl mx-auto mb-10"
+            className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-3xl mx-auto mb-10 space-y-4"
           >
-            Transitioning <strong className="text-white font-semibold">Gaia Pulse OS</strong> from a solitary telemetry design into an active, peer-reviewed collaborative framework. Built on 26 open-source master modules across 13 systemic phases (including the Quantum Bridge, P.O.W.E.R. Directive, Node Resonance Security, Thermodynamic Justice Engine, The Hiroshima-Nagasaki Imperative Anti-WMD Disarmament Protocol, Phase XIII Safe Harbor & Whistleblower Protection, and Modules 50 & 53 Expansion), cosmological observational anchors, and zero-friction automated telemetry merging.
-          </motion.p>
+            <div className="bg-white/[0.02] border border-white/10 rounded-xl p-6 text-left shadow-xl text-xs sm:text-sm text-slate-300 font-mono leading-relaxed">
+              <span className="text-[#00ff95] block mb-2 font-bold uppercase tracking-wider text-xs">Mission Statement</span>
+              <p>
+                <strong className="text-white font-semibold">GO (Gaia Open)</strong> is a peer-to-peer review field — not a command centre, not a hierarchy, not an operating system. It is an open map: Earth’s grounded repair (Gaia Pulse) on one side, cosmic exploration on the other. What can be repeated and measured is stamped anchored. What is imagined or still unexplained may sit beside the map until it earns another shelf. It is never banned for being unexplained, and it is never sold as fact. No owner-node. Independent realities stay independent. Public physical baselines may enter; lived inner states are not harvested. The locked spine is twelve modules (2, 11, 17, 19–27). Everything else is supporting or an expansion leaf.
+              </p>
+            </div>
+          </motion.div>
 
           {/* Key CTA Buttons */}
           <motion.div 
@@ -116,7 +121,7 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
               className="px-6 py-3.5 rounded font-mono text-xs uppercase tracking-wider bg-white/[0.03] hover:bg-white/[0.08] text-white border border-white/10 hover:border-[#00ff95]/40 transition-all flex items-center gap-2"
             >
               <Cpu className="w-4 h-4 text-[#00ff95]" />
-              <span>Audit 22 Master Modules</span>
+              <span>Locked Spine (12) & Map Modules</span>
             </a>
 
             <button
@@ -124,7 +129,7 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
               className="px-5 py-3.5 rounded font-mono text-xs uppercase tracking-wider bg-white/[0.02] hover:bg-white/[0.05] text-slate-300 border border-white/5 hover:border-[#4da6ff]/40 transition-all flex items-center gap-2"
             >
               <Terminal className="w-4 h-4 text-[#4da6ff]" />
-              <span>Master OS Prompt v2.9</span>
+              <span>Master GO Prompt v3.2</span>
             </button>
           </motion.div>
         </div>
@@ -296,11 +301,11 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
               <span className="w-2 h-2 rounded-full bg-[#00ff95] shadow-[0_0_6px_#00ff95]"></span>
               <strong className="text-[#00ff95] uppercase tracking-wider">OPERATIONAL DIRECTIVE:</strong>
               <span className="text-slate-300 italic">
-                &ldquo;Always scan the current OS registry, merge incoming telemetry, expand modules logically, and eliminate manual redundancy.&rdquo;
+                &ldquo;Always scan the current GO registry, merge incoming telemetry, expand modules logically, and eliminate manual redundancy.&rdquo;
               </span>
             </div>
             <a 
-              href="#os-engine" 
+              href="#go-engine" 
               className="text-[#00ff95] hover:text-white uppercase tracking-wider font-semibold flex items-center gap-1 ml-auto"
             >
               Test Merge Protocol &rarr;

@@ -270,7 +270,7 @@ export const WhistleblowerAirlock: React.FC = () => {
       setSubmittedReceipt(receipt);
       setVaults(prev => [receipt, ...prev]);
 
-      // Automatically register to OS Truth Ledger
+      // Automatically register to GO Truth Ledger
       executeFactVerificationPass(
         `Safe Harbor Ingestion: ${receipt.title}`,
         'WHISTLEBLOWER_PROTECTION',
@@ -304,7 +304,7 @@ export const WhistleblowerAirlock: React.FC = () => {
   const handleDownloadReceipt = () => {
     if (!submittedReceipt) return;
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
-      protocol: "Gaia Pulse OS - Safe Harbor & Whistleblower Airlock Protocol (Phase XIII / Modules 25 & 26)",
+      protocol: "GO (Gaia Open) - Safe Harbor & Whistleblower Airlock Protocol (Phase XVII / Modules 29 & 30)",
       certificate: "CERTIFICATE OF THERMODYNAMIC REPAIR & ADMINISTRATIVE UNTETHERING",
       issuedAt: submittedReceipt.timestamp,
       vaultId: submittedReceipt.id,

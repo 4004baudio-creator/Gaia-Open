@@ -289,7 +289,7 @@ export const InterSpeciesSanctuary: React.FC = () => {
       confidenceScore: 1.00,
       objectivePhysicalBaseline: 'The Cambridge Declaration on Consciousness (2012) & Thermodynamic Exergy Equilibrium',
       ruleAnchor: 'Module 24: The Inter-Species Sentience Protocol',
-      notes: 'Autonomous OS pulse executed: Industrial factory farm thermodynamic extraction logged as critical systemic failure.'
+      notes: 'Autonomous GO pulse executed: Industrial factory farm thermodynamic extraction logged as critical systemic failure.'
     });
 
     triggerAutonomousScan();
@@ -540,7 +540,7 @@ export const InterSpeciesSanctuary: React.FC = () => {
                     {selectedSpecies.vulnerabilityToCruelty}
                   </p>
                   <div className="mt-3 p-2.5 rounded bg-rose-950/30 border border-rose-500/30 text-[11px] font-mono text-rose-200">
-                    <strong>OS Directive 24.1:</strong> Any non-consensual infliction of suffering upon this node is mathematically logged as a critical systemic failure and thermodynamic violation.
+                    <strong>GO Directive 24.1:</strong> Any non-consensual infliction of suffering upon this node is mathematically logged as a critical systemic failure and thermodynamic violation.
                   </div>
                 </div>
               </div>

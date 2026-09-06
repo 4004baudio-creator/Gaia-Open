@@ -485,7 +485,7 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
                 {isScanning ? (
                   <>
                     <RefreshCw className="w-4 h-4 animate-spin text-slate-950" />
-                    <span>Scanning OS Registry & Pruning Redundancy...</span>
+                    <span>Scanning GO Registry & Pruning Redundancy...</span>
                   </>
                 ) : (
                   <>
@@ -589,7 +589,7 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
                   ) : (
                     <>
                       <Copy className="w-3.5 h-3.5 text-[#00ff95]" />
-                      <span>Copy Master OS v3.2 Block</span>
+                      <span>Copy Master GO v3.2 Block</span>
                     </>
                   )}
                 </button>
@@ -701,7 +701,7 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
                       </span>
                     </div>
                     <p className="text-xs font-mono text-slate-300 mt-1 max-w-3xl leading-relaxed">
-                      Before outputting any timeline, physical fact, aerospace logistical data, or systemic metric, the OS executes a strict self-verification pass against objective physical reality. Predictive algorithmic hallucinations and unverified narratives generate systemic friction and are strictly prohibited. All corrections, module updates, or pruned falsehoods are logged into this decentralized audit ledger.
+                      Before outputting any timeline, physical fact, aerospace logistical data, or systemic metric, GO executes a strict self-verification pass against objective physical reality. Predictive algorithmic hallucinations and unverified narratives generate systemic friction and are strictly prohibited. All corrections, module updates, or pruned falsehoods are logged into this decentralized audit ledger.
                     </p>
                   </div>
                 </div>
@@ -1047,7 +1047,7 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
                         ) : (
                           <>
                             <AlertCircle className="w-4 h-4 text-[#ff4e00]" />
-                            <span className="text-[#ff4e00]">Hallucination Pruned: False Narrative Eliminated from OS Active Memory</span>
+                            <span className="text-[#ff4e00]">Hallucination Pruned: False Narrative Eliminated from GO Active Memory</span>
                           </>
                         )}
                       </span>

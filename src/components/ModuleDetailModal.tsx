@@ -16,7 +16,9 @@ import {
   Zap,
   Trash2,
   RefreshCw,
-  Orbit
+  Orbit,
+  Lock,
+  BookOpen
 } from 'lucide-react';
 
 interface ModuleDetailModalProps {
@@ -82,6 +84,78 @@ export const ModuleDetailModal: React.FC<ModuleDetailModalProps> = ({
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed bg-white/[0.02] p-4 rounded border border-white/10 font-sans">
               &ldquo;{module.thesis}&rdquo;
             </p>
+          </div>
+
+          {/* GO Topology & Knowledge Layer Stamp */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 p-3.5 rounded bg-white/[0.02] border border-white/10">
+            {/* Structure Tier */}
+            <div className="flex items-start gap-2.5">
+              <div className={`p-2 rounded mt-0.5 ${
+                module.structureTier === 'LOCKED_SPINE' 
+                  ? 'bg-[#00ff95]/10 text-[#00ff95] border border-[#00ff95]/30'
+                  : module.structureTier === 'EXPANSION_LEAF'
+                  ? 'bg-amber-500/10 text-amber-300 border border-amber-500/30'
+                  : 'bg-sky-500/10 text-sky-300 border border-sky-500/30'
+              }`}>
+                {module.structureTier === 'LOCKED_SPINE' ? (
+                  <Lock className="w-4 h-4" />
+                ) : module.structureTier === 'EXPANSION_LEAF' ? (
+                  <Zap className="w-4 h-4" />
+                ) : (
+                  <Layers className="w-4 h-4" />
+                )}
+              </div>
+              <div>
+                <div className="text-[10px] uppercase font-mono text-slate-400 tracking-wider">Structure Tier</div>
+                <div className="text-xs font-bold text-white font-mono mt-0.5">
+                  {module.structureTier === 'LOCKED_SPINE' && 'Locked Spine (Permanent Integrity)'}
+                  {module.structureTier === 'SUPPORTING' && 'Supporting (Operational Map)'}
+                  {module.structureTier === 'EXPANSION_LEAF' && 'Expansion Leaf (Resonance / Clear Node)'}
+                </div>
+                <p className="text-[10px] text-slate-400 mt-1 font-sans">
+                  {module.structureTier === 'LOCKED_SPINE' && 'Core foundational module (2, 11, 17, 19–27). Cannot be dropped or overwritten.'}
+                  {module.structureTier === 'SUPPORTING' && 'Operational scaffolding supporting grounded Earth repair and peer-review.'}
+                  {module.structureTier === 'EXPANSION_LEAF' && 'Autonomous branch extending telemetry to electromagnetic clear nodes and cosmic sensing.'}
+                </p>
+              </div>
+            </div>
+
+            {/* Knowledge Layer */}
+            <div className="flex items-start gap-2.5">
+              <div className={`p-2 rounded mt-0.5 ${
+                module.knowledgeLayer === 'ANCHORED'
+                  ? 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/30'
+                  : module.knowledgeLayer === 'PLAUSIBLE'
+                  ? 'bg-sky-500/10 text-sky-300 border border-sky-500/30'
+                  : module.knowledgeLayer === 'IMAGINED'
+                  ? 'bg-purple-500/10 text-purple-300 border border-purple-500/30'
+                  : 'bg-amber-500/10 text-amber-300 border border-amber-500/30'
+              }`}>
+                <BookOpen className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-[10px] uppercase font-mono text-slate-400 tracking-wider">Knowledge Layer Stamp</div>
+                <div className="text-xs font-bold font-mono mt-0.5 flex items-center gap-1.5">
+                  <span className={`px-1.5 py-0.5 rounded text-[10px] uppercase tracking-wider font-semibold ${
+                    module.knowledgeLayer === 'ANCHORED'
+                      ? 'bg-emerald-500/20 text-emerald-300'
+                      : module.knowledgeLayer === 'PLAUSIBLE'
+                      ? 'bg-sky-500/20 text-sky-300'
+                      : module.knowledgeLayer === 'IMAGINED'
+                      ? 'bg-purple-500/20 text-purple-300'
+                      : 'bg-amber-500/20 text-amber-300'
+                  }`}>
+                    {module.knowledgeLayer || 'ANCHORED'}
+                  </span>
+                </div>
+                <p className="text-[10px] text-slate-400 mt-1 font-sans">
+                  {module.knowledgeLayer === 'ANCHORED' && 'Repeatable, measurable, public physical baseline.'}
+                  {module.knowledgeLayer === 'PLAUSIBLE' && 'Specified enough to test or prototype in open research.'}
+                  {module.knowledgeLayer === 'IMAGINED' && 'Story, design language, or mnemonic equations.'}
+                  {module.knowledgeLayer === 'OPEN_FIELD' && 'Unexplained phenomenon; allowed to exist beside map, never sold as fact.'}
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Domains Badges */}

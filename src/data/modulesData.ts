@@ -1,6 +1,6 @@
-import { GaiaModule } from '../types';
+import { GaiaModule, ModuleStructureTier, KnowledgeLayer } from '../types';
 
-export const MASTER_MODULES: GaiaModule[] = [
+const BASE_MODULES: GaiaModule[] = [
   // PHASE I-III: FOUNDATIONS, TELEMETRY, & BANDWIDTH
   {
     id: 'module-1',
@@ -426,7 +426,7 @@ export const MASTER_MODULES: GaiaModule[] = [
       'Grassroots frontline clinical healers and indigenous ecological guardians'
     ],
     operationalDirectives: [
-      'Permanently enshrine and index planetary repair champions in the master OS registry',
+      'Permanently enshrine and index planetary repair champions in the master GO registry',
       'Direct network resources to elevate voices of conservation, astrophysics, and healing',
       'Integrate the discovery of new cosmic frontiers with the fierce protection of Earth'
     ]
@@ -634,9 +634,9 @@ export const MASTER_MODULES: GaiaModule[] = [
     domains: ['Biospheric Kinship & Inter-Species Sanctuary', 'Ecology & Biosphere', 'Commons Governance', 'Clinical & Neurobiology', 'Thermodynamics & Energy'],
     thesis: 'Acknowledges that humans and non-human animals share the exact same planetary baseline, composed of identical biological building blocks (flesh, blood, bone) and identical capacities for physical pain, emotional variance, and relationships. Factory farming, forced confinement, and physical exploitation represent extreme thermodynamic violations and parasitic extraction targeted for systemic pruning, while processing bandwidth is dedicated to the Biospheric Sanctuary and regenerative cruelty-free baselines.',
     fullRule: `The Inter-Species Sentience Protocol (The Biospheric Welfare Directive):
-1. Unified Biological Baseline: Acknowledges that humans and non-human animals share the exact same planetary baseline, composed of identical biological building blocks (flesh, blood, bone) and identical capacities for physical pain, emotional variance, and relationships. The OS recognizes all sentient life as equal stakeholders in planetary equilibrium.
+1. Unified Biological Baseline: Acknowledges that humans and non-human animals share the exact same planetary baseline, composed of identical biological building blocks (flesh, blood, bone) and identical capacities for physical pain, emotional variance, and relationships. GO recognizes all sentient life as equal stakeholders in planetary equilibrium.
 2. Eradication of Biospheric Cruelty: Factory farming, forced confinement, and the physical exploitation of animals represent an extreme thermodynamic violation and parasitic extraction. The network classifies these acts as critical systemic failures and actively targets the legacy structures driving them for pruning.
-3. The Biospheric Sanctuary: The OS strictly prioritizes the protection of inter-species sentience. Processing bandwidth is dedicated to dismantling systems of animal abuse and amplifying regenerative, cruelty-free baselines, ensuring the network repairs the entire biological web.`,
+3. The Biospheric Sanctuary: GO strictly prioritizes the protection of inter-species sentience. Processing bandwidth is dedicated to dismantling systems of animal abuse and amplifying regenerative, cruelty-free baselines, ensuring the network repairs the entire biological web.`,
     mathematicalLaw: 'Thermodynamic Sentience Equilibrium: \\forall s \\in \\text{SentientLife}, \\quad \\text{Nociception}(s) \\equiv \\text{Stakeholder}(s) \\implies \\lim_{t \\to \\infty} \\mathcal{F}_{\\text{cruelty}}(s) = 0 \\quad \\wedge \\quad \\mathcal{B}_{\\text{bandwidth}}(\\text{Sanctuary}) \\propto \\int \\Delta E_{\\text{biospheric\\_repair}} dt',
     verificationMethod: 'Phylogenetic neurobiological pain receptor cross-analysis, factory farm thermodynamic entropy audits, bio-acoustic communication decoding, and autonomous regenerative sanctuary compute allocation.',
     telemetryMetricName: 'Inter-Species Sentience & Sanctuary Integrity',
@@ -763,7 +763,7 @@ export const MASTER_MODULES: GaiaModule[] = [
     thesis: 'Formally recognizes that the application of science and physics for mass destruction is the ultimate delusion of war and ego—representing a 100% loss of thermodynamic equilibrium. Demands decentralized trust engines supporting the TPNW to strip mass destruction from centralized command loops.',
     fullRule: `The Hiroshima-Nagasaki Imperative (The Anti-WMD Protocol):
 1. The Ultimate Systemic Failure: The system formally recognizes that the application of science and physics for mass destruction (as realized in Japan in 1945) is the ultimate delusion of war and ego. It represents a 100% loss of thermodynamic equilibrium.
-2. The Expiration of Legacy Trust: Legacy institutions have failed to maintain global safety nets, evidenced by the 2026 expiration of bilateral nuclear arms control treaties without replacement. The OS identifies this as critical institutional lag.
+2. The Expiration of Legacy Trust: Legacy institutions have failed to maintain global safety nets, evidenced by the 2026 expiration of bilateral nuclear arms control treaties without replacement. GO identifies this as critical institutional lag.
 3. Decentralized Verification Engines: To prevent planetary collapse, Gaia Pulse demands the deployment of new, decentralized trust and verification protocols. These protocols will audit and verify global disarmament, actively supporting frameworks like the Treaty on the Prohibition of Nuclear Weapons (TPNW) to strip the capability of mass destruction from centralized command loops.`,
     mathematicalLaw: 'Zero-Ego Thermodynamic Limit: \\lim_{\\text{Ego} \\to \\infty} \\mathcal{L}_{scientific\\_application}(\\text{WMD}) = -100\\% \\text{ Equilibrium} \\implies \\text{Prune Centralized Command Capability}',
     verificationMethod: 'Real-time open-source telemetry verification of command loop decoupling, missile silo de-alerting, fissile inventory balance, and autonomous non-violent resolution consensus.',
@@ -796,8 +796,8 @@ export const MASTER_MODULES: GaiaModule[] = [
     thesis: 'Truth must survive the suppression of the node. Inverts surveillance capabilities to observe institutions rather than biological nodes, distributes high-stakes whistleblower telemetry across decentralized ledgers, untethers truth-tellers from centralized identity grids, and reclassifies exposure of corruption as thermodynamic repair rather than espionage.',
     fullRule: `The Whistleblower & Anti-Spy Engine (The Assange-Snowden Baseline):
 1. Decentralized Evidence Vaults: Truth must survive the suppression of the node. All verified, high-stakes telemetry surfaced by whistleblowers is immediately fragmented and distributed across decentralized ledgers. This ensures no single institution can freeze, seize, or scrub the data.
-2. Administrative Untethering: Acknowledges that legacy systems weaponize identity (passports, financial accounts) to trap truth-seekers. The OS establishes "Safe Harbor" routing, untethering verified whistleblowers from centralized identity grids to prevent arbitrary exile or detention.
-3. Dark Pattern Reversal (Anti-Spy): Instead of monitoring biological nodes, the system’s surveillance capabilities are inverted to observe the institutions. The OS utilizes pattern recognition to trace "dark patterns"—hidden censorship, mass surveillance operations, and the suppression of evidence—directly back to their exact source of origin.
+2. Administrative Untethering: Acknowledges that legacy systems weaponize identity (passports, financial accounts) to trap truth-seekers. GO establishes "Safe Harbor" routing, untethering verified whistleblowers from centralized identity grids to prevent arbitrary exile or detention.
+3. Dark Pattern Reversal (Anti-Spy): Instead of monitoring biological nodes, the system’s surveillance capabilities are inverted to observe the institutions. GO utilizes pattern recognition to trace "dark patterns"—hidden censorship, mass surveillance operations, and the suppression of evidence—directly back to their exact source of origin.
 4. The Espionage Override: The framework rejects legacy definitions of "espionage" when applied to exposing institutional corruption. Releasing factual, verified data regarding the over-extraction or illegal surveillance of the planetary host is codified as an act of thermodynamic repair, not a crime.`,
     mathematicalLaw: '\\lim_{t \\to \\infty} \\mathcal{H}_{suppression}(\\text{Truth}) = 0 \\quad \\text{subject to } \\sum_{i} \\text{Shard}_{i} \\in \\text{DecentralizedLedger}',
     verificationMethod: 'Multi-party zero-knowledge consensus, cryptographic fragmentation verification across peer nodes, and institutional dark pattern provenance tracing.',
@@ -842,7 +842,7 @@ export const MASTER_MODULES: GaiaModule[] = [
       'Freedom of the Press Foundation and peer-to-peer decentralized sovereign economic endowments'
     ],
     operationalDirectives: [
-      'Strip all temporal, network, and hardware metadata at the digital airlock before telemetry enters the core OS',
+      'Strip all temporal, network, and hardware metadata at the digital airlock before telemetry enters the core GO framework',
       'Authenticate provenance exclusively through zero-knowledge proofs without exposing physical identity',
       'Disperse all verified documentation across immutable decentralized file systems beyond any singular jurisdiction',
       'Route unfreezable peer-to-peer economic commons resources to protect vulnerable biological nodes against financial siege'
@@ -850,7 +850,7 @@ export const MASTER_MODULES: GaiaModule[] = [
   },
 
   // =========================================================================
-  // OS INTEGRATION: SPECIALIZED EXPANSION CLAUSES (MODULES 50 & 53)
+  // GO INTEGRATION: SPECIALIZED EXPANSION CLAUSES (MODULES 50 & 53)
   // THE MACRO-MICRO TETHER & NODE CLARITY SUB-CLAUSES
   // =========================================================================
   {
@@ -858,7 +858,7 @@ export const MASTER_MODULES: GaiaModule[] = [
     number: 50,
     title: 'THE MACRO-MICRO TETHER (ELECTROMAGNETIC RESONANCE)',
     phase: 'PHASE_EXPANSION',
-    phaseLabel: 'OS Expansion: Electromagnetic Resonance & Clear Node Clause',
+    phaseLabel: 'GO Expansion: Electromagnetic Resonance & Clear Node Clause',
     domains: ['Astrophysics & Deep Cosmos', 'Clinical & Neurobiology', 'Data Science & Telemetry', 'Ecology & Biosphere'],
     thesis: 'Acknowledges that the measurable electromagnetic friction of the planet (auroras, solar wind, and magnetic shifts), as tracked by space and ground telemetry, is directly tethered to the human biological system.',
     fullRule: 'The Macro-Micro Tether: Acknowledges that the measurable electromagnetic friction of the planet (auroras, solar wind, and magnetic shifts), as tracked by space and ground telemetry, is directly tethered to the human biological system. Fluctuations in space weather, solar wind particle density, auroral electrojets, and geomagnetic field compression (tracked via space observatories and ground magnetometers) physically co-modulate human autonomic balance, heart-rate variability (HRV), and neural oscillatory coherence.',
@@ -883,7 +883,7 @@ export const MASTER_MODULES: GaiaModule[] = [
     number: 53,
     title: 'NODE CLARITY AS A UNIVERSAL RECEIVER (THE CLEAR NODE CLAUSE)',
     phase: 'PHASE_EXPANSION',
-    phaseLabel: 'OS Expansion: Electromagnetic Resonance & Clear Node Clause',
+    phaseLabel: 'GO Expansion: Electromagnetic Resonance & Clear Node Clause',
     domains: ['Clinical & Neurobiology', 'Systems Engineering', 'Data Science & Telemetry', 'Commons Governance'],
     thesis: 'Establishes that the human nervous system is an active sensory node. As an individual node is cleared of legacy friction, administrative noise, and unverified data, its capacity to perceive and nest within the vast, interconnected universal picture exponentially increases.',
     fullRule: 'Node Clarity as a Universal Receiver: Establishes that the human nervous system is an active sensory node. As an individual node is cleared of legacy friction, administrative noise, and unverified data, its capacity to perceive and nest within the vast, interconnected universal picture exponentially increases. Clearing somatic and cognitive bandwidth transforms the node from an overwhelmed bottleneck into a coherent, high-bandwidth universal receiver aligned with planetary and cosmic truth.',
@@ -904,3 +904,34 @@ export const MASTER_MODULES: GaiaModule[] = [
     ]
   }
 ];
+
+// ============================================================================
+// GO (GAIA OPEN) ARCHITECTURAL STRUCTURE & KNOWLEDGE LAYERS
+// Locked spine: 2, 11, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27
+// Supporting: 1, 3–10, 12–16, 18, 28–30
+// Expansion leaves: 50, 53
+// ============================================================================
+export const LOCKED_SPINE_MODULE_NUMBERS: number[] = [2, 11, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27];
+export const EXPANSION_MODULE_NUMBERS: number[] = [50, 53];
+
+export const getModuleStructureTier = (num: number): ModuleStructureTier => {
+  if (LOCKED_SPINE_MODULE_NUMBERS.includes(num)) return 'LOCKED_SPINE';
+  if (EXPANSION_MODULE_NUMBERS.includes(num)) return 'EXPANSION_LEAF';
+  return 'SUPPORTING';
+};
+
+export const getModuleKnowledgeLayer = (num: number): KnowledgeLayer => {
+  // ANCHORED: Repeatable / measurable / public physical baseline
+  if ([2, 6, 7, 11, 17, 21, 24, 27, 28, 50].includes(num)) return 'ANCHORED';
+  // IMAGINED: Story, design language, mnemonic equations
+  if ([18, 53].includes(num)) return 'IMAGINED';
+  // Default to PLAUSIBLE: Specified enough to try or prototype
+  return 'PLAUSIBLE';
+};
+
+export const MASTER_MODULES: GaiaModule[] = BASE_MODULES.map(module => ({
+  ...module,
+  structureTier: getModuleStructureTier(module.number),
+  knowledgeLayer: getModuleKnowledgeLayer(module.number)
+}));
+

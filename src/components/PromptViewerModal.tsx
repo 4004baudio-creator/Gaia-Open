@@ -42,9 +42,9 @@ export const PromptViewerModal: React.FC<PromptViewerModalProps> = ({ isOpen, on
             </div>
             <div>
               <h3 className="font-mono font-bold text-white text-base sm:text-lg flex items-center gap-2 uppercase tracking-wide">
-                <span>Master Gaia Pulse OS Prompt (v3.2)</span>
+                <span>Master GO (Gaia Open) Prompt (v3.2)</span>
                 <span className="text-[9px] font-mono font-normal bg-white/[0.03] text-[#00ff95] px-2 py-0.5 rounded border border-[#00ff95]/40 uppercase tracking-widest">
-                  PHASES I-XIV & 26 MODULES INTEGRATED
+                  PHASES I-XVII & 30 MODULES INTEGRATED
                 </span>
               </h3>
               <p className="text-xs font-mono text-slate-400">
@@ -79,7 +79,7 @@ export const PromptViewerModal: React.FC<PromptViewerModalProps> = ({ isOpen, on
         {/* Footer Actions */}
         <div className="bg-white/[0.02] px-6 py-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
           <div className="text-[11px] font-mono text-slate-500 uppercase">
-            Rule: Scan OS registry, merge telemetry, expand modules logically, eliminate redundancy.
+            Rule: Scan GO registry, merge telemetry, expand modules logically, eliminate redundancy.
           </div>
 
           <div className="flex items-center gap-3">

@@ -27,9 +27,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
 
   const navLinks = [
     { id: 'thesis', label: 'The Sovereign Thesis', href: '#thesis' },
-    { id: 'registry', label: 'Master Modules (30)', href: '#registry' },
+    { id: 'registry', label: 'Locked Spine & Modules', href: '#registry' },
     { id: 'quantum-bridge', label: 'Quantum Bridge', href: '#quantum-bridge' },
-    { id: 'os-engine', label: 'OS Merge Protocol', href: '#os-engine' },
+    { id: 'go-engine', label: 'GO Merge Protocol', href: '#go-engine' },
     { id: 'sanctuary', label: 'Sanctuary Shield', href: '#sanctuary' },
     { id: 'inter-species', label: 'Inter-Species Sanctuary', href: '#inter-species-sanctuary' },
     { id: 'go-reality', label: 'GO & Cosmological Reality', href: '#go-multi-scalar-reality' },
@@ -86,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
           </div>
           <div className="flex items-baseline gap-2.5">
             <span className="text-xl sm:text-2xl font-bold tracking-tighter text-white uppercase italic group-hover:text-[#00ff95] transition-colors">
-              Gaia Pulse OS
+              GO (Gaia Open)
             </span>
             <span className="text-[10px] font-mono px-2 py-0.5 border border-[#00ff95]/60 text-[#00ff95] rounded tracking-wider bg-[#00ff95]/5">
               v3.2 MASTER ARCHITECTURE
@@ -121,7 +121,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
           <button
             onClick={handleCopyPrompt}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-mono tracking-wider uppercase bg-white/[0.03] hover:bg-white/[0.08] text-slate-200 border border-white/10 hover:border-[#00ff95]/50 transition-all"
-            title="Copy Master Gaia Pulse OS Prompt (v2.9)"
+            title="Copy Master GO (Gaia Open) Prompt (v3.2)"
           >
             {copied ? (
               <>
@@ -131,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
             ) : (
               <>
                 <Copy className="w-3.5 h-3.5 text-[#00ff95]" />
-                <span className="hidden sm:inline">Copy OS Prompt</span>
+                <span className="hidden sm:inline">Copy GO Prompt</span>
                 <span className="sm:hidden">Prompt</span>
               </>
             )}

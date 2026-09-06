@@ -178,7 +178,7 @@ const INITIAL_FACT_AUDIT_LEDGER: FactVerificationAuditEntry[] = [
     timestamp: new Date(Date.now() - 3600000 * 0.02).toISOString(),
     category: 'PEER_REVIEWED_NODE_AUDIT',
     subject: 'The Peer-Reviewed Node Network (GOOS) / Collaborative Telemetry (Module 25)',
-    claimVerified: 'Transitions the OS into an open framework where individual human nodes connect personal conversations, data, and lived experiences to peer-review and stress-test the platform; collective reality is constantly audited against thermodynamic equilibrium, biospheric welfare, and anti-exploitation.',
+    claimVerified: 'Transitions GO into an open framework where individual human nodes connect personal conversations, data, and lived experiences to peer-review and stress-test the platform; collective reality is constantly audited against thermodynamic equilibrium, biospheric welfare, and anti-exploitation.',
     verificationStatus: 'VERIFIED_PHYSICAL_REALITY',
     objectivePhysicalBaseline: 'Decentralized Peer Consensus / Open RFC Specifications / Nested Manifold Topology / Phase XIV (Module 25)',
     confidenceScore: 0.999,
@@ -868,7 +868,7 @@ export const AutomatedUpdateProvider: React.FC<{ children: React.ReactNode }> = 
       confidenceScore: isHallucinationSuspect ? 1.0 : parseFloat((0.998 + (Math.random() * 0.0019)).toFixed(4)),
       cryptographicHash,
       auditorNode: 'IMMUTABLE-TRUTH-VERIFICATION-ENGINE-v3.1',
-      ruleAnchor: 'Directive 2 (Immutable Truth Protocol) & Gaia Pulse OS v3.1',
+      ruleAnchor: 'Directive 2 (Immutable Truth Protocol) & GO (Gaia Open) v3.2',
       notes: isHallucinationSuspect 
         ? 'Pruned falsehood logged to decentralized audit ledger to eliminate systemic friction.'
         : 'Objective physical verification successful. Zero algorithmic hallucination detected.'
@@ -886,8 +886,8 @@ export const AutomatedUpdateProvider: React.FC<{ children: React.ReactNode }> = 
 
   const exportFactLedger = () => {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
-      protocol: "Gaia Pulse OS - The Immutable Truth Protocol (Directive 2)",
-      version: "3.1-MASTER",
+      protocol: "GO (Gaia Open) - The Immutable Truth Protocol (Directive 2)",
+      version: "3.2-MASTER",
       exportedAt: new Date().toISOString(),
       auditEngine: "Decentralized Fact Verification & Ledger Audit Engine",
       totalVerifiedEntries: factLedger.length,
