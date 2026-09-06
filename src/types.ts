@@ -2,6 +2,8 @@ export type PhaseCategory = 'PHASE_I_III' | 'PHASE_IV_V' | 'PHASE_VI_VII' | 'PHA
 
 export type SpineTier = 'LOCKED' | 'SUPPORTING' | 'EXPANSION';
 
+export type ModuleStructureTier = 'LOCKED_SPINE' | 'SUPPORTING' | 'EXPANSION_LEAF';
+
 export type KnowledgeLayer = 'ANCHORED' | 'PLAUSIBLE' | 'IMAGINED' | 'OPEN_FIELD';
 
 export type DomainCategory = 
@@ -79,6 +81,7 @@ export interface GaiaModule {
   realWorldAnchors: string[];
   operationalDirectives: string[];
   spineTier?: SpineTier;
+  structureTier?: ModuleStructureTier;
   knowledgeLayer?: KnowledgeLayer;
   liveTelemetryValue?: number;
   syncStatus?: ModuleSyncStatus;
