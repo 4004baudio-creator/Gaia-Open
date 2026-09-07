@@ -8,6 +8,9 @@ Knowledge layers (mortar):
 - IMAGINED — story and design language
 - OPEN_FIELD — unexplained, allowed to stay unexplained
 
+Packet states (supporting law, not spine): BESIDE, CHALLENGED, WITHDRAWN — see PACKET_CONTRACT.md.
+Two lanes: LANE_FILTER.md. Sort, not gag.
+
 ## Locked spine (master prompt)
 
 These are the modules the map must not lose:
@@ -37,6 +40,7 @@ Rule of 27: the founder is not the only filter. Ingest public physical baselines
 - 31 Claim Shelf — stories as packets (MEDIA_CLAIM_AUDIT.md)
 - 32 Inventory Tether — TRACE / national inventories ranked under instruments
 - 33 Exploration Catalogue — public sky/mission files, same stamp rules
+- LANE_FILTER.md + PACKET_CONTRACT.md — all-ingest gate; no new module number
 
 Keep them on the map. Do not let them overwrite the spine.
 

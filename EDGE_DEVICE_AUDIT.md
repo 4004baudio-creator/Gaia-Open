@@ -1,6 +1,7 @@
 # Edge device audit protocol
 
 A node that records climate or energy on the edge may attach to the map only as a **published instrument**, not as a story engine.
+Packet shape and WITHDRAWN: PACKET_CONTRACT.md. Two lanes: LANE_FILTER.md.
 
 ## Allow onto the collective shelf
 
@@ -12,8 +13,13 @@ A packet may be stamped ANCHORED when all of these are true:
 4. Raw or minimally processed values retained; adjustment recipe published if any.
 5. Peer or second-instrument check possible (another node can pull the same file and agree on a hash).
 6. No inner-state harvest. No mood, flow, fear score, or "doom index".
+7. Contract complete (PACKET_CONTRACT.md). Incomplete = cannot complete; may sit BESIDE.
 
 Argo delayed-mode (pressure → thermal mass → salinity drift vs reference) is the pattern: calibrate, then map, then let a human refuse a bad fit.
+
+## WITHDRAWN
+
+If calibration expires, firmware is unsigned, the reference cell drifted, or a later audit shows the device non-compliant: stamp WITHDRAWN, keep the row, point to a successor. Downstream numbers that used the device are re-ranked, not silently edited.
 
 ## Refuse
 

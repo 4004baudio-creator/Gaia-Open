@@ -4,6 +4,7 @@ Purpose: the founder is not the only filter.
 An oracle here is a **fetch + stamp** helper. It is not a priest, not a kernel, not a mind-reader.
 
 Layer: PLAUSIBLE design. OPEN_FIELD stays off the ingest pipe.
+Ingest gate for *all* packet kinds: LANE_FILTER.md + PACKET_CONTRACT.md.
 
 ## Proof of physical work (narrow meaning)
 
@@ -14,6 +15,7 @@ A packet may enter the **anchored** shelf only if all of these are true:
 3. **Named origin** — URL, station, instrument, date, licence.
 4. **Repeatable** — a second node can pull the same bytes later and get the same hash (or a documented revision).
 5. **No person attached** — no identity, health stream, location trail, or unconsented body data.
+6. **Contract complete** — PACKET_CONTRACT.md fields present.
 
 That is the whole of “proof of physical work” for GO. Not a crypto mine. Not a loyalty test.
 
@@ -33,6 +35,7 @@ Stamp each packet: source, time, hash, licence, knowledgeLayer = ANCHORED or PLA
 - Design equations and mnemonics already in modules — labelled as design, not as lab results.
 - News and commentary — at most PLAUSIBLE, never auto-promoted to ANCHORED. Promotion requires MEDIA_CLAIM_AUDIT.md (named claim, time window, rival packet, open challenge, versioning). An account tick is not a claim tick.
 - Second inventories (Climate TRACE and peers) — sit beside national files per MODULE_32_INVENTORY_TETHER.md. They do not outrank delayed-mode instruments.
+- Chat or model output from this workshop — BESIDE unless it cites an open file. Not training data on a person.
 
 ## Must refuse
 
@@ -48,11 +51,13 @@ Refuse = drop. Do not quarantine people. Quarantine *packets*.
 ## How a packet moves
 
 ```
-fetch (public URL)
+fetch (public URL) or arrive (any kind)
+  → kind + required fields
   → hash + source card
-  → layer stamp (ANCHORED | PLAUSIBLE | reject)
-  → optional second-node echo (same URL, same hash)
-  → shelf. Never silent overwrite of a locked spine module.
+  → layer stamp (ANCHORED | PLAUSIBLE | BESIDE | reject)
+  → optional second-node echo
+  → shelf. Version++. WITHDRAWN + successor if the contract later breaks.
+  Never silent overwrite of a locked spine module.
 ```
 
 Two nodes agreeing on a hash is consensus about *a file*.

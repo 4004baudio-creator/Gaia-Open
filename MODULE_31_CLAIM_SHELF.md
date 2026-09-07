@@ -4,6 +4,7 @@ Not spine. Does not overwrite Modules 1, 25, or 27.
 
 **Purpose.** Give stories the same shelves instruments already have.
 **Layer.** The *protocol* is ANCHORED. Individual stories default to PLAUSIBLE until they pass MEDIA_CLAIM_AUDIT.md.
+**Gate.** LANE_FILTER.md + PACKET_CONTRACT.md.
 
 ## Rule
 
@@ -16,6 +17,8 @@ Module 31 adds:
 - External auditors attach evidence; they do not join a ministry of truth.
 - Weight = reproducibility + evidence rank + failed predictions.
 - News stays BESIDE until tethered. Unexplained stays OPEN_FIELD. Neither is banned.
+- Repeat without a file moves toward illusion, not toward ANCHORED.
+- Failed date or lost source → WITHDRAWN + successor.
 
 ## Directives
 

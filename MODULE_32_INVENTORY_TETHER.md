@@ -4,6 +4,7 @@ Not spine. Serves Gaia Pulse (ground repair) without pretending an inventory is 
 
 **Purpose.** Rank how tonnes and activity estimates attach to the Audit.
 **Layer.** Ranking rule ANCHORED. Each inventory row is PLAUSIBLE until method + version + uncertainty exist.
+**Gate.** LANE_FILTER.md + PACKET_CONTRACT.md. Inventories cannot self-promote rank.
 
 ## Rank (high → low)
 
@@ -23,6 +24,7 @@ A lower rank may *challenge* a higher rank. It may not overwrite it.
 - Requires: sector methodology doc, release version (e.g. v5.x), time window, confidence if published.
 - Uncertainty “on request” is not the same as an error bar in the file. Stamp PLAUSIBLE until the error travels with the row.
 - Changelog / external papers (including disputes) stay on the shelf. That is the peer loop working.
+- Superseded vintage → WITHDRAWN + successor, not a silent overwrite.
 
 ## Directives
 
