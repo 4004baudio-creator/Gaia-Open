@@ -8,7 +8,7 @@ import {
   ModuleSyncStatus,
   FactVerificationAuditEntry
 } from '../types';
-import { MASTER_MODULES } from '../data/modulesData';
+import { MASTER_MODULES } from '../data/modulesIndex';
 
 interface AutomatedUpdateContextType {
   modules: GaiaModule[];

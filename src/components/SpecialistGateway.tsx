@@ -20,7 +20,7 @@ import {
   Layers
 } from 'lucide-react';
 import { SpecialistNode, DomainCategory } from '../types';
-import { MASTER_MODULES } from '../data/modulesData';
+import { MASTER_MODULES } from '../data/modulesIndex';
 import { INITIAL_SPECIALIST_NODES } from '../data/initialSpecialists';
 
 interface SpecialistGatewayProps {
