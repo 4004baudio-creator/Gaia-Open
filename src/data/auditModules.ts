@@ -1,6 +1,6 @@
 import { GaiaModule } from '../types';
 
-/** Supporting modules 31–33. Not spine. */
+/** Supporting modules 31–34. Not spine. */
 export const AUDIT_SUPPORT_MODULES: GaiaModule[] = [
   {
     id: 'module-31',
@@ -72,7 +72,8 @@ export const AUDIT_SUPPORT_MODULES: GaiaModule[] = [
 1. May ingest: named agency mission status, public survey catalogues with version and licence, published ephemerides.
 2. May sit beside: Module 19 bridge language, mnemonic equations, a node’s unexplained sky experience.
 3. Must refuse: synthetic mission lock % labelled as Roman IR or Earth depth; closed military feeds; HRV sold as sky or climate fact.
-4. Exploration does not wait for EEI = 0. It also does not fake equilibrium chrome.`,
+4. Exploration does not wait for EEI = 0. It also does not fake equilibrium chrome.
+5. Outward contact follows Module 34.`,
     mathematicalLaw: '\\text{ANCHORED}_{\\text{sky}} \\iff \\exists\\; (\\text{catalogue version},\\; \\text{licence},\\; \\text{hash})',
     verificationMethod: 'Two nodes, same catalogue version, same hash. See MODULE_33_EXPLORATION_CATALOGUE.md.',
     telemetryMetricName: 'Catalogue Ingest Coverage',
@@ -87,6 +88,38 @@ export const AUDIT_SUPPORT_MODULES: GaiaModule[] = [
       'Do not stamp OPS chrome (Roman IR %, Kardashev bars) as catalogue ingest',
       'Do not force unexplained sky experience through Module 27',
       'Graft (Module 2): a new sky branch does not rewrite the locked spine'
+    ]
+  },
+  {
+    id: 'module-34',
+    number: 34,
+    title: 'NON-COLONISATION CONTACT (LOCAL LINK FIRST)',
+    phase: 'PHASE_XIV',
+    phaseLabel: 'Phase XIV: Cosmological Scaling & Universal Anchoring',
+    domains: ['Cosmological Scaling & Universal Anchoring', 'Inter-Species Sentience', 'Sovereignty and Sanctuary', 'GO (Gaia Open) & Collaborative Telemetry'],
+    thesis: 'Earth has overwritten other structures of reality. The map will not repeat that habit at planetary or cosmic scale. Local nodes link first. Visitor and first-cause stories stay OPEN_FIELD. Public files stay packets. Openness is a stance, not a completed contract.',
+    fullRule: `Non-Colonisation Contact:
+1. Local first: handshake among planetary nodes before speaking as one outward.
+2. Do not collapse a structure of reality (Module 2 graft; Modules 23–24 sanctuary).
+3. Wait can be sanctuary, not contempt.
+4. Correction is shared ranked files, not a new flag.
+5. Contact in any form sits BESIDE until a public packet completes.
+6. First cause is not Module 27 ingest. UAP volume is not a catalogue.
+7. A comms constellation is infrastructure, not proof of visitors.`,
+    mathematicalLaw: '\\text{contact}_{\\text{ANCHORED}} \\iff \\exists\\; \\text{public packet} \\quad \\text{stance} \\neq \\text{stamp}',
+    verificationMethod: 'Catalogue files as Module 33. Sighting stories as Module 31 packets. Lived stance remains the author\u2019s. See NON_COLONISATION.md.',
+    telemetryMetricName: 'Contact Stamp Hygiene',
+    telemetryUnit: 'OPEN_FIELD stances not sold as ANCHORED',
+    telemetryBaseline: 0,
+    realWorldAnchors: [
+      'Public agency mission and constellation status pages',
+      'Documented terrestrial colonisation and later legal/knowledge corrections',
+      'Named public UAP report releases treated as claim packets, not origin proof'
+    ],
+    operationalDirectives: [
+      'Do not render a sighting thread as VERIFIED_PHYSICAL_REALITY',
+      'Do not render a creator story as baseline ingest',
+      'Keep the planet open as stance; keep the contract closed as stamp until a file exists'
     ]
   },
 ];

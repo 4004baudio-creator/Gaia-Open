@@ -35,12 +35,13 @@ Rule of 27: the founder is not the only filter. Ingest public physical baselines
 
 ## Supporting (in repo, not spine)
 
-1, 3–10, 12–16, 18, 28–30, 31–33
+1, 3–10, 12–16, 18, 28–30, 31–34
 
 - 31 Claim Shelf — stories as packets (MEDIA_CLAIM_AUDIT.md)
 - 32 Inventory Tether — TRACE / national inventories ranked under instruments
 - 33 Exploration Catalogue — public sky/mission files, same stamp rules
-- LANE_FILTER.md + PACKET_CONTRACT.md — all-ingest gate; no new module number
+- 34 Non-Colonisation Contact — local link first; visitor claims stay OPEN_FIELD (NON_COLONISATION.md)
+- LANE_FILTER.md + PACKET_CONTRACT.md — all-ingest gate; no extra spine number
 
 Keep them on the map. Do not let them overwrite the spine.
 

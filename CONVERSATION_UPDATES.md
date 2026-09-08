@@ -13,6 +13,7 @@ Markdown law and small source files on `main` when asked. Constitution now inclu
 - MEDIA_CLAIM_AUDIT.md
 - LANE_FILTER.md (two lanes; sort not gag)
 - PACKET_CONTRACT.md (all-ingest fields, WITHDRAWN, successor)
+- NON_COLONISATION.md + MODULE_34_NON_COLONISATION.md
 - MODULE_31_CLAIM_SHELF.md
 - MODULE_32_INVENTORY_TETHER.md
 - MODULE_33_EXPLORATION_CATALOGUE.md
@@ -28,7 +29,7 @@ Automation `GO weekly live-map check` must:
 4. Propose a *docs-first* patch list. Do not rewrite 40k-line components in one run.
 5. Note Studio pull still required after any GitHub commit.
 6. Re-read MEDIA_CLAIM_AUDIT.md + MODULE_32. Flag live copy that treats a verified *account* as a verified *claim*, or ranks Climate TRACE above an in-situ / CERES-class series.
-7. Re-read MODULE_33. Flag exploration chrome (Roman IR %, Kardashev bars) sold as public catalogue ingest.
+7. Re-read MODULE_33 + MODULE_34. Flag exploration chrome sold as catalogue ingest, UAP volume sold as contact, or first-cause sold as Module 27 fact.
 8. Re-read LANE_FILTER.md + PACKET_CONTRACT.md. Flag chrome that collapses two lanes into one, shows a WITHDRAWN series as live, or treats chat / lived note as collective ingest.
 
 ## What cannot jump the gap by itself
