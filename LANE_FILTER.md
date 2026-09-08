@@ -5,6 +5,7 @@ Applies to this chat, GO law, edge packets, media claims, inventories, catalogue
 Not a spine module. Does not overwrite Modules 2, 11, 17, 19–27.
 
 See PACKET_CONTRACT.md for fields and states.
+See TOOLS_NOT_CROWNS.md when a tool is shaping another node’s picture.
 
 ## Two lanes
 
@@ -21,6 +22,8 @@ It does not answer: *may we talk about it?*
 Repeat is not a second node. Volume and tone do not raise rank.
 A packet that recurs without a public file, without a method, or against a higher-rank instrument moves **toward illusion** — a narrative that can drive mood or policy without a measurand.
 
+Assistance without a clear picture (owner, method, limit, detach) is the same class of illusion: it can be read as control.
+
 It leaves illusion only when:
 - a named source + time window exists, or
 - a pattern is explained by a mechanism that predicts something else that then shows, or
@@ -31,8 +34,9 @@ Weight = reproducibility + rank + failed predictions.
 ## Not this filter
 
 - Not a ban on cosmic, symbolic, or personal timeline speech.
-- Not a harvest of lived telemetry into the collective.
+- Not a harvest of lived telemetry, household, or child state into the collective.
 - Not a verified-account badge that freezes a headline.
 - Not a rule that rare-but-measured things are fake.
+- Not a flattening of nested individual realities into one official mind.
 
 Unexplained may sit beside the map. It is never sold as the map.
