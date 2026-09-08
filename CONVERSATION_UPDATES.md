@@ -38,7 +38,7 @@ Automation `GO weekly live-map check` must:
 
 ## What cannot jump the gap by itself
 
-Google AI Studio hosts the running app. Commit ≤ publish.
+Google AI Studio hosts the running app. Commit ≠ publish.
 
 ## Preferred change types
 
