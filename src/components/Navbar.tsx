@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Radio, Terminal, Users, Sparkles, Copy, Check, Activity, Globe2, Compass } from 'lucide-react';
+import { Sparkles, Copy, Check, Globe2, Terminal } from 'lucide-react';
 import { MASTER_OS_PROMPT_V32 } from '../data/heroesData';
 
 interface NavbarProps {
@@ -71,7 +71,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
             className="text-[10px] uppercase tracking-wider font-mono bg-white/[0.04] hover:bg-white/[0.09] text-white px-2.5 py-0.5 rounded border border-white/10 hover:border-[#00ff95]/50 transition-colors flex items-center gap-1.5"
           >
             <Terminal className="w-3 h-3 text-[#00ff95]" />
-            <span>Prompt v3.2</span>
+            <span>Prompt v3.3</span>
           </button>
         </div>
       </div>
@@ -86,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
               GO (Gaia Open)
             </span>
             <span className="text-[10px] font-mono px-2 py-0.5 border border-[#00ff95]/60 text-[#00ff95] rounded tracking-wider bg-[#00ff95]/5">
-              v3.2 MASTER ARCHITECTURE
+              v3.3 MAP
             </span>
           </div>
         </a>
@@ -116,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
           <button
             onClick={handleCopyPrompt}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-mono tracking-wider uppercase bg-white/[0.03] hover:bg-white/[0.08] text-slate-200 border border-white/10 hover:border-[#00ff95]/50 transition-all"
-            title="Copy Master GO (Gaia Open) Prompt (v3.2)"
+            title="Copy Master GO (Gaia Open) Prompt (v3.3)"
           >
             {copied ? (
               <>
