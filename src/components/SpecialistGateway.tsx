@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import confetti from 'canvas-confetti';
 import { 
   Users, 
@@ -28,6 +28,7 @@ interface SpecialistGatewayProps {
 }
 
 export const SpecialistGateway: React.FC<SpecialistGatewayProps> = ({ preSelectedModuleId }) => {
+  const containerRef = useRef<HTMLElement>(null);
   const [nodes, setNodes] = useState<SpecialistNode[]>(INITIAL_SPECIALIST_NODES);
   
   // Form State
@@ -47,9 +48,60 @@ export const SpecialistGateway: React.FC<SpecialistGatewayProps> = ({ preSelecte
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Update target module if prop changes
-  React.useEffect(() => {
+  useEffect(() => {
     if (preSelectedModuleId) {
       setTargetModuleId(preSelectedModuleId);
+    }
+  }, [preSelectedModuleId]);
+
+  // GSAP scrollIntoView and fade-in / slide-up entrance animation when a module is selected
+  useEffect(() => {
+    if (preSelectedModuleId && containerRef.current) {
+      const el = containerRef.current;
+      
+      // Calculate destination coordinates with offset for top navigation
+      const navOffset = 50;
+      const targetPosition = Math.max(0, el.getBoundingClientRect().top + window.scrollY - navOffset);
+      const startPosition = window.scrollY;
+
+      // Clean up previous animations on the container element
+      gsap.killTweensOf(el);
+
+      const tl = gsap.timeline({
+        defaults: { overwrite: 'auto' }
+      });
+
+      // Smooth scrollIntoView logic with ease-in-out timing function
+      const scrollProxy = { y: startPosition };
+      tl.to(scrollProxy, {
+        y: targetPosition,
+        duration: 0.85,
+        ease: 'power2.inOut',
+        onUpdate: () => {
+          window.scrollTo(0, scrollProxy.y);
+        }
+      }, 0);
+
+      // GSAP smooth fade-in and slide-up animation on #gateway container as it enters the viewport
+      tl.fromTo(
+        el,
+        { 
+          opacity: 0, 
+          y: 45 
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.85,
+          ease: 'power3.out',
+          clearProps: 'transform'
+        },
+        0.15 // coordinated so the slide-up and fade-in visually blossom as viewport approaches #gateway
+      );
+
+      return () => {
+        tl.kill();
+      };
     }
   }, [preSelectedModuleId]);
 
@@ -123,7 +175,11 @@ Directive: Aligning human technology with planetary thermodynamic equilibrium.
   };
 
   return (
-    <section id="gateway" className="py-20 md:py-28 relative bg-[#05070a] border-t border-white/10">
+    <section 
+      id="gateway" 
+      ref={containerRef}
+      className="py-20 md:py-28 relative bg-[#05070a] border-t border-white/10"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -254,9 +310,17 @@ Directive: Aligning human technology with planetary thermodynamic equilibrium.
 
                 {/* Target Module Anchor */}
                 <div>
-                  <label className="block text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-1">
-                    Target Baseline Module to Anchor & Stabilize *
-                  </label>
+                  <div className="flex items-center justify-between mb-1">
+                    <label className="block text-[10px] font-mono uppercase tracking-wider text-slate-400">
+                      Target Baseline Module to Anchor & Stabilize *
+                    </label>
+                    {preSelectedModuleId && (
+                      <span className="text-[9px] font-mono text-[#00ff95] bg-[#00ff95]/10 px-2 py-0.5 rounded border border-[#00ff95]/30 flex items-center gap-1">
+                        <Sparkles className="w-2.5 h-2.5" />
+                        <span>Selected from Registry</span>
+                      </span>
+                    )}
+                  </div>
                   <select
                     value={targetModuleId}
                     onChange={(e) => setTargetModuleId(e.target.value)}

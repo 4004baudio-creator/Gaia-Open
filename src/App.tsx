@@ -57,10 +57,11 @@ export default function App() {
   };
 
   const handleSelectForGateway = (moduleId: string) => {
-    setGatewayTargetModuleId(moduleId);
-    const gatewayEl = document.getElementById('gateway');
-    if (gatewayEl) {
-      gatewayEl.scrollIntoView({ behavior: 'smooth' });
+    if (gatewayTargetModuleId === moduleId) {
+      setGatewayTargetModuleId(null);
+      requestAnimationFrame(() => setGatewayTargetModuleId(moduleId));
+    } else {
+      setGatewayTargetModuleId(moduleId);
     }
   };
 
