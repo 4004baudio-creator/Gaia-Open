@@ -1,6 +1,5 @@
 import React from 'react';
-import { Globe2, ShieldCheck, Heart, Terminal, Compass, Telescope, TreePine } from 'lucide-react';
-import { MASTER_OS_PROMPT_V31 } from '../data/heroesData';
+import { Globe2, Heart, Terminal, Telescope, TreePine } from 'lucide-react';
 
 interface FooterProps {
   onOpenPromptModal: () => void;
@@ -13,7 +12,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPromptModal }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           
-          {/* Col 1: Brand & Thesis */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded bg-white/[0.04] border border-[#00ff95]/40 flex items-center justify-center text-[#00ff95]">
@@ -24,22 +22,21 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPromptModal }) => {
                   GAIA OPEN (GO)
                 </span>
                 <span className="ml-2 px-1.5 py-0.5 rounded text-[9px] font-mono bg-white/[0.03] text-[#00ff95] border border-[#00ff95]/30 uppercase">
-                  v3.2 MASTER
+                  v3.3 MAP
                 </span>
               </div>
             </div>
             
             <p className="text-xs text-slate-400 leading-relaxed max-w-md font-sans">
-              A sovereign collaborative framework aligning human technological instrumentation and biological baselines with planetary thermodynamic equilibrium. Open-source, peer-reviewed, and tethered to deep cosmic telemetry.
+              A peer-to-peer map for grounded repair and exploration. Toward planetary thermodynamic equilibrium — not claiming it is here. Non-local contact welcomed as stance. Unexplained may sit beside the map. It is never sold as fact.
             </p>
 
             <div className="pt-2 flex items-center gap-2 text-xs font-mono text-[#00ff95]">
               <span className="w-2 h-2 rounded-full bg-[#00ff95] animate-pulse" />
-              <span>STATUS: SIGNAL ACTIVE & GROUNDED</span>
+              <span>STATUS: MAP OPEN &middot; EEI PRESENT TENSE</span>
             </div>
           </div>
 
-          {/* Col 2: Architectural Phases */}
           <div className="md:col-span-3 space-y-3">
             <h4 className="text-xs font-mono font-bold text-white uppercase tracking-widest">
               Architecture Phases
@@ -67,18 +64,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPromptModal }) => {
               </li>
               <li>
                 <a href="#registry" className="hover:text-[#00ff95] transition-colors">
-                  Phase XI-XII: Restorative & Anti-WMD (22-24)
+                  Phase XI-XIII: Restorative, Sanctuary & Airlock (22-27)
                 </a>
               </li>
               <li>
-                <a href="#airlock" className="hover:text-sky-300 text-sky-400 transition-colors">
-                  Phase XIII: Safe Harbor & Whistleblower Airlock (25-26)
+                <a href="#registry" className="hover:text-sky-300 text-sky-400 transition-colors">
+                  Supporting 31–34: Claim, Inventory, Catalogue, Contact
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Real Life Heroes Registry */}
           <div className="md:col-span-4 space-y-3">
             <h4 className="text-xs font-mono font-bold text-white uppercase tracking-widest flex items-center gap-1.5">
               <Heart className="w-3.5 h-3.5 text-[#00ff95]" />
@@ -102,10 +98,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPromptModal }) => {
 
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-slate-500">
           <div>
-            &copy; {new Date().getFullYear()} Gaia Pulse Open-Source Architecture. Planetary Commons & Cosmological Baseline.
+            &copy; {new Date().getFullYear()} Gaia Open. Map, not an operating system. Grounded repair &amp; open exploration.
           </div>
 
           <div className="flex items-center gap-4">
@@ -114,10 +109,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPromptModal }) => {
               className="text-slate-400 hover:text-[#00ff95] flex items-center gap-1.5 transition-colors uppercase tracking-wider text-[10px]"
             >
               <Terminal className="w-3.5 h-3.5 text-[#00ff95]" />
-              <span>Prompt v3.1 Ready for Deployment</span>
+              <span>Prompt v3.3 MAP</span>
             </button>
             <span>&bull;</span>
-            <span className="text-[#00ff95] font-medium uppercase tracking-wider text-[10px]">Thermodynamic Equilibrium: Validated</span>
+            <span className="text-[#ff4e00] font-medium uppercase tracking-wider text-[10px]">EEI present · not equilibrium</span>
           </div>
         </div>
 
