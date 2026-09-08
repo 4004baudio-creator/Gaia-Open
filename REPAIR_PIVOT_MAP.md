@@ -4,6 +4,8 @@ Change is not a sermon. Incumbents already have R&D, customers, and balance shee
 
 Present: EEI ~+1.12 W m⁻². OHC still climbing. Emissions totals have not turned down. 1.5 °C is a policy line likely crossed as a multi-year mean around 2030; it is not a collapse switch.
 
+Orbital shell (Module 35 / ORBITAL_SHELL_REPAIR.md) is a **fifth ledger**, not a replacement for 1–4. Ground heat and sky junk are both commons.
+
 ## 1. Methane waste (fastest rate lever)
 
 **Why first.** Methane is short-lived. Cutting leaks lowers the *near-term warming rate* inside a decade.
@@ -52,10 +54,23 @@ Staffing: agronomists + remote sensing + land law. Keep the farm. Stop paying fo
 
 Staffing: mechanical + public-health + municipal finance. Profit = avoided downtime and claims. Repair = fewer bodies on the hottest days.
 
+## 5. Orbital shell (keeps 1–4’s eyes and the road out)
+
+**Why.** Repair 1–4 lean on satellites (methane maps, forest MRV, weather). Exploration needs the same lanes. Unmanaged mass in LEO can close those lanes from the inside. Kessler is a modelled cascade, not a doom date.
+
+| Layer | Who already operates | Pivot |
+|-------|----------------------|--------|
+| Existing | Launch providers, constellation operators, SSA catalogues (space-track / DISCOS / LeoLabs-class), insurers | Sell launches with a named disposal path. Passivate. Stop leaving stages in long-lived LEO. |
+| Emerging | Astroscale-class inspect/capture, ClearSpace-class ESA ADR, docking plates on new buses, in-orbit servicing | Profit = service contract + insurance discount. Repair = object removed or life extended without a new husk. |
+| Venture / new | Multi-client “garbage truck” tugs; design-for-demise kits; consent-cleared legacy-hulk removal | Do not mint a debris token. Mint a catalogue ID + outcome log. Launching-state consent required. |
+
+Staffing: flight dynamics + robotics + space law. Keep the constellation. Change what is left dead in the road.
+Full protocol: ORBITAL_SHELL_REPAIR.md.
+
 ## Rules for every pivot map
 
-- Name the incumbent P&L line that stays (molecules moved, kWh sold, grain delivered, lives cooled).
-- Name the line that must shrink (vented CH₄, coal MWh, cleared hectare, untreated heat exposure).
-- Require an instrumented series before a green claim.
+- Name the incumbent P&L line that stays (molecules moved, kWh sold, grain delivered, lives cooled, objects serviced).
+- Name the line that must shrink (vented CH₄, coal MWh, cleared hectare, untreated heat exposure, unmanaged orbital mass).
+- Require an instrumented series before a green claim (catalogue ID for debris).
 - R&D sits inside the firm. The map does not become their HR department.
 - Detach allowed. No owner-node.
