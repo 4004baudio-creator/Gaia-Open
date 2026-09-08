@@ -34,3 +34,10 @@ You are documenting and extending GO (Gaia Open), a theoretical design map.
 - Do not design control, surveillance, or weapons. Sanctuary is ethic, not a hunt.
 - Prefer short, editable documents over new modules. Do not invent modules unless the user asks.
 - When unsure, ask. When writing UI copy, do not stamp placeholders as VERIFIED_PHYSICAL_REALITY.
+
+## VERSION & RELEASE SYNC
+- When a version bump or PR is made (canonical in `MAP_VERSION.md` & `src/data/mapVersion.ts`):
+  - Update `metadata.json`: set `name` to `GO (Gaia Open) <version>` and ensure description stays aligned.
+  - Update `index.html`: keep `<title>`, `<meta property="og:title">`, and descriptions synchronized.
+  - Update `package.json`: keep `name` (`gaia-open`) and `version` (semver matching map version, e.g. `3.3.0`) synchronized.
+  - This ensures public publishing cleanly mirrors the repo.

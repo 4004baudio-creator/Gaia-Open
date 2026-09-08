@@ -1,5 +1,5 @@
 {
-  "name": "GO (Gaia Open)",
+  "name": "GO (Gaia Open) v3.3",
   "description": "Living map for planetary repair and peer-reviewed exploration. No operating system. No command centre. Locked spine: modules 2, 11, 17, 19–27.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
