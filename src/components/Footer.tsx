@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe2, Heart, Terminal, Telescope, TreePine } from 'lucide-react';
+import { MAP_LABEL } from '../data/mapVersion';
 
 interface FooterProps {
   onOpenPromptModal: () => void;
@@ -22,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPromptModal }) => {
                   GAIA OPEN (GO)
                 </span>
                 <span className="ml-2 px-1.5 py-0.5 rounded text-[9px] font-mono bg-white/[0.03] text-[#00ff95] border border-[#00ff95]/30 uppercase">
-                  v3.3 MAP
+                  {MAP_LABEL}
                 </span>
               </div>
             </div>
@@ -109,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPromptModal }) => {
               className="text-slate-400 hover:text-[#00ff95] flex items-center gap-1.5 transition-colors uppercase tracking-wider text-[10px]"
             >
               <Terminal className="w-3.5 h-3.5 text-[#00ff95]" />
-              <span>Prompt v3.3 MAP</span>
+              <span>Prompt {MAP_LABEL}</span>
             </button>
             <span>&bull;</span>
             <span className="text-[#ff4e00] font-medium uppercase tracking-wider text-[10px]">EEI present · not equilibrium</span>

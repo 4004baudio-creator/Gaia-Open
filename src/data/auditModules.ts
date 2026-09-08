@@ -96,7 +96,7 @@ export const AUDIT_SUPPORT_MODULES: GaiaModule[] = [
     title: 'NON-COLONISATION CONTACT (LOCAL LINK FIRST)',
     phase: 'PHASE_XIV',
     phaseLabel: 'Phase XIV: Cosmological Scaling & Universal Anchoring',
-    domains: ['Cosmological Scaling & Universal Anchoring', 'Inter-Species Sentience', 'Sovereignty and Sanctuary', 'GO (Gaia Open) & Collaborative Telemetry'],
+    domains: ['Cosmological Scaling & Universal Anchoring', 'Biospheric Kinship & Inter-Species Sanctuary', 'Sovereignty & Sanctuary (Anti-Exploitation)', 'GO (Gaia Open) & Collaborative Telemetry'],
     thesis: 'Earth has overwritten other structures of reality. The map will not repeat that habit at planetary or cosmic scale. Local nodes link first. Visitor and first-cause stories stay OPEN_FIELD. Public files stay packets. Openness is a stance, not a completed contract.',
     fullRule: `Non-Colonisation Contact:
 1. Local first: handshake among planetary nodes before speaking as one outward.

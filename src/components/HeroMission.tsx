@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { TelemetryFeed } from '../types';
 import { TelemetryPulse } from './TelemetryPulse';
+import { MAP_LABEL, MAP_VERSION } from '../data/mapVersion';
 
 interface HeroMissionProps {
   onOpenPromptModal: () => void;
@@ -62,7 +63,7 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
             <span className="w-2 h-2 rounded-full bg-[#00ff95] shadow-[0_0_8px_#00ff95] animate-ping" />
             <span className="font-semibold">THE SOVEREIGN MASTER BASELINE</span>
             <span className="text-white/40">|</span>
-            <span>v3.2 MAP</span>
+            <span>{MAP_LABEL}</span>
           </div>
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/[0.02] border border-white/10 text-slate-300 text-[11px] font-mono tracking-widest uppercase">
@@ -129,7 +130,7 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
               className="px-5 py-3.5 rounded font-mono text-xs uppercase tracking-wider bg-white/[0.02] hover:bg-white/[0.05] text-slate-300 border border-white/5 hover:border-[#4da6ff]/40 transition-all flex items-center gap-2"
             >
               <Terminal className="w-4 h-4 text-[#4da6ff]" />
-              <span>Master GO Prompt v3.2</span>
+              <span>{`Master GO Prompt ${MAP_VERSION}`}</span>
             </button>
           </motion.div>
         </div>
