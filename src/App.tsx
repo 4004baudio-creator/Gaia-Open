@@ -18,6 +18,7 @@ import { DistributedGreatFilterGateway } from './components/DistributedGreatFilt
 import { WhistleblowerAirlock } from './components/WhistleblowerAirlock';
 import { PromptViewerModal } from './components/PromptViewerModal';
 import { Footer } from './components/Footer';
+import { DragonflyDriftContainer } from './components/DragonflyDriftContainer';
 import { AutomatedUpdateProvider } from './context/AutomatedUpdateContext';
 
 export default function App() {
@@ -85,41 +86,63 @@ export default function App() {
             onOpenAuditModule={handleOpenAuditModule}
           />
 
-          <ModuleRegistry
-            selectedModuleIdForAudit={selectedAuditModuleId}
-            onClearAuditSelection={() => setSelectedAuditModuleId(null)}
-            onSelectForGateway={handleSelectForGateway}
-          />
+          <DragonflyDriftContainer seed={1}>
+            <ModuleRegistry
+              selectedModuleIdForAudit={selectedAuditModuleId}
+              onClearAuditSelection={() => setSelectedAuditModuleId(null)}
+              onSelectForGateway={handleSelectForGateway}
+            />
+          </DragonflyDriftContainer>
 
-          <QuantumBridgeVisualizer
-            onNavigateToModule={handleOpenAuditModule}
-          />
+          <DragonflyDriftContainer seed={2}>
+            <QuantumBridgeVisualizer
+              onNavigateToModule={handleOpenAuditModule}
+            />
+          </DragonflyDriftContainer>
 
-          <OSMergeEngine
-            onOpenPromptModal={() => setIsPromptModalOpen(true)}
-          />
+          <DragonflyDriftContainer seed={3}>
+            <OSMergeEngine
+              onOpenPromptModal={() => setIsPromptModalOpen(true)}
+            />
+          </DragonflyDriftContainer>
 
-          <HeroesSection
-            onSelectHeroModule={handleOpenAuditModule}
-          />
+          <DragonflyDriftContainer seed={4}>
+            <HeroesSection
+              onSelectHeroModule={handleOpenAuditModule}
+            />
+          </DragonflyDriftContainer>
 
-          <ThermodynamicAuditor />
+          <DragonflyDriftContainer seed={5}>
+            <ThermodynamicAuditor />
+          </DragonflyDriftContainer>
 
-          <SovereignSanctuaryShield
-            onOpenModule={handleOpenAuditModule}
-          />
+          <DragonflyDriftContainer seed={6}>
+            <SovereignSanctuaryShield
+              onOpenModule={handleOpenAuditModule}
+            />
+          </DragonflyDriftContainer>
 
-          <InterSpeciesSanctuary />
+          <DragonflyDriftContainer seed={7}>
+            <InterSpeciesSanctuary />
+          </DragonflyDriftContainer>
 
-          <GaiaOpenMultiScalarReality />
+          <DragonflyDriftContainer seed={8}>
+            <GaiaOpenMultiScalarReality />
+          </DragonflyDriftContainer>
 
-          <DistributedGreatFilterGateway />
+          <DragonflyDriftContainer seed={9}>
+            <DistributedGreatFilterGateway />
+          </DragonflyDriftContainer>
 
-          <WhistleblowerAirlock />
+          <DragonflyDriftContainer seed={10}>
+            <WhistleblowerAirlock />
+          </DragonflyDriftContainer>
 
-          <SpecialistGateway
-            preSelectedModuleId={gatewayTargetModuleId}
-          />
+          <DragonflyDriftContainer seed={11}>
+            <SpecialistGateway
+              preSelectedModuleId={gatewayTargetModuleId}
+            />
+          </DragonflyDriftContainer>
 
         </main>
 

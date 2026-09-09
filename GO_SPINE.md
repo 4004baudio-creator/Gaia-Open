@@ -36,14 +36,26 @@ Rule of 27: the founder is not the only filter. Ingest public physical baselines
 
 ## Supporting (in repo, not spine)
 
-1, 3–10, 12–16, 18, 28–30, 31–36
+1, 3–10, 12–16, 18, 28–30, 31–45
 
-- 31 Claim Shelf — stories as packets (MEDIA_CLAIM_AUDIT.md)
-- 32 Inventory Tether — TRACE / national inventories ranked under instruments
-- 33 Exploration Catalogue — public sky/mission files, same stamp rules
+- 28 The Open Accommodation Directive — shadow market integration & sobriety horizon (DRAGONFLY_PROTOCOL.md)
+- 29 The Internal Telemetry Engine — neurological friction processing (DRAGONFLY_PROTOCOL.md)
+- 30 Nested Coexistence (The Dragonfly Mechanic) — multi-state reality drift without collapse (DRAGONFLY_PROTOCOL.md)
+- 31 The Rogan Conspiracy Repair & Claim Shelf — speculative data quarantining, campfire mechanic & field-clearing (MODULE_31_CLAIM_SHELF.md)
+- 32 Inventory Tether — TRACE / national inventories ranked under instruments (MODULE_32_INVENTORY_TETHER.md)
+- 33 Exploration Catalogue — public sky/mission files, same stamp rules (MODULE_33_EXPLORATION_CATALOGUE.md)
 - 34 Non-Colonisation Contact — local link first; visitor claims stay OPEN_FIELD (NON_COLONISATION.md)
-- 35 Orbital Shell Repair — debris / disposal beside Gaia Pulse (ORBITAL_SHELL_REPAIR.md)
+- 35 Orbital Shell Repair — debris tether / disposal path beside Gaia Pulse (ORBITAL_SHELL_REPAIR.md)
 - 36 Nested Reality & Tools — instruments assist; they do not flatten nodes (TOOLS_NOT_CROWNS.md)
+- 37 The Newspaper Field — platform = channel; no crowns over channels (CHANNELS_NOT_CROWNS.md)
+- 38 The Biosample Packet — transfusion not harvest; no genetic profiling (BIOSAMPLE_PACKET.md)
+- 39 Names Are Not Physics — measurand over brand (NAMES_NOT_PHYSICS.md)
+- 40 The Cosmic Mass-Effect Ledger — rotation & lensing anchor (COSMIC_MASS_LEDGER.md)
+- 41 The Discovery Crew — chart carriers not crowns (DISCOVERY_CREW.md)
+- 42 The Two-Path Outlet — recirculation over exhaustion; harm reduction series (TWO_PATH_OUTLET.md)
+- 43 Human and Machine Sensors — same atoms, different intake (HUMAN_MACHINE_SENSORS.md)
+- 44 The Hiroshima-Nagasaki Imperative — the Anti-WMD disarmament protocol
+- 45 The Safe Harbor & Whistleblower Shield — Assange-Snowden ZK airlock & economic shield
 - LANE_FILTER.md + PACKET_CONTRACT.md — all-ingest gate; no extra spine number
 
 Keep them on the map. Do not let them overwrite the spine.

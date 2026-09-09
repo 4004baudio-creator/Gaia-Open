@@ -304,7 +304,7 @@ export const WhistleblowerAirlock: React.FC = () => {
   const handleDownloadReceipt = () => {
     if (!submittedReceipt) return;
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
-      protocol: "GO (Gaia Open) - Safe Harbor & Whistleblower Airlock Protocol (Phase XVII / Modules 29 & 30)",
+      protocol: "GO (Gaia Open) - Safe Harbor & Whistleblower Airlock Protocol (Phase XVII / Consolidated Module 45)",
       certificate: "CERTIFICATE OF THERMODYNAMIC REPAIR & ADMINISTRATIVE UNTETHERING",
       issuedAt: submittedReceipt.timestamp,
       vaultId: submittedReceipt.id,
@@ -315,8 +315,8 @@ export const WhistleblowerAirlock: React.FC = () => {
       espionageOverrideStatus: "ACTIVE (Reclassified from espionage to planetary restoration)",
       economicAntiSiegeStatus: submittedReceipt.economicShieldActive ? "ACTIVE (P2P Commons Tether)" : "STANDBY",
       ruleAnchors: [
-        "Module 25: The Whistleblower & Anti-Spy Engine (The Assange-Snowden Baseline)",
-        "Module 26: The Safe Harbor Parameters (Digital & Economic Shielding)"
+        "Module 45: The Safe Harbor & Whistleblower Shield (Assange-Snowden ZK Airlock)",
+        "Phase XVII: Transparency & Node Protection Protocol"
       ],
       submissionSummary: submittedReceipt.evidenceSnippet
     }, null, 2));

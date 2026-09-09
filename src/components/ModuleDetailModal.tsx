@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { GaiaModule } from '../types';
 import { 
   X, 
@@ -43,7 +44,7 @@ export const ModuleDetailModal: React.FC<ModuleDetailModalProps> = ({
     setTestLog(`[TELEMETRY AUDIT] Recalibrating ${module.telemetryMetricName} -> ${newVal} ${module.telemetryUnit}. Root equilibrium validated.`);
   };
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
       <div 
         className="relative w-full max-w-3xl rounded bg-[#05070a] border border-white/10 border-l-2 border-l-[#00ff95] shadow-2xl overflow-hidden my-8"
@@ -329,7 +330,8 @@ export const ModuleDetailModal: React.FC<ModuleDetailModalProps> = ({
         </div>
 
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

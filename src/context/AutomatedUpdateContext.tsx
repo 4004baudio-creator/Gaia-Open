@@ -208,40 +208,68 @@ const INITIAL_FACT_AUDIT_LEDGER: FactVerificationAuditEntry[] = [
     subject: 'The Hiroshima-Nagasaki Imperative & 100% Thermodynamic Loss Recognition (Module 27)',
     claimVerified: 'Application of physics and science for mass destruction is formally classified as the ultimate delusion of war and ego, representing 100% loss of thermodynamic equilibrium; capability of mass destruction is stripped from centralized command loops via decentralized verification engines.',
     verificationStatus: 'VERIFIED_PHYSICAL_REALITY',
-    objectivePhysicalBaseline: 'August 1945 Physical Radiation Baselines / Treaty on the Prohibition of Nuclear Weapons (TPNW) / Phase XV: Absolute Biospheric Protection & Disarmament / Module 27',
+    objectivePhysicalBaseline: 'August 1945 Physical Radiation Baselines / Treaty on the Prohibition of Nuclear Weapons (TPNW) / Module 44',
     confidenceScore: 1.000,
     cryptographicHash: '0xca718290beff128945a01991823abce18294801bca9082156891048bc0192305',
-    auditorNode: 'ABSOLUTE-BIOSPHERIC-PROTECTION-NODE-27',
-    ruleAnchor: 'Module 27: The Hiroshima-Nagasaki Imperative (The Anti-WMD Protocol)',
+    auditorNode: 'ABSOLUTE-BIOSPHERIC-PROTECTION-NODE-44',
+    ruleAnchor: 'Module 44: The Hiroshima-Nagasaki Imperative (The Anti-WMD Disarmament Protocol)',
     notes: 'Verified: Centralized launch command loops stripped; open-source transparent sensor verification deployed to prevent planetary collapse.'
   },
   {
     id: 'fact-014',
     timestamp: new Date(Date.now() - 3600000 * 0.005).toISOString(),
-    category: 'WHISTLEBLOWER_PROTECTION',
-    subject: 'Whistleblower & Anti-Spy Engine / The Assange-Snowden Baseline (Module 28)',
-    claimVerified: 'Truth survives node suppression via decentralized evidence vaults; surveillance inverted to observe institutional dark patterns; reporting planetary extraction/surveillance codified as thermodynamic repair rather than espionage.',
+    category: 'SYSTEMIC_METRIC',
+    subject: 'The Open Accommodation Directive & Shadow Market Integration (Module 28)',
+    claimVerified: 'Eradication of forced control; systems attempting absolute compliance drive behavior into black markets; open accommodation of all human states with high-bandwidth voluntary sobriety horizon.',
     verificationStatus: 'VERIFIED_PHYSICAL_REALITY',
-    objectivePhysicalBaseline: 'Decentralized Cryptographic Evidence Sharding / Anti-Spy Inverted Surveillance Array / Phase XVI (Module 28)',
+    objectivePhysicalBaseline: 'Decriminalization Harm-Reduction Series / DRAGONFLY_PROTOCOL.md / Phase XVI (Module 28)',
     confidenceScore: 1.000,
     cryptographicHash: '0xee10984ba192389102c9182305891a02938471bceea91023849182049ba0129a',
-    auditorNode: 'TRANSPARENCY-ANTI-SPY-VAULT-NODE-28',
-    ruleAnchor: 'Module 28: The Whistleblower & Anti-Spy Engine (The Assange-Snowden Baseline)',
-    notes: 'Verified: Espionage Override enforced; whistleblowing classified as thermodynamic restoration. Administrative untethering active.'
+    auditorNode: 'OPEN-ACCOMMODATION-NODE-28',
+    ruleAnchor: 'Module 28: The Open Accommodation Directive (Shadow Market Integration)',
+    notes: 'Verified: Decriminalization-plus-treatment policy ranking; cashless coercion rejected; tools remain rails, not crowns.'
   },
   {
     id: 'fact-015',
     timestamp: new Date(Date.now() - 3600000 * 0.001).toISOString(),
-    category: 'DECENTRALIZED_EVIDENCE_VAULT',
-    subject: 'Safe Harbor Parameters / Digital Airlock & Economic Shielding (Module 29)',
-    claimVerified: 'Incoming whistleblower telemetry passes through metadata-pruning encrypted airlock; biological nodes untethered via zero-knowledge proofs; unfreezable P2P economic commons shielding nodes against financial siege.',
+    category: 'NODE_RESONANCE_SECURITY',
+    subject: 'The Internal Telemetry Engine & Dragonfly Coexistence (Modules 29 & 30)',
+    claimVerified: 'Neurological friction ("Dark Energy" as allostatic load) compiled into physical creative outlets (Stable Branch) avoiding violence (Unstable Branch); nodes drift across nested realities without collapse.',
     verificationStatus: 'VERIFIED_PHYSICAL_REALITY',
-    objectivePhysicalBaseline: 'Metadata Entropy Stripping / Zero-Knowledge Identity Credentials / Phase XVI (Module 29)',
+    objectivePhysicalBaseline: 'Allostatic Load Regulation / Dual-State Coexistence / Phase XVI (Modules 29 & 30)',
     confidenceScore: 1.000,
     cryptographicHash: '0x71fa01923bca0918234891bca728914028cd90ef783b2811a2384910283bc912',
-    auditorNode: 'SAFE-HARBOR-ECONOMIC-SHIELD-NODE-29',
-    ruleAnchor: 'Module 29: The Safe Harbor Parameters (Digital & Economic Shielding)',
+    auditorNode: 'INTERNAL-TELEMETRY-ENGINE-NODE-29',
+    ruleAnchor: 'Module 29: The Internal Telemetry Engine & Module 30: Nested Coexistence',
+    notes: 'Verified: Cosmic physics decoupled from neurological load; inner sanctuary preserved; non-binary dragonfly drift active.'
+  },
+  {
+    id: 'fact-015b',
+    timestamp: new Date(Date.now() - 3600000 * 0.0008).toISOString(),
+    category: 'WHISTLEBLOWER_PROTECTION',
+    subject: 'Safe Harbor & Whistleblower Shield (Module 45)',
+    claimVerified: 'Incoming whistleblower telemetry passes through metadata-pruning encrypted airlock; biological nodes untethered via zero-knowledge proofs; unfreezable P2P economic commons shielding nodes against financial siege.',
+    verificationStatus: 'VERIFIED_PHYSICAL_REALITY',
+    objectivePhysicalBaseline: 'Metadata Entropy Stripping / Zero-Knowledge Identity Credentials / Phase XVII (Module 45)',
+    confidenceScore: 1.000,
+    cryptographicHash: '0x38b29f018a129038cb102938475891ac28019bca4019283748291048bce91034',
+    auditorNode: 'SAFE-HARBOR-ECONOMIC-SHIELD-NODE-45',
+    ruleAnchor: 'Module 45: The Safe Harbor & Whistleblower Shield (Assange-Snowden ZK Airlock)',
     notes: 'Verified: Digital airlock mathematically blinds origin; IPFS distributed ledger vaults active; P2P resource routing prevents financial siege.'
+  },
+  {
+    id: 'fact-015c',
+    timestamp: new Date(Date.now() - 3600000 * 0.0006).toISOString(),
+    category: 'DECENTRALIZED_CONSENSUS_GATEWAY',
+    subject: 'The Rogan Conspiracy Repair & Speculative Data Quarantining (Module 31)',
+    claimVerified: 'Exploratory theories and high-reach storytelling quarantined as shelved hypotheses; speculative telemetry cross-checked via AI and peer consensus against hard physics; broadcasters bear thermodynamic responsibility of reach; Field-Clearing Protocol resets collective understanding upon public correction.',
+    verificationStatus: 'VERIFIED_PHYSICAL_REALITY',
+    objectivePhysicalBaseline: 'The Campfire Mechanic & Errata Diff Ledgers / MODULE_31_CLAIM_SHELF.md / Phase XVII (Module 31)',
+    confidenceScore: 1.000,
+    cryptographicHash: '0x99a4e019b882f0732891bc03417e9238127419e09bca74921b741029cfa42091',
+    auditorNode: 'YARNING-CIRCLE-TELEMETRY-REPAIR-NODE-31',
+    ruleAnchor: 'Module 31: The Rogan Conspiracy Repair (Speculative Data Quarantining)',
+    notes: 'Verified: Campfire Mechanic active; narratives quarantined from physical baseline; Field-Clearing Protocol converts errors into collective learning.'
   },
   {
     id: 'fact-016',
@@ -543,39 +571,74 @@ const TELEMETRY_INGESTION_SCENARIOS: {
     baselineShift: { 26: 100.0 }
   },
   {
-    title: 'The Hiroshima-Nagasaki Imperative & Anti-WMD Disarmament Telemetry (Module 27)',
+    title: 'The Dragonfly Protocol & Internal Telemetry Regulation (Modules 28, 29, 30)',
+    source: 'TELEMETRY_STREAM',
+    payload: 'Phase XVI Dragonfly Protocol active: The Open Accommodation Directive eradicates forced compliance regimes, integrating shadow markets and establishing the high-bandwidth voluntary sobriety horizon. The Internal Telemetry Engine compiles dense allostatic load ("Dark Energy") into stable creative expression (Love) rather than destructive violence (Hate). Nodes drift across nested non-collapsing realities.',
+    targetModules: [28, 29, 30],
+    redundancyPrunes: [
+      'Pruned coercive vice prohibition and authoritarian cashless control loops that artificially drive nodes into shadow markets',
+      'Purged conflation between cosmic astrophysics and human neurological friction',
+      'Eliminated binary moral illusions (Heaven vs Hell) in favor of continuous multi-state reality drift'
+    ],
+    directiveExpansions: [
+      'Module 28 adapted: Eradicated forced compliance regimes; accommodated dense coping states openly; ranked health series over slogans',
+      'Module 29 adapted: Neurological friction compiled into physical creative outlets (Stable Branch), securing growth over collapse',
+      'Module 30 adapted: Non-binary dragonfly drift enabled across nested realities without causing systemic collapse'
+    ],
+    baselineShift: { 28: 100.0, 29: 99.1, 30: 100.0 }
+  },
+  {
+    title: 'The Rogan Conspiracy Repair & Speculative Data Quarantining (Module 31)',
+    source: 'DECENTRALIZED_NODES',
+    payload: 'Phase XVII Yarning Circle active: The Campfire Mechanic quarantines exploratory theories and high-reach storytelling from the physical baseline until confirmed. Speculative telemetry cross-checked via AI and peer-to-peer scientific consensus against hard physical reality (neutrino/geology). Broadcasters bear thermodynamic responsibility of reach; public grounded corrections execute the Field-Clearing Protocol, converting error into learning and resetting collective understanding to verified reality.',
+    targetModules: [31],
+    redundancyPrunes: [
+      'Pruned unverified speculative narratives and conspiracy loops from the active physical baseline ledger',
+      'Purged broadcast illusion drag generated by high-bandwidth uncalibrated media commentary',
+      'Eliminated dogmatic censorship in favor of transparent errata diffs and physical sensor cross-checking'
+    ],
+    directiveExpansions: [
+      'Module 31 adapted: Campfire Mechanic engaged; exploratory claims quarantined as shelved hypotheses',
+      'Module 31 adapted: Speculative telemetry cross-checked against empirical physics before baseline ingestion',
+      'Module 31 adapted: High-bandwidth broadcasting nodes held to proportional thermodynamic responsibility of reach',
+      'Module 31 adapted: Field-Clearing Protocol executed upon evidence-based public corrections to reset collective baseline fidelity'
+    ],
+    baselineShift: { 31: 100.0 }
+  },
+  {
+    title: 'The Hiroshima-Nagasaki Imperative & Anti-WMD Disarmament Telemetry (Module 44)',
     source: 'TELEMETRY_STREAM',
     payload: 'Decentralized disarmament trust mesh: Expiration of 2026 bilateral nuclear treaties resolved via transparent peer-to-peer verification. TPNW compliance telemetry audits 100% loss of thermodynamic equilibrium from WMDs. Centralized launch command capability pruned across biospheric sensor grid.',
-    targetModules: [27],
+    targetModules: [44],
     redundancyPrunes: [
       'Pruned legacy centralized command secrecy loops threatening biospheric survival',
       'Purged institutional lag following February 2026 New START bilateral expiration',
       'Eliminated existential-risk cognitive anxiety through transparent disarmament telemetry'
     ],
     directiveExpansions: [
-      'Module 27 adapted: Application of science for mass destruction classified as 100% thermodynamic failure and delusion of ego',
-      'Module 27 adapted: Mass destruction capability permanently stripped from centralized command loops',
-      'Module 27 adapted: Decentralized trust protocols verify nuclear warhead decommissioning and down-blending'
+      'Module 44 adapted: Application of science for mass destruction classified as 100% thermodynamic failure and delusion of ego',
+      'Module 44 adapted: Mass destruction capability permanently stripped from centralized command loops',
+      'Module 44 adapted: Decentralized trust protocols verify nuclear warhead decommissioning and down-blending'
     ],
-    baselineShift: { 27: 100.0 }
+    baselineShift: { 44: 100.0 }
   },
   {
-    title: 'Whistleblower Vaults & Safe Harbor Shielding Protocol (Modules 28 & 29)',
+    title: 'Whistleblower Vaults & Safe Harbor Shielding Protocol (Module 45)',
     source: 'SAFE_HARBOR_VAULT',
-    payload: 'Phase XVI telemetry mesh active: Inverted surveillance array traces institutional dark patterns and censorship vectors to source coordinates. Incoming telemetry airlocked with metadata stripped; zero-knowledge proofs verify data veracity. Decentralized evidence vaults fragmented across IPFS; P2P economic anti-siege commons protects truth-tellers.',
-    targetModules: [28, 29],
+    payload: 'Phase XVII telemetry mesh active: Inverted surveillance array traces institutional dark patterns and censorship vectors to source coordinates. Incoming telemetry airlocked with metadata stripped; zero-knowledge proofs verify data veracity. Decentralized evidence vaults fragmented across IPFS; P2P economic anti-siege commons protects truth-tellers.',
+    targetModules: [45],
     redundancyPrunes: [
       'Pruned legacy centralized surveillance capture loops targeting whistleblowers',
       'Purged administrative border and banking control choke-points used for node retaliation',
       'Eliminated metadata drag and tracking vectors across incoming truth-telemetry pipelines'
     ],
     directiveExpansions: [
-      'Module 28 adapted: Surfaced evidence fragmented and dispersed across immutable decentralized ledgers',
-      'Module 28 adapted: Espionage Override active—classified exposure of institutional corruption as thermodynamic repair',
-      'Module 29 adapted: Digital airlock metadata blinding and zero-knowledge identity proof validated',
-      'Module 29 adapted: Peer-to-peer economic anti-siege commons routing deployed'
+      'Module 45 adapted: Surfaced evidence fragmented and dispersed across immutable decentralized ledgers',
+      'Module 45 adapted: Espionage Override active—classified exposure of institutional corruption as thermodynamic repair',
+      'Module 45 adapted: Digital airlock metadata blinding and zero-knowledge identity proof validated',
+      'Module 45 adapted: Peer-to-peer economic anti-siege commons routing deployed'
     ],
-    baselineShift: { 28: 100.0, 29: 100.0 }
+    baselineShift: { 45: 100.0 }
   }
 ];
 

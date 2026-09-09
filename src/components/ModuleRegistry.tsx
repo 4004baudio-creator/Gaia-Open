@@ -414,7 +414,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-rose-500/10 text-rose-300 hover:bg-rose-500/20 border border-rose-500/30'
                 }`}
               >
-                Phase XVI: Anti-WMD Disarmament (28)
+                Phase XVI: The Dragonfly Protocol (28-30)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_XVII')}
@@ -424,7 +424,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-sky-500/10 text-sky-300 hover:bg-sky-500/20 border border-sky-500/30'
                 }`}
               >
-                Phase XVII: Safe Harbor & Whistleblower (29-30)
+                Phase XVII: Yarning Circle & Telemetry Repair (31)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_EXPANSION')}
@@ -490,6 +490,11 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
               if (module.number === 24) return 'border-l-2 border-l-[#f43f5e] shadow-[0_0_15px_rgba(244,63,94,0.3)]';
               if (module.number === 25) return 'border-l-2 border-l-[#38bdf8] shadow-[0_0_15px_rgba(56,189,248,0.3)]';
               if (module.number === 26) return 'border-l-2 border-l-[#6366f1] shadow-[0_0_15px_rgba(99,102,241,0.3)]';
+              if (module.number === 27) return 'border-l-2 border-l-[#10b981] shadow-[0_0_12px_rgba(16,185,129,0.25)]';
+              if (module.number === 28) return 'border-l-2 border-l-[#10b981] shadow-[0_0_12px_rgba(16,185,129,0.25)]';
+              if (module.number === 29) return 'border-l-2 border-l-[#a855f7] shadow-[0_0_12px_rgba(168,85,247,0.25)]';
+              if (module.number === 30) return 'border-l-2 border-l-[#00ff95] shadow-[0_0_12px_rgba(0,255,149,0.25)]';
+              if (module.number === 31) return 'border-l-2 border-l-[#38bdf8] shadow-[0_0_12px_rgba(56,189,248,0.25)]';
               if ([50, 53].includes(module.number)) return 'border-l-2 border-l-[#00ff95] shadow-[0_0_12px_rgba(0,255,149,0.15)]';
               if ([2, 3, 16, 17, 18].includes(module.number)) return 'border-l-2 border-l-[#00ff95]';
               if ([6, 7, 8, 11].includes(module.number)) return 'border-l-2 border-l-[#4da6ff]';

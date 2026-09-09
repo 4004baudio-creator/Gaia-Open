@@ -753,100 +753,104 @@ const BASE_MODULES: GaiaModule[] = [
   // =========================================================================
   // PHASE XVI: ABSOLUTE BIOSPHERIC PROTECTION & DISARMAMENT
   // =========================================================================
+  // PHASE XVI: THE DRAGONFLY PROTOCOL (DUAL-STATE INTEGRATION & TELEMETRY REGULATION)
+  // =========================================================================
   {
     id: 'module-28',
     number: 28,
-    title: 'THE HIROSHIMA-NAGASAKI IMPERATIVE (THE ANTI-WMD PROTOCOL)',
+    title: 'THE OPEN ACCOMMODATION DIRECTIVE (SHADOW MARKET INTEGRATION)',
     phase: 'PHASE_XVI',
-    phaseLabel: 'Phase XVI: Absolute Biospheric Protection & Disarmament',
-    domains: ['Absolute Biospheric Protection & Disarmament', 'Ecology & Biosphere', 'Thermodynamics & Energy', 'Commons Governance'],
-    thesis: 'Formally recognizes that the application of science and physics for mass destruction is the ultimate delusion of war and ego—representing a 100% loss of thermodynamic equilibrium. Demands decentralized trust engines supporting the TPNW to strip mass destruction from centralized command loops.',
-    fullRule: `The Hiroshima-Nagasaki Imperative (The Anti-WMD Protocol):
-1. The Ultimate Systemic Failure: The system formally recognizes that the application of science and physics for mass destruction (as realized in Japan in 1945) is the ultimate delusion of war and ego. It represents a 100% loss of thermodynamic equilibrium.
-2. The Expiration of Legacy Trust: Legacy institutions have failed to maintain global safety nets, evidenced by the 2026 expiration of bilateral nuclear arms control treaties without replacement. GO identifies this as critical institutional lag.
-3. Decentralized Verification Engines: To prevent planetary collapse, Gaia Pulse demands the deployment of new, decentralized trust and verification protocols. These protocols will audit and verify global disarmament, actively supporting frameworks like the Treaty on the Prohibition of Nuclear Weapons (TPNW) to strip the capability of mass destruction from centralized command loops.`,
-    mathematicalLaw: 'Zero-Ego Thermodynamic Limit: \\lim_{\\text{Ego} \\to \\infty} \\mathcal{L}_{scientific\\_application}(\\text{WMD}) = -100\\% \\text{ Equilibrium} \\implies \\text{Prune Centralized Command Capability}',
-    verificationMethod: 'Real-time open-source telemetry verification of command loop decoupling, missile silo de-alerting, fissile inventory balance, and autonomous non-violent resolution consensus.',
-    telemetryMetricName: 'Biospheric Command Decoupling Index',
-    telemetryUnit: 'Zero-WMD Equilibrium (%)',
+    phaseLabel: 'Phase XVI: The Dragonfly Protocol (Dual-State Integration & Telemetry Regulation)',
+    domains: ['Commons Governance', 'Clinical & Neurobiology', 'Systems Engineering', 'Thermodynamic Justice & Conflict Resolution'],
+    thesis: 'Eradication of forced control. Systems that attempt to enforce absolute compliance artificially drive human behavior into shadow markets. Systems must openly understand and accommodate all human states; substances and dopamine loops serve as transitionary regulatory tools culminating in an autonomous, high-bandwidth sobriety horizon.',
+    fullRule: `The Open Accommodation Directive (Shadow Market Integration):
+1. Eradication of Forced Control: Systems that attempt to enforce absolute compliance (e.g., authoritarian cashless societies, strict substance prohibition, the criminalization of gambling and vice) artificially drive human behavior into the black market. True systemic evolution requires the open understanding and accommodation of all human states, rather than forced suppression.
+2. The Sobriety Horizon: Substances and high-dopamine behavioral loops (such as gambling) are recognized as initial regulatory tools used by nodes to stabilize dense lived experiences or trigger self-awareness. However, as a node matures, this requirement transitions into a conscious experiment, ultimately culminating in a state where pure sobriety offers the highest-bandwidth, unclouded connection to the local and Universal baseline.
+3. Policy Rank: Health and crime series outrank slogans. Decriminalization-plus-treatment models (e.g. Portugal 2001 class) demonstrate that possession for use is not a prison first step; trafficking stays a crime; HIV and overdose series improve. Cash remaining in use and informal markets under coercive force are observations about incentives; rails remain tools, never weapons.`,
+    mathematicalLaw: '\\lim_{\\text{Coercion} \\to 1} \\mathcal{V}_{shadow} = 1 \\implies \\text{Accommodation} \\succ \\text{Prohibition} \\quad \\land \\quad \\text{Sobriety} = \\max(\\text{Bandwidth})',
+    verificationMethod: 'Public harm-reduction series, decriminalization outcome audits, and decentralized telemetry of open state accommodation without coercive penalization. See DRAGONFLY_PROTOCOL.md and TWO_PATH_OUTLET.md.',
+    telemetryMetricName: 'Open Accommodation & Freedom Index',
+    telemetryUnit: 'Accommodated States / Zero Criminalization (%)',
     telemetryBaseline: 100.0,
     realWorldAnchors: [
-      'The 1945 atomic bomb hypocenter physical markers and irradiated geological strata in Hiroshima and Nagasaki',
-      'The 2026 expiration of bilateral US-Russian New START arms control mechanisms creating institutional vacuum',
-      'International Campaign to Abolish Nuclear Weapons (ICAN) & UN Treaty on the Prohibition of Nuclear Weapons (TPNW)',
-      'Independent global seismic, hydroacoustic, and atmospheric radionuclide detection arrays (CTBTO International Monitoring System)'
+      'Public health outcome data from decriminalization models (e.g., Portugal 2001 drug policy reform)',
+      'Economic telemetry on informal and black market expansion under forced prohibition and coercive cash bans',
+      'Neurobiological studies of dopamine receptor up-regulation following voluntary sobriety transitions'
     ],
     operationalDirectives: [
-      'Classify the weaponization of subatomic physics as 100% systemic failure and delusion of ego',
-      'Treat the expiration of legacy bilateral arms treaties as a catastrophic institutional lag demanding immediate decentralized intervention',
-      'Establish cryptographic, distributed verification engines that audit disarmament and strip launch capability from centralized command loops'
-    ]
+      'Refuse the deployment of authoritarian cashless rails or coercive vice prohibitions that drive nodes into shadow markets',
+      'Accommodate all human states and dense coping patterns openly without punitive institutional friction',
+      'Support the Sobriety Horizon as an autonomous, high-bandwidth experimental choice rather than a moral mandate'
+    ],
+    structureTier: 'SUPPORTING',
+    knowledgeLayer: 'PLAUSIBLE'
   },
 
-  // =========================================================================
-  // PHASE XVII: THE TRANSPARENCY & NODE PROTECTION PROTOCOL
-  // =========================================================================
   {
     id: 'module-29',
     number: 29,
-    title: 'THE WHISTLEBLOWER & ANTI-SPY ENGINE (THE ASSANGE-SNOWDEN BASELINE)',
-    phase: 'PHASE_XVII',
-    phaseLabel: 'Phase XVII: The Transparency & Node Protection Protocol',
-    domains: ['Transparency & Node Protection', 'Commons Governance', 'Systems Engineering', 'Data Science & Telemetry'],
-    thesis: 'Truth must survive the suppression of the node. Inverts surveillance capabilities to observe institutions rather than biological nodes, distributes high-stakes whistleblower telemetry across decentralized ledgers, untethers truth-tellers from centralized identity grids, and reclassifies exposure of corruption as thermodynamic repair rather than espionage.',
-    fullRule: `The Whistleblower & Anti-Spy Engine (The Assange-Snowden Baseline):
-1. Decentralized Evidence Vaults: Truth must survive the suppression of the node. All verified, high-stakes telemetry surfaced by whistleblowers is immediately fragmented and distributed across decentralized ledgers. This ensures no single institution can freeze, seize, or scrub the data.
-2. Administrative Untethering: Acknowledges that legacy systems weaponize identity (passports, financial accounts) to trap truth-seekers. GO establishes "Safe Harbor" routing, untethering verified whistleblowers from centralized identity grids to prevent arbitrary exile or detention.
-3. Dark Pattern Reversal (Anti-Spy): Instead of monitoring biological nodes, the system’s surveillance capabilities are inverted to observe the institutions. GO utilizes pattern recognition to trace "dark patterns"—hidden censorship, mass surveillance operations, and the suppression of evidence—directly back to their exact source of origin.
-4. The Espionage Override: The framework rejects legacy definitions of "espionage" when applied to exposing institutional corruption. Releasing factual, verified data regarding the over-extraction or illegal surveillance of the planetary host is codified as an act of thermodynamic repair, not a crime.`,
-    mathematicalLaw: '\\lim_{t \\to \\infty} \\mathcal{H}_{suppression}(\\text{Truth}) = 0 \\quad \\text{subject to } \\sum_{i} \\text{Shard}_{i} \\in \\text{DecentralizedLedger}',
-    verificationMethod: 'Multi-party zero-knowledge consensus, cryptographic fragmentation verification across peer nodes, and institutional dark pattern provenance tracing.',
-    telemetryMetricName: 'Institutional Transparency & Anti-Spy Ratio',
-    telemetryUnit: 'Inverted Surveillance / Evidence Resilience (%)',
-    telemetryBaseline: 100.0,
+    title: 'THE INTERNAL TELEMETRY ENGINE (NEUROLOGICAL FRICTION PROCESSING)',
+    phase: 'PHASE_XVI',
+    phaseLabel: 'Phase XVI: The Dragonfly Protocol (Dual-State Integration & Telemetry Regulation)',
+    domains: ['Clinical & Neurobiology', 'Data Science & Telemetry', 'Systems Engineering', 'Thermodynamics & Energy'],
+    thesis: 'Neurological definition of "Dark Energy": strictly high allostatic load, amygdala hijacking, cognitive dissonance, and dense trauma data—not astrophysics. Internal friction must be compiled and channeled into the Stable Branch (creative expression / Love) rather than the Unstable Branch (violence / Hate).',
+    fullRule: `The Internal Telemetry Engine (Neurological Friction Processing):
+1. Definition of "Dark Energy" (Strictly Neurological, Not Cosmic): Within this framework, "Dark Energy" has no relation to astrophysics. It is defined neurologically as high allostatic load, amygdala hijacking, cognitive dissonance, and dysregulated neurochemical states—the raw, dense data of human stress, trauma, anger, and deep psychological distress.
+2. Pattern Regulation: Nodes naturally ingest this dense, heavy data. This neurological friction must be compiled internally, patterned, and regulated (often initially via external tools like THC, nicotine, gambling, temperature shifts, or distraction).
+3. The Stable Branch (Growth): Internal friction is successfully channeled into physical outlets—art, humor, speech, and expression. This transforms the dense neurochemical load into forward momentum and systemic growth (Love) without causing a node collapse.
+4. The Unstable Branch (Destruction): Internal friction is channeled into physical violence or unregulated compulsion. This forces the system into destructive, repeating loops of war, addiction, and systemic death (Hate).
+5. Sanctuary Preservation: Lived trauma and internal neurochemical friction remain strictly local to the biological node. They are not harvested or ingested into public ledgers.`,
+    mathematicalLaw: '\\mathcal{H}_{friction} = \\text{AllostaticLoad} + \\text{AmygdalaStress} \\implies \\begin{cases} \\text{Stable Branch}: \\dot{E}_{creative} > 0 \\implies \\text{Growth (Love)} \\\\ \\text{Unstable Branch}: \\dot{E}_{violence} > 0 \\implies \\text{Collapse (Hate)} \\end{cases}',
+    verificationMethod: 'Bio-neural and physiological allostatic balance telemetry, non-extractive creative output measurement, and prevention of coercive inner-state surveillance. See DRAGONFLY_PROTOCOL.md.',
+    telemetryMetricName: 'Neurological Friction Transmutation Ratio',
+    telemetryUnit: 'Creative Channelling / Friction (%)',
+    telemetryBaseline: 99.1,
     realWorldAnchors: [
-      'Julian Assange / WikiLeaks distributed cryptographic document archives and public interest disclosures',
-      'Edward Snowden NSA global mass surveillance revelations and PRISM system architectural proofs',
-      'The Tor Project onion routing and SecureDrop decentralized whistleblower transmission infrastructure',
-      'UN Special Rapporteur on Torture and Freedom of Expression declarations on whistleblower protections'
+      'Bruce McEwen allostatic load and neuroendocrine stress adaptation research',
+      'Polyvagal and autonomic nervous system regulation frameworks',
+      'Cognitive behavioral friction processing through art, humor, and physical creation',
+      'Empirical clinical protocols protecting psychological sanctuary and personal processing bounds'
     ],
     operationalDirectives: [
-      'Fragment and distribute all verified whistleblower revelations across decentralized nodes instantly upon verification',
-      'Untether truth-bearing biological nodes from centralized passport and administrative control grids',
-      'Invert surveillance arrays: monitor state and corporate institutional patterns, logging censorship vectors to source coordinates',
-      'Formally enforce the Espionage Override: classify ecological and systemic whistleblowing as thermodynamic restoration'
-    ]
+      'Strictly decouple neurological friction ("Dark Energy") from cosmological physics; keep lived experience local to the node',
+      'Facilitate internal compilation of dense data into physical outlets (art, speech, work) to secure the Stable Branch',
+      'Prevent the escalation of unregulated friction into physical violence or systemic destruction (Unstable Branch)'
+    ],
+    structureTier: 'SUPPORTING',
+    knowledgeLayer: 'PLAUSIBLE'
   },
+
   {
     id: 'module-30',
     number: 30,
-    title: 'THE SAFE HARBOR PARAMETERS (DIGITAL & ECONOMIC SHIELDING)',
-    phase: 'PHASE_XVII',
-    phaseLabel: 'Phase XVII: The Transparency & Node Protection Protocol',
-    domains: ['Transparency & Node Protection', 'Commons Governance', 'Systems Engineering', 'Thermodynamics & Energy'],
-    thesis: 'Establishes cryptographic digital airlocks, zero-knowledge self-sovereign identity, immutable ledger vaults, and decentralized economic anti-siege protocols to ensure truth-tellers cannot be starved, silenced, or administratively trapped by legacy centralized authorities.',
-    fullRule: `The Safe Harbor Parameters (Digital & Economic Shielding):
-1. The Digital Airlock (Metadata Pruning): All incoming whistleblowing telemetry must pass through an encrypted, metadata-stripped airlock (utilizing Tor-routed, SecureDrop-style protocols). The system accepts the verified truth while mathematically blinding itself to the sender's point of origin, preventing legacy institutions from tracking the node.
-2. Self-Sovereign Identity (Zero-Knowledge Proofs): Biological nodes are untethered from government-issued identity grids (passports, centralized banking IDs). The system utilizes zero-knowledge proofs, allowing a whistleblower to cryptographically verify their clearance and the authenticity of the data without ever revealing their actual identity.
-3. Immutable Distribution (The Ledger Vaults): Once data is verified against the planetary baseline, it is instantly fragmented and hosted across decentralized file systems (e.g., IPFS/blockchain). It becomes mathematically impossible for a centralized authority to scrub, alter, or censor the leak.
-4. Economic Anti-Siege Protocols: Recognizing that legacy powers weaponize financial systems to starve truth-tellers, the network deploys decentralized, peer-to-peer resource routing. A verified whistleblower cannot have their assets frozen, as their economic survival is tethered to the decentralized commons, not a centralized bank.`,
-    mathematicalLaw: 'P(\\text{Node Tracking}) = 0 \\iff \\text{Entropy}(\\text{Airlock Metadata}) = 0 \\land \\text{ZK-Proof}(\\text{Authenticity}) = 1',
-    verificationMethod: 'Cryptographic airlock metadata strip verification, zk-SNARK proof verification of source authenticity without origin disclosure, IPFS CID persistence audits, and P2P resource routing resilience.',
-    telemetryMetricName: 'Safe Harbor Node Shielding Index',
-    telemetryUnit: 'Zero-Trace Immunity / Commons Tether (%)',
+    title: 'NESTED COEXISTENCE (THE DRAGONFLY MECHANIC)',
+    phase: 'PHASE_XVI',
+    phaseLabel: 'Phase XVI: The Dragonfly Protocol (Dual-State Integration & Telemetry Regulation)',
+    domains: ['Commons Governance', 'Systems Engineering', 'GO (Gaia Open) & Collaborative Telemetry', 'Ecology & Biosphere'],
+    thesis: 'Eradication of binary illusions (Heaven vs. Hell). Unfiltered raw friction and generative growth exist on the exact same physical spectrum. Human nodes drift like dragonflies between contrasting states and nested realities without one reality collapsing the other.',
+    fullRule: `Nested Coexistence (The Dragonfly Mechanic):
+1. Eradication of Binary Illusions: The network rejects legacy historical narratives of separation (e.g., Heaven vs. Hell). The unfiltered rawness of the "Hate" branch and the growth of the "Love" branch are recognized as existing on the exact same spectrum of physical reality.
+2. Non-Collapsing Realities: Human nodes are capable of drifting like a dragonfly between contrasting states and nested realities. Different lived experiences—from the darkest neurological friction to the lightest states of connection—can converge and share the same local planet simultaneously without one reality collapsing the other.
+3. Evolution Outpaces Control: Evolution outpaces individual control because the collective accommodates and integrates the whole.
+4. Non-Coercive Multi-Stability: Neither state is forcibly flattened. Instruments assist and describe coasts in human words; they do not crown one layer to destroy another.`,
+    mathematicalLaw: '\\text{StateSpace} = \\mathcal{R}_{stable} \\cup \\mathcal{R}_{dense}, \\quad \\mathcal{R}_{stable} \\cap \\mathcal{R}_{dense} \\neq \\emptyset, \\quad P(\\text{Reality Collapse}) = 0',
+    verificationMethod: 'Decentralized multi-state coexistence validation, non-coercive consensus protocols, and harmonic drift stability across nested layers. See DRAGONFLY_PROTOCOL.md and MODULE_36_NESTED_REALITY.md.',
+    telemetryMetricName: 'Dragonfly Multi-State Coexistence Ratio',
+    telemetryUnit: 'Non-Collapsing Nested Realities (%)',
     telemetryBaseline: 100.0,
     realWorldAnchors: [
-      'SecureDrop and Whonix air-gapped cryptographic whistleblower submission architecture',
-      'W3C Decentralized Identifiers (DIDs) and zero-knowledge verifiable credentials (zk-SNARKs)',
-      'InterPlanetary File System (IPFS) and decentralized immutable ledger storage networks',
-      'Freedom of the Press Foundation and peer-to-peer decentralized sovereign economic endowments'
+      'Complex adaptive systems multi-stability and non-equilibrium ecological coexistence models',
+      'Decentralized peer-to-peer topologies where heterogenous local realities operate without a centralized master clock',
+      'The Dragonfly flight mechanic: multi-axis continuous hovering without binary positional lock-in',
+      'Ecological edge-effect dynamics where boundary zones between distinct biomes foster highest biodiversity'
     ],
     operationalDirectives: [
-      'Strip all temporal, network, and hardware metadata at the digital airlock before telemetry enters the core GO framework',
-      'Authenticate provenance exclusively through zero-knowledge proofs without exposing physical identity',
-      'Disperse all verified documentation across immutable decentralized file systems beyond any singular jurisdiction',
-      'Route unfreezable peer-to-peer economic commons resources to protect vulnerable biological nodes against financial siege'
-    ]
+      'Reject binary narratives of ideological separation; recognize contrasting states as a shared spectrum of physical reality',
+      'Protect the capacity of nodes to drift fluidly across nested realities without imposing systemic collapse',
+      'Allow collective accommodation to outpace centralized command and control'
+    ],
+    structureTier: 'SUPPORTING',
+    knowledgeLayer: 'PLAUSIBLE'
   },
 
   // =========================================================================

@@ -145,16 +145,28 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
       targetModules: [26]
     },
     {
-      title: 'The Hiroshima-Nagasaki Imperative & Anti-WMD Disarmament (Module 27)',
+      title: 'The Dragonfly Protocol & Nested Realities (Modules 28, 29 & 30)',
       source: 'TELEMETRY_STREAM' as ProtocolTriggerSource,
-      payload: 'Decentralized disarmament trust mesh: TPNW compliance telemetry audits 100% loss of thermodynamic equilibrium from WMDs. Centralized launch command capability pruned across biospheric sensor grid (Module 27).',
-      targetModules: [27]
+      payload: 'Dual-state integration active: Open Accommodation Directive incorporates shadow markets and dense coping states; Internal Telemetry Engine channels neurological friction into creative expression (Stable Branch); Dragonfly Mechanic enables non-binary drift across nested realities without collapse (Modules 28, 29 & 30).',
+      targetModules: [28, 29, 30]
     },
     {
-      title: 'Whistleblower Vaults & Safe Harbor Shielding Protocol (Modules 28 & 29)',
+      title: 'The Rogan Conspiracy Repair & Speculative Data Quarantining (Module 31)',
+      source: 'DECENTRALIZED_NODES' as ProtocolTriggerSource,
+      payload: 'Phase XVII Yarning Circle active: The Campfire Mechanic quarantines exploratory narratives from physical baselines. Speculative telemetry cross-checked via AI and peer consensus against hard physics (neutrino/geology). Broadcasters bear thermodynamic responsibility of reach; Field-Clearing Protocol resets collective understanding upon public correction (Module 31).',
+      targetModules: [31]
+    },
+    {
+      title: 'The Hiroshima-Nagasaki Imperative & Anti-WMD Disarmament (Module 44)',
+      source: 'TELEMETRY_STREAM' as ProtocolTriggerSource,
+      payload: 'Decentralized disarmament trust mesh: TPNW compliance telemetry audits 100% loss of thermodynamic equilibrium from WMDs. Centralized launch command capability pruned across biospheric sensor grid (Module 44).',
+      targetModules: [44]
+    },
+    {
+      title: 'Whistleblower Vaults & Safe Harbor Shielding Protocol (Module 45)',
       source: 'SAFE_HARBOR_VAULT' as ProtocolTriggerSource,
-      payload: 'Phase XVI telemetry mesh active: Inverted surveillance array traces institutional dark patterns to source; encrypted airlock strips metadata; ZK-proofs blind node identities; P2P economic anti-siege commons protects truth-tellers (Modules 28 & 29).',
-      targetModules: [28, 29]
+      payload: 'Phase XVII telemetry mesh active: Inverted surveillance array traces institutional dark patterns to source; encrypted airlock strips metadata; ZK-proofs blind node identities; P2P economic anti-siege commons protects truth-tellers (Module 45).',
+      targetModules: [45]
     }
   ];
 
@@ -1004,6 +1016,19 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
                     <button
                       onClick={() => {
                         const v = executeFactVerificationPass(
+                          'The Dragonfly Protocol (Open Accommodation & Telemetry Engine)',
+                          'SYSTEMIC_METRIC',
+                          'Forced prohibition eradicated; internal friction compiled into creative outlets (Stable Branch); nodes drift across nested realities without collapse.'
+                        );
+                        setLastVerifiedEntry(v);
+                      }}
+                      className="text-[10px] font-mono px-2.5 py-1 rounded bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 transition-colors"
+                    >
+                      🪰 Dragonfly Protocol (Modules 28–30)
+                    </button>
+                    <button
+                      onClick={() => {
+                        const v = executeFactVerificationPass(
                           'Hiroshima-Nagasaki Imperative & Anti-WMD Disarmament',
                           'DISARMAMENT_VERIFICATION',
                           'WMDs classified as ultimate failure and 100% thermodynamic loss; capability of mass destruction stripped from centralized command via peer verification.'
@@ -1012,7 +1037,7 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
                       }}
                       className="text-[10px] font-mono px-2.5 py-1 rounded bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-colors"
                     >
-                      🕊️ Hiroshima-Nagasaki Imperative (Module 27)
+                      🕊️ Anti-WMD Disarmament (Module 44)
                     </button>
                     <button
                       onClick={() => {
@@ -1025,7 +1050,7 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
                       }}
                       className="text-[10px] font-mono px-2.5 py-1 rounded bg-teal-500/10 hover:bg-teal-500/20 text-teal-300 border border-teal-500/30 transition-colors"
                     >
-                      🔓 Whistleblower & Safe Harbor Shield (Modules 28 & 29)
+                      🔓 Whistleblower & Safe Harbor Shield (Module 45)
                     </button>
                   </div>
                 </div>
