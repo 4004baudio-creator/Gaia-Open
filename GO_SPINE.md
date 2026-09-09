@@ -41,7 +41,7 @@ Rule of 27: the founder is not the only filter. Ingest public physical baselines
 - 28 The Open Accommodation Directive — shadow market integration & sobriety horizon (DRAGONFLY_PROTOCOL.md)
 - 29 The Internal Telemetry Engine — neurological friction processing (DRAGONFLY_PROTOCOL.md)
 - 30 Nested Coexistence (The Dragonfly Mechanic) — multi-state reality drift without collapse (DRAGONFLY_PROTOCOL.md)
-- 31 The Rogan Conspiracy Repair & Claim Shelf — speculative data quarantining, campfire mechanic & field-clearing (MODULE_31_CLAIM_SHELF.md)
+- 31 The Claim Shelf — yarn stays yarn; like-with-like series; reach is not a watt; public correction is a repair (MODULE_31_CLAIM_SHELF.md)
 - 32 Inventory Tether — TRACE / national inventories ranked under instruments (MODULE_32_INVENTORY_TETHER.md)
 - 33 Exploration Catalogue — public sky/mission files, same stamp rules (MODULE_33_EXPLORATION_CATALOGUE.md)
 - 34 Non-Colonisation Contact — local link first; visitor claims stay OPEN_FIELD (NON_COLONISATION.md)

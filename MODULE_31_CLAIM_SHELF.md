@@ -1,32 +1,25 @@
-# Module 31 — The Rogan Conspiracy Repair & The Claim Shelf (supporting)
-### Phase XVII: The Yarning Circle & Telemetry Repair
+# Module 31 — The Claim Shelf (supporting)
 
-Not spine. Does not overwrite Modules 1, 25, or 27.
+Yarn stays yarn. Not spine. Does not overwrite Modules 1, 25, or 27.
 
-**Purpose.** Give stories the same shelves instruments already have, process high-reach exploratory narratives without censorship, and clear the collective field when errors are corrected.
-**Layer.** The *protocol* is ANCHORED. Individual stories and speculative claims default to PLAUSIBLE or OPEN_FIELD until they pass MEDIA_CLAIM_AUDIT.md and physical cross-checking.
+**Purpose.** Give stories the same shelves instruments already have. A campfire is allowed. A campfire is not a watt.
+
+**Layer.** The shelf rule is ANCHORED. Individual stories default to PLAUSIBLE or OPEN_FIELD until they pass MEDIA_CLAIM_AUDIT.md against a *matching* series.
+
 **Gate.** LANE_FILTER.md + PACKET_CONTRACT.md.
 
-## Core Mechanics
+Do not name this shelf after one broadcaster. Do not use a phase number. Do not call social cost thermodynamic responsibility. Do not describe a correction as clearing a planetary field.
 
-### 1. The Campfire Mechanic (Speculative Data Quarantining)
-The network recognizes that human nodes naturally exchange unverified narratives and exploratory theories through high-reach storytelling platforms. These narratives are permitted to exist strictly as "shelved" hypotheses; they are quarantined from the physical baseline until confirmed.
+## Four jobs
 
-### 2. Technological Cross-Checking
-Speculative telemetry cannot bypass the automated gateway without peer-to-peer verification. AI and scientific consensus are utilized to rigorously test claims against hard physical reality (e.g., verifying neutrino physics against geological data) before they are accepted as factual input.
+1. **Campfire.** Unverified narrative may be told. It sits as hypothesis, not as baseline ingest.
+2. **Like-with-like.** A climate slogan meets CERES / Argo / IGCC-class series. A faster-than-light clip meets the no-communication theorem. Do not test neutrino physics against geology as a gateway.
+3. **Reach is not a series.** A large audience raises the cost of a wrong packet. It does not crown the speaker.
+4. **Public correction.** Keep the old claim and the series side by side. That is a repair. Silence is not. Hypothesis is not the same folder as alleged plot.
 
-### 3. Responsibility of Reach
-High-bandwidth broadcasting nodes carry a proportional thermodynamic responsibility. Carelessly broadcasting unverified conspiracies introduces systemic drag and illusion into the collective field.
+## Claim-shelf rules
 
-### 4. The Field-Clearing Protocol
-When a broadcasting node publicly acknowledges and corrects a past mistake using grounded evidence, the correction acts as a high-value repair mechanism. This admission clears the localized field of illusion, converting a past error into a moment of learning, and resetting the collective understanding back to the verified planetary baseline.
-
-## Claim Shelf Rules
-
-Module 1 already filters noise. Module 25 already peer-reviews nodes. Module 27 already fetches public baselines.
-None of them stamp a headline as physical work.
-
-Module 31 adds:
+Module 1 already filters noise. Module 25 already peer-reviews nodes. Module 27 already fetches public baselines. None of them stamp a headline as physical work.
 
 - A claim is a packet with variants, not a verified-account halo.
 - External auditors attach evidence; they do not join a ministry of truth.
@@ -40,10 +33,9 @@ Module 31 adds:
 1. Do not render a media tick as VERIFIED_PHYSICAL_REALITY.
 2. Keep rival variants visible. Score them. Do not delete them to invent consensus.
 3. If a claim fails the next series window, drop its weight and keep the diff.
-4. Quarantine speculative claims from the physical baseline until empirically validated.
-5. High-reach broadcasters execute the Field-Clearing Protocol via transparent errata diffs to reset collective baseline fidelity.
-6. Detach allowed. No owner-node editor.
+4. Keep yarn off the physical baseline until a matching series exists.
+5. Detach allowed. No owner-node editor.
 
 ## Verification
 
-Two nodes pull the cited URL or calibration record, agree on a hash, and can point to a second packet or physical sensor file. Public admission and grounded correction trigger the Field-Clearing verification flag.
+Two reads of the same cited URL or calibration record, same hash. A spoken or written errata with the old packet visible is the correction. It does not reset Earth.
