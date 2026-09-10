@@ -80,18 +80,18 @@ const DEPTH_ZONES: DepthZoneConfig[] = [
     biomeClass: 'Dysphotic Twilight — Thermocline Equalization',
     badgeColor: 'bg-sky-500/10 text-sky-300 border-sky-500/40',
     borderColor: 'border-sky-500/30',
-    foundationAxiom: 'Earth Energy Imbalance is present-tense (~1.18 W/m²). Physical work must equal planetary damage repaired. Non-colonisation of non-local frequencies.',
+    foundationAxiom: 'Earth Energy Imbalance is present-tense (~1.12 W m⁻², 2013–2025). Physical work must equal planetary damage repaired. Non-colonisation of non-local frequencies.',
     gestationDescription: 'Cognitive compression increases. Nodes must learn exergy accounting without greenwashing, understanding that claiming present equilibrium without physical proof is a breach of thermodynamic law.',
     associatedModuleNumbers: [12, 13, 14, 15, 16, 22, 23, 24],
     equalizationTest: {
-      question: 'Why does GO mandate that Earth Energy Imbalance (EEI) is stamped as present-tense (~1.18 W/m²) rather than zero?',
+      question: 'Why does GO mandate that Earth Energy Imbalance (EEI) is stamped as present-tense (~1.12 W m⁻², 2013–2025) rather than zero?',
       options: [
         'Because equilibrium is an ultimate target of planetary repair, not a completed present condition; claiming zero is false accounting',
         'Because energy balance numbers are purely decorative marketing metrics',
         'Because energy can be artificially offset using unverified digital tokens'
       ],
       correctIndex: 0,
-      explanation: 'User rules and thermodynamic integrity dictate: EEI present tense is ~1.18 W/m² (not zero). Equilibrium is the target, never a simulated boast.'
+      explanation: 'User rules and thermodynamic integrity dictate: EEI present tense is ~1.12 W m⁻² (2013–2025, not zero). Equilibrium is the target, never a simulated boast.'
     }
   },
   {

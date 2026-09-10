@@ -292,7 +292,7 @@ const BASE_MODULES: GaiaModule[] = [
     verificationMethod: 'Full life-cycle exergy audit tracking cradle-to-grave thermal dissipation and biospheric return.',
     telemetryMetricName: 'Thermodynamic Balance Ratio',
     telemetryUnit: 'Return / Friction (Ratio)',
-    telemetryBaseline: 1.18,
+    telemetryBaseline: 1.12,
     realWorldAnchors: [
       'Second Law of Thermodynamics closed-system entropy balances',
       'Industrial ecology circular economy mass/energy flow audits',

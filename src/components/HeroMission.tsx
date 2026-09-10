@@ -28,7 +28,7 @@ interface HeroMissionProps {
 export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onOpenAuditModule }) => {
   const [telemetry, setTelemetry] = useState<TelemetryFeed>({
     timestamp: new Date().toISOString(),
-    thermodynamicEquilibriumRatio: 1.18,
+    thermodynamicEquilibriumRatio: 1.12,
     neutrinoFluxRate: 6.54,
     romanIRObservationalDepth: 0.281,
     biosphericBaselineHealth: 96.8,
@@ -45,7 +45,7 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
         ...prev,
         timestamp: new Date().toISOString(),
         neutrinoFluxRate: +(6.54 + (Math.random() * 0.08 - 0.04)).toFixed(3),
-        thermodynamicEquilibriumRatio: +(1.18 + (Math.random() * 0.04 - 0.02)).toFixed(3),
+        thermodynamicEquilibriumRatio: +(1.12 + (Math.random() * 0.04 - 0.02)).toFixed(3),
         darkDataPurgedRate: Math.floor(1420 + (Math.random() * 50 - 25)),
         activeNodesCount: prev.activeNodesCount + (Math.random() > 0.85 ? 1 : 0)
       }));
@@ -97,7 +97,7 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
               <div className="flex flex-wrap items-center justify-between border-b border-white/10 pb-2 mb-2 gap-2">
                 <span className="text-[#00ff95] font-bold uppercase tracking-wider text-xs flex items-center gap-2">
                   <Sparkles className="w-3.5 h-3.5 text-[#00ff95]" />
-                  <span>GO (Gaia Open) Mission Statement · {MAP_LABEL} (Phase XXII)</span>
+                  <span>GO (Gaia Open) Mission Statement · {MAP_LABEL}</span>
                 </span>
                 <span className="text-[10px] text-slate-400 uppercase tracking-widest">
                   LOCKED SPINE (12) · BINOCULAR LANES (DIRECTIVES 46–48) · ZERO OWNER-NODE
@@ -110,7 +110,7 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
                 The map operates through two distinct, equal-respect epistemic lanes: an <strong className="text-[#00ff95]">Empirical Lane</strong> grounded in repeatable public physical measurement (Earth energy imbalance, ocean heat content, thermodynamic audits, and sky telemetry), and a <strong className="text-amber-300">Lineage &amp; Wisdom Lane</strong> (Directives 46–48) carrying the civilizational weight of sacred texts, stone monuments, covenants, and unbroken traditions. Under <strong className="text-amber-300">Directive 47 (The Time-Capsule Paradox)</strong>, the survival of ancient teachings across millennia is their self-evident validation, not needing modern mechanical tools to prove their relevance. Under <strong className="text-violet-300">Directive 48 (The 'Neo Vision' Synthesis)</strong>, empirical physics and deep ancestral lineage coexist stereoscopically without collapsing into one another.
               </p>
               <p className="text-slate-400 text-xs">
-                Governed by a locked spine of twelve sovereign modules (2, 11, 17, 19–27) that cannot be overridden, GO protects human rest (Module 11), guarantees inter-species sanctuary (Module 19), inverts institutional surveillance through whistleblower airlocks (Module 25), and maintains fluid, density-driven exchange. Independent realities stay independent; no node can switch another off; and the living human nervous system remains sovereign and unharvested.
+                Governed by a locked spine of twelve sovereign modules (2, 11, 17, 19–27) that cannot be overridden, GO protects human rest (Module 11), grounds the quantum bridge (Module 19), guarantees inter-species sanctuary (Module 24), inverts institutional surveillance through whistleblower airlocks (Module 25), and maintains fluid, density-driven exchange. Independent realities stay independent; no node can switch another off; and the living human nervous system remains sovereign and unharvested.
               </p>
             </div>
           </motion.div>

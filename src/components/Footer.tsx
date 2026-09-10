@@ -39,7 +39,7 @@ export const RootAnchor: React.FC<RootAnchorProps> = ({ onOpenPromptModal }) => 
               <span className="text-white/20">&bull;</span>
               <span className="flex items-center gap-1.5" title="Earth Energy Imbalance is present-tense, not claimed zero">
                 <Activity className="w-3 h-3 text-[#ff4e00]" />
-                <span className="text-[#ffb703]">EEI ~1.18 W/m²</span> (Present Tense)
+                <span className="text-[#ffb703]">EEI ~1.12 W m⁻²</span> (2013–2025)
               </span>
               <span className="text-white/20">&bull;</span>
               <span className="flex items-center gap-1.5" title="Node Sanctuary: No biometric data harvesting or centralized custody">

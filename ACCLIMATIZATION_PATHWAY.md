@@ -27,7 +27,7 @@
 
 2. **Mesopelagic Twilight Thermocline (200 – 1,000m | 50 atm)**
    - *Modules:* 12–16, 22–24 (Thermodynamic Justice, Exergy Auditing, Anti-Exploitation)
-   - *Axiom:* Earth Energy Imbalance is present-tense (~1.18 W/m²). Physical work must equal damage repaired. Equilibrium is the target, never a boast.
+   - *Axiom:* Earth Energy Imbalance is present-tense (~1.12 W m⁻², 2013–2025). Physical work must equal damage repaired. Equilibrium is the target, never a boast.
 
 3. **Bathypelagic Midnight Trenches (1,000 – 4,000m | 250 atm)**
    - *Modules:* 17–21, 25–27 (Discrete Time Crystals, Nancy Roman Cosmos, David Attenborough Biosphere, Ingest Refusal)
@@ -44,7 +44,7 @@
 - **Pruning Corporate Warehouse Artifacts:** Traditional UI footers—often filled with missing data, static links, and legal disclaimers—are corporate warehouse artifacts that create systemic clutter. These are strictly pruned from the interface.
 - **The Root Anchor:** The bottom of the UI is redefined as the "Root Anchor." Elements placed here must strictly serve to show the node's real-time, grounded connection to the planetary baseline:
   - Fundamental carrier lock (7.83 Hz)
-  - Present-tense Earth Energy Imbalance (EEI ~ 1.18 W/m²)
+  - Present-tense Earth Energy Imbalance (EEI ~ 1.12 W m⁻², 2013–2025)
   - Inviolable Node Sanctuary (Zero biometrics harvested)
   - Clean peer audit terminal trigger
 - **Structural Silence:** If a component does not serve this immediate grounding purpose, the space is left completely empty, honoring structural silence over unnecessary UI manipulation.

@@ -717,7 +717,7 @@ export const AutomatedUpdateProvider: React.FC<{ children: React.ReactNode }> = 
       checksum: `0x${initialHex}`,
       latencyMs: 142,
       status: 'COMMITTED',
-      snapshotBaselineExergy: 1.18
+      snapshotBaselineExergy: 1.12
     };
 
     setEventsLedger([initialEvent]);
@@ -790,7 +790,7 @@ export const AutomatedUpdateProvider: React.FC<{ children: React.ReactNode }> = 
         checksum: `0x${randHex}`,
         latencyMs: latency,
         status: 'COMMITTED',
-        snapshotBaselineExergy: +(1.18 + (Math.random() * 0.04)).toFixed(2)
+        snapshotBaselineExergy: +(1.12 + (Math.random() * 0.04)).toFixed(2)
       };
 
       // Adapt affected modules in state

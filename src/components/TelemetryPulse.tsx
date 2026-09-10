@@ -33,7 +33,7 @@ interface StreamingPacket {
 }
 
 export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
-  currentEquilibriumRatio = 1.18,
+  currentEquilibriumRatio = 1.12,
   activeNodesCount = 148,
   onOpenAuditModule
 }) => {
