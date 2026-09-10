@@ -537,36 +537,69 @@ export const GaiaOpenMultiScalarReality: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Interactive Sliders for Sensitivity Stress Testing */}
-                  <div className="space-y-4 mt-6 pt-6 border-t border-white/10">
-                    <div>
-                      <div className="flex justify-between text-xs font-mono mb-1">
-                        <span className="text-slate-400">Individual Plurality Vector:</span>
-                        <span className="text-purple-400 font-bold">{individualNuance}%</span>
-                      </div>
-                      <input
-                        type="range"
-                        min="80"
-                        max="100"
-                        value={individualNuance}
-                        onChange={(e) => setIndividualNuance(Number(e.target.value))}
-                        className="w-full accent-purple-500 h-1.5 bg-white/10 rounded cursor-pointer"
-                      />
+                  {/* Directive 40 Compliant Sensitivity Calibration Regimes */}
+                  <div className="space-y-4 mt-6 pt-6 border-t border-white/10 font-mono">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] uppercase text-emerald-400">Calibrated Operating Regimes:</span>
+                      <span className="text-[9px] px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">
+                        DIRECTIVE 40: NO MANUAL NEEDLES
+                      </span>
                     </div>
 
                     <div>
-                      <div className="flex justify-between text-xs font-mono mb-1">
+                      <div className="flex justify-between text-xs mb-1.5">
+                        <span className="text-slate-400">Individual Plurality Vector:</span>
+                        <span className="text-purple-400 font-bold">{individualNuance}%</span>
+                      </div>
+                      <div className="grid grid-cols-3 gap-1.5">
+                        {[
+                          { val: 88, label: 'Autonomy', desc: '88%' },
+                          { val: 94, label: 'Harmonic (Default)', desc: '94%' },
+                          { val: 98, label: 'Full Nuance', desc: '98%' }
+                        ].map(regime => (
+                          <button
+                            key={regime.val}
+                            type="button"
+                            onClick={() => setIndividualNuance(regime.val)}
+                            className={`px-2 py-1.5 rounded text-center border transition-all ${
+                              individualNuance === regime.val 
+                                ? 'bg-purple-500/20 border-purple-400 text-white font-bold' 
+                                : 'bg-white/5 border-white/10 text-slate-400 hover:text-white'
+                            }`}
+                          >
+                            <span className="text-xs block">{regime.label}</span>
+                            <span className="text-[9px] opacity-75 font-normal">{regime.desc}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between text-xs mb-1.5">
                         <span className="text-slate-400">Collective Synthesis Consensus:</span>
                         <span className="text-cyan-400 font-bold">{collectiveSynthesis}%</span>
                       </div>
-                      <input
-                        type="range"
-                        min="90"
-                        max="100"
-                        value={collectiveSynthesis}
-                        onChange={(e) => setCollectiveSynthesis(Number(e.target.value))}
-                        className="w-full accent-cyan-500 h-1.5 bg-white/10 rounded cursor-pointer"
-                      />
+                      <div className="grid grid-cols-3 gap-1.5">
+                        {[
+                          { val: 91, label: 'Baseline', desc: '91%' },
+                          { val: 97, label: 'Synthesis (Default)', desc: '97%' },
+                          { val: 99, label: 'Zero-Coercion', desc: '99%' }
+                        ].map(regime => (
+                          <button
+                            key={regime.val}
+                            type="button"
+                            onClick={() => setCollectiveSynthesis(regime.val)}
+                            className={`px-2 py-1.5 rounded text-center border transition-all ${
+                              collectiveSynthesis === regime.val 
+                                ? 'bg-cyan-500/20 border-cyan-400 text-white font-bold' 
+                                : 'bg-white/5 border-white/10 text-slate-400 hover:text-white'
+                            }`}
+                          >
+                            <span className="text-xs block">{regime.label}</span>
+                            <span className="text-[9px] opacity-75 font-normal">{regime.desc}</span>
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>

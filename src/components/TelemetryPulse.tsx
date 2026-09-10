@@ -11,8 +11,6 @@ import {
   RefreshCw,
   Globe2,
   Orbit,
-  Play,
-  Pause,
   Sliders,
   CheckCircle2
 } from 'lucide-react';
@@ -42,11 +40,10 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
   const { isScanning, triggerManualPulse, metrics } = useAutomatedUpdate();
 
   const [streamMode, setStreamMode] = useState<'SCHUMANN' | 'SOLAR_WIND' | 'BIOSPHERIC'>('SCHUMANN');
-  const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [pulseCount, setPulseCount] = useState<number>(1429);
   const [pulseIntensity, setPulseIntensity] = useState<number>(94);
   const [streamVelocity, setStreamVelocity] = useState<number>(1.0); // 0.5x to 2x
-  const [manualBurstActive, setManualBurstActive] = useState<boolean>(false);
+  const [harmonicLocked, setHarmonicLocked] = useState<boolean>(false);
 
   // Streaming packets ticker state
   const [packets, setPackets] = useState<StreamingPacket[]>([
@@ -60,12 +57,10 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animFrameRef = useRef<number | null>(null);
   const phaseRef = useRef<number>(0);
-  const burstAnimRef = useRef<number>(0);
+  const nextPktIdRef = useRef<number>(850);
 
-  // New incoming packets simulator
+  // New incoming packets simulator (Directive 43: Perpetual Field — continuously flows)
   useEffect(() => {
-    if (!isPlaying) return;
-
     const sources = [
       { source: 'L2_ROMAN_WFI', channel: 'IR_DEPTH', value: '0.281 deg²', freq: '7.83 Hz' },
       { source: 'VOSTOK_STATION', channel: 'SUBGLACIAL_EXERGY', value: '3,768m INVIOLATE', freq: '7.83 Hz' },
@@ -78,8 +73,9 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
     const interval = setInterval(() => {
       setPulseCount(prev => prev + 1);
       const randomSrc = sources[Math.floor(Math.random() * sources.length)];
+      const nextId = nextPktIdRef.current++;
       const newPkt: StreamingPacket = {
-        id: `PKT-${Math.floor(1000 + Math.random() * 9000)}`,
+        id: `PKT-${nextId}`,
         source: randomSrc.source,
         channel: randomSrc.channel,
         value: randomSrc.value,
@@ -88,11 +84,11 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
         timestamp: 'NOW'
       };
 
-      setPackets(prev => [newPkt, prev[0], prev[1], prev[2]]);
+      setPackets(prev => [newPkt, ...prev.slice(0, 3)]);
     }, 2800 / streamVelocity);
 
     return () => clearInterval(interval);
-  }, [isPlaying, streamVelocity]);
+  }, [streamVelocity]);
 
   // 60FPS High-Definition Oscilloscope Waveform Animation
   useEffect(() => {
@@ -110,17 +106,9 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
       const height = canvas.height;
       const centerY = height / 2;
 
-      // Advance phase
-      if (isPlaying) {
-        const speed = (streamMode === 'SCHUMANN' ? 0.045 : streamMode === 'SOLAR_WIND' ? 0.08 : 0.03) * streamVelocity;
-        phaseRef.current += speed;
-      }
-
-      // Decrement burst effect if triggered
-      if (burstAnimRef.current > 0) {
-        burstAnimRef.current -= 0.02;
-        if (burstAnimRef.current < 0) burstAnimRef.current = 0;
-      }
+      // Advance phase continuously (Perpetual Field)
+      const speed = (streamMode === 'SCHUMANN' ? 0.045 : streamMode === 'SOLAR_WIND' ? 0.08 : 0.03) * streamVelocity;
+      phaseRef.current += speed;
 
       // Fade canvas for phosphor trail effect
       ctx.fillStyle = 'rgba(5, 8, 14, 0.28)';
@@ -148,7 +136,7 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
 
       // Wave calculation parameters based on stream mode
       const freq = streamMode === 'SCHUMANN' ? 7.83 : streamMode === 'SOLAR_WIND' ? 14.3 : 5.0;
-      const amp = (28 + burstAnimRef.current * 35) * (pulseIntensity / 100);
+      const amp = 28 * (pulseIntensity / 100);
 
       // 1. Draw Secondary Ghost Harmonics (Cosmic background field)
       ctx.beginPath();
@@ -168,7 +156,7 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
       ctx.strokeStyle = primaryColor;
       ctx.lineWidth = 2.4;
       ctx.shadowColor = primaryColor;
-      ctx.shadowBlur = 8 + burstAnimRef.current * 14;
+      ctx.shadowBlur = 8;
 
       // Heartbeat pulse envelope factor (simulating cardiac / planetary pulse rhythm)
       const heartbeatEnvelope = (xNorm: number) => {
@@ -223,15 +211,15 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
         cancelAnimationFrame(animFrameRef.current);
       }
     };
-  }, [isPlaying, streamMode, pulseIntensity, streamVelocity]);
+  }, [streamMode, pulseIntensity, streamVelocity]);
 
-  // Handle Manual Telemetry Pulse Burst
-  const handleTriggerBurst = () => {
-    burstAnimRef.current = 1.0;
-    setManualBurstActive(true);
-    setPulseCount(prev => prev + 12);
-    triggerManualPulse();
-    setTimeout(() => setManualBurstActive(false), 800);
+  // Directive 40 Compliant: Harmonic Alignment (Non-Coercive Recommended Function)
+  const handleHarmonicAlignment = () => {
+    setStreamMode('SCHUMANN');
+    setPulseIntensity(94);
+    setStreamVelocity(1.0);
+    setHarmonicLocked(true);
+    setTimeout(() => setHarmonicLocked(false), 1600);
   };
 
   return (
@@ -282,21 +270,22 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
             </span>
           </div>
 
-          <button
-            onClick={() => setIsPlaying(!isPlaying)}
-            className="p-1.5 rounded bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/10 transition-colors"
-            title={isPlaying ? 'Pause Telemetry Stream' : 'Resume Telemetry Stream'}
+          {/* Directive 43: Eradication of the Pause State — Perpetual Field */}
+          <div 
+            className="px-2.5 py-1.5 rounded bg-[#00ff95]/10 border border-[#00ff95]/30 text-[#00ff95] text-[10px] font-mono flex items-center gap-1.5 tracking-wider uppercase font-semibold"
+            title="Directive 43: An ocean does not have a pause button, and neither does evolution. The field flows perpetually at the natural pace of the collective baseline."
           >
-            {isPlaying ? <Pause className="w-3.5 h-3.5 text-[#00ff95]" /> : <Play className="w-3.5 h-3.5 text-[#ffb703]" />}
-          </button>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00ff95] animate-pulse" />
+            <span>Perpetual Flow</span>
+          </div>
 
           <button
-            onClick={handleTriggerBurst}
-            disabled={manualBurstActive}
-            className="px-3 py-1.5 rounded bg-[#00ff95] hover:bg-[#00e685] text-slate-950 font-bold uppercase tracking-wider text-[10px] flex items-center gap-1.5 shadow-[0_0_12px_rgba(0,255,149,0.3)] transition-all active:scale-95 disabled:opacity-50"
+            onClick={handleHarmonicAlignment}
+            className="px-3 py-1.5 rounded bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 font-bold uppercase tracking-wider text-[10px] flex items-center gap-1.5 shadow-[0_0_12px_rgba(0,255,149,0.15)] transition-all active:scale-95"
+            title="Directive 40 Compliant: Re-anchors carrier to natural 7.83 Hz Schumann baseline without forced pulse bursts"
           >
-            <Zap className={`w-3 h-3 ${manualBurstActive ? 'animate-bounce' : ''}`} />
-            <span>Burst Pulse</span>
+            <CheckCircle2 className={`w-3 h-3 ${harmonicLocked ? 'text-emerald-400 animate-spin' : 'text-emerald-400'}`} />
+            <span>{harmonicLocked ? 'Aligned (7.83 Hz)' : 'Harmonic Alignment'}</span>
           </button>
         </div>
       </div>
@@ -398,23 +387,32 @@ export const TelemetryPulse: React.FC<TelemetryPulseProps> = ({
             </button>
           </div>
 
-          {/* Stream Velocity Slider */}
-          <div className="flex items-center gap-3 pt-1">
-            <span className="text-[9px] uppercase tracking-wider text-slate-400 whitespace-nowrap">
-              Flux Speed:
-            </span>
-            <input
-              type="range"
-              min={0.4}
-              max={2.2}
-              step={0.1}
-              value={streamVelocity}
-              onChange={(e) => setStreamVelocity(parseFloat(e.target.value))}
-              className="w-full accent-[#00ff95]"
-            />
-            <span className="text-[10px] text-[#00ff95] w-8 text-right font-bold">
-              {streamVelocity.toFixed(1)}x
-            </span>
+          {/* Directive 40 Compliant Stream Velocity */}
+          <div className="pt-2 border-t border-white/5 space-y-1.5 font-mono">
+            <div className="flex items-center justify-between text-[9px] uppercase text-slate-400">
+              <span>Natural Cadence (Directive 40 Compliant):</span>
+              <span className="text-[#00ff95] font-bold">{streamVelocity.toFixed(1)}x Flow</span>
+            </div>
+            <div className="grid grid-cols-3 gap-1.5">
+              {[
+                { label: 'Calm', val: 0.7 },
+                { label: 'Nominal', val: 1.0 },
+                { label: 'Active', val: 1.6 }
+              ].map(cadence => (
+                <button
+                  key={cadence.label}
+                  type="button"
+                  onClick={() => setStreamVelocity(cadence.val)}
+                  className={`py-1 px-1.5 rounded text-[10px] border transition-all ${
+                    Math.abs(streamVelocity - cadence.val) < 0.2
+                      ? 'bg-[#00ff95]/20 border-[#00ff95] text-white font-bold'
+                      : 'bg-white/5 border-white/10 text-slate-400 hover:text-white'
+                  }`}
+                >
+                  {cadence.label} ({cadence.val}x)
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 

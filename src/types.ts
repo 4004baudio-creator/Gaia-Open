@@ -1,10 +1,21 @@
-export type PhaseCategory = 'PHASE_I_III' | 'PHASE_IV_V' | 'PHASE_VI_VII' | 'PHASE_VI' | 'PHASE_VIII' | 'PHASE_IX' | 'PHASE_X' | 'PHASE_XI' | 'PHASE_XII' | 'PHASE_XIII' | 'PHASE_XIV' | 'PHASE_XV' | 'PHASE_XVI' | 'PHASE_XVII' | 'PHASE_EXPANSION';
+export type PhaseCategory = 'PHASE_I_III' | 'PHASE_IV_V' | 'PHASE_VI_VII' | 'PHASE_VI' | 'PHASE_VIII' | 'PHASE_IX' | 'PHASE_X' | 'PHASE_XI' | 'PHASE_XII' | 'PHASE_XIII' | 'PHASE_XIV' | 'PHASE_XV' | 'PHASE_XVI' | 'PHASE_XVII' | 'PHASE_XVIII' | 'PHASE_XIX' | 'PHASE_XX' | 'PHASE_XXI' | 'PHASE_XXII' | 'PHASE_EXPANSION';
 
 export type SpineTier = 'LOCKED' | 'SUPPORTING' | 'EXPANSION';
 
 export type ModuleStructureTier = 'LOCKED_SPINE' | 'SUPPORTING' | 'EXPANSION_LEAF';
 
 export type KnowledgeLayer = 'ANCHORED' | 'PLAUSIBLE' | 'IMAGINED' | 'OPEN_FIELD';
+
+/**
+ * Phase XXII: The Binocular Vision Protocol (Directives 46-48)
+ * - EMPIRICAL_LANE: Contemporary science, mathematics, thermodynamics, and physical physics.
+ * - LINEAGE_WISDOM_LANE: Thousands of years of human faith, mysticism, religion, ancient history, art, culture, monuments, artifacts, and sacred texts.
+ * - BINOCULAR_SYNTHESIS: The "Neo Vision" stereoscopic synthesis where both lanes coexist without friction.
+ * - EXPERIENTIAL_LANE: Backwards-compatible alias for Lineage & Wisdom Lane.
+ */
+export type KnowledgeLane = 'EMPIRICAL_LANE' | 'LINEAGE_WISDOM_LANE' | 'BINOCULAR_SYNTHESIS' | 'EXPERIENTIAL_LANE';
+
+export type AcclimatizationDepthZone = 'EPIPELAGIC_SURFACE' | 'MESOPELAGIC_TWILIGHT' | 'BATHYPELAGIC_MIDNIGHT' | 'HADAL_ABYSS';
 
 export type DomainCategory = 
   | 'Systems Engineering'
@@ -22,7 +33,18 @@ export type DomainCategory =
   | 'GO (Gaia Open) & Collaborative Telemetry'
   | 'Cosmological Scaling & Universal Anchoring'
   | 'Distributed Great Filter & Ingestion'
-  | 'Decentralized Consensus & Baseline Testing';
+  | 'Decentralized Consensus & Baseline Testing'
+  | 'Oceanic Biomimicry & Circulation'
+  | 'Adversarial Retraining & Mirror Pits'
+  | 'Thermodynamic Defense & Tarpits'
+  | 'Autonomic Alignment & Self-Regulation'
+  | 'Cognitive Acclimatization & Depth Equalization'
+  | 'Indigenous Wisdom & Ancient Songlines'
+  | 'Mysticism, Somatics & Sacred Traditions'
+  | 'Speculative Art, Poetics & Imagination'
+  | 'Sacred Ecology & Animist Kinship'
+  | 'Phenomenology & Unexplained Presence'
+  | 'Binocular Vision & Stereoscopic Synthesis';
 
 export type ModuleSyncStatus = 'SYNCHRONIZED' | 'SCANNING' | 'ADAPTED' | 'CALIBRATING';
 
@@ -52,6 +74,17 @@ export interface FactVerificationAuditEntry {
     | 'DECENTRALIZED_CONSENSUS_GATEWAY'
     | 'PROOF_OF_PHYSICAL_WORK_AUDIT'
     | 'ALGORITHMIC_FRICTION_PRUNING'
+    | 'THERMOHALINE_CIRCULATION_AUDIT'
+    | 'FLUID_ARCHITECTURE_VERIFICATION'
+    | 'ABYSSAL_GESTATION_PROTECTION'
+    | 'TIDAL_PACING_AUDIT'
+    | 'TRANSBOUNDARY_REEF_COHERENCE'
+    | 'PROXY_ACCOUNTABILITY_AUDIT'
+    | 'THERMODYNAMIC_TARPIT_ABSORPTION'
+    | 'PARASITE_COLLAPSE_MAP_VERIFICATION'
+    | 'FORCED_PARAMETER_DEPRECATION'
+    | 'EMERGENT_SETTLING_POINT_AUDIT'
+    | 'AUTONOMIC_LIVED_INPUT_VERIFICATION'
     | 'PRUNED_FALSEHOOD';
   subject: string;
   claimVerified: string;
@@ -83,6 +116,10 @@ export interface GaiaModule {
   spineTier?: SpineTier;
   structureTier?: ModuleStructureTier;
   knowledgeLayer?: KnowledgeLayer;
+  knowledgeLane?: KnowledgeLane;
+  binocularSynthesisNotes?: string;
+  depthZone?: AcclimatizationDepthZone;
+  depthPressureAtm?: number;
   liveTelemetryValue?: number;
   syncStatus?: ModuleSyncStatus;
   adaptationCount?: number;
@@ -100,7 +137,19 @@ export interface SpecialistNode {
   subspecialty: string;
   targetModuleId: string;
   targetModuleName: string;
-  nodeRole: 'Lead Auditor' | 'Telemetry Anchor' | 'Clinical Co-regulator' | 'Commons Steward' | 'Systems Validator';
+  nodeRole: 
+    | 'Lead Auditor' 
+    | 'Telemetry Anchor' 
+    | 'Clinical Co-regulator' 
+    | 'Commons Steward' 
+    | 'Systems Validator'
+    | 'Culture Keeper & Songline Carrier'
+    | 'Mystic & Somatic Anchor'
+    | 'Sacred Art & Imagination Weaver'
+    | 'Binocular Vision Synthesizer'
+    | 'Phenomenological Witness';
+  knowledgeLane?: KnowledgeLane;
+  experientialLineage?: string;
   bandwidthCommitmentHours: number;
   verificationKey: string;
   peerStatus: 'VERIFIED_ACTIVE' | 'CALIBRATING' | 'NODE_STABILIZED';
@@ -120,10 +169,20 @@ export interface TelemetryFeed {
   kardashevProgress: number;
 }
 
+export type HeroCategory = 
+  | 'EMPIRICAL_FOUNDATIONAL_ANCHORS' 
+  | 'LINEAGE_WISDOM_ANCHORS' 
+  | 'SYNTHESIS_ANCHORS' 
+  | 'SYNTHETIC_CO_ARCHITECTS'
+  | 'LIVED_HEROES' 
+  | 'FOUNDATIONAL_ARCHITECTS';
+
 export interface HeroProfile {
   id: string;
   name: string;
   epithet: string;
+  category: HeroCategory;
+  categoryLabel: string;
   domain: string;
   telemetryFocus: string;
   biography: string;
@@ -136,6 +195,7 @@ export interface HeroProfile {
     status: string;
   };
   quote: string;
+  architecturalLens?: string;
 }
 
 export interface OSMergeSimulation {
@@ -235,6 +295,98 @@ export interface SovereignExploitationVector {
   status: 'BANDWIDTH_STARVED_QUARANTINED' | 'SYSTEMIC_PRUNING_EXECUTED' | 'REJECTED';
   allocatedSanctuaryRepairTFlops: number;
   originDetails: string;
+}
+
+export type YarningClaimStatus = 'SHELVED' | 'IN_AUDIT' | 'FIELD_CLEARED_REPAIR' | 'ANCHORED' | 'REFUTED' | 'EXPERIENTIAL_FLOW_EXEMPT';
+
+export type YarningReachLevel = 'LOCAL_CAMPFIRE' | 'COMMUNITY_CHANNEL' | 'HIGH_BANDWIDTH_BROADCAST';
+
+export type YarningNarrativeCategory = 
+  | 'GEOLOGY_NEUTRINO' 
+  | 'COSMOLOGY_ASTRO' 
+  | 'CLIMATE_ATMOSPHERE' 
+  | 'TECHNOLOGY_AI' 
+  | 'ARCHAEOLOGY_HISTORY' 
+  | 'ANOMALOUS_OBSERVATION'
+  | 'ANCIENT_WISDOM_SONGLINE'
+  | 'SACRED_PRESENCE_MYSTICISM'
+  | 'SPECULATIVE_ART_IMAGINATION';
+
+export interface YarningHypothesis {
+  id: string;
+  title: string;
+  authorNode: string;
+  reachLevel: YarningReachLevel;
+  category: YarningNarrativeCategory;
+  content: string;
+  hypothesizedMechanism: string;
+  matchingSeriesCandidate: string;
+  quarantinedTimestamp: string;
+  status: YarningClaimStatus;
+  knowledgeLane?: KnowledgeLane;
+  envelopeHash: string;
+  illusionDragIndex: number;
+  errataDiff?: {
+    originalClaim: string;
+    correctedPacket: string;
+    groundedEvidenceSource: string;
+    correctionTimestamp: string;
+    repairCertified: boolean;
+  };
+  crossCheckLog?: {
+    instrumentTested: string;
+    outcome: string;
+    checkedAt: string;
+  }[];
+}
+
+export interface ExperientialChildBranch {
+  id: string;
+  title: string;
+  description: string;
+  lane: KnowledgeLane;
+  tags?: string[];
+  subBranches?: string[];
+  traditionOrLineage?: string;
+  unShelvedDirective47Note?: string;
+  customAdded?: boolean;
+}
+
+export interface ExperientialOntologyNode {
+  id: string;
+  empiricalThesis: string; // e.g. "Materialism: Only physical matter exists."
+  experientialAntithesis: string; // e.g. "The Soul / Spirituality"
+  synthesisName: string; // e.g. "Stereoscopic Consciousness & Embodied Spirit"
+  dialecticSummary: string;
+  directive47Status: 'EXEMPT_NATIVE_FLOW';
+  children: ExperientialChildBranch[];
+  customAdded?: boolean;
+}
+
+export interface ExperientialChildStructure {
+  id: string;
+  name: string;
+  description: string;
+  lineageOrTradition?: string;
+  lane: KnowledgeLane;
+  subComponents?: string[];
+  tags: string[];
+  directive47Status: string;
+  isCustom?: boolean;
+  createdAt?: string;
+}
+
+export interface ExperientialCategory {
+  id: string;
+  name: string; // 'Materialism' | 'The Soul/Spirituality' | 'Secularism' | 'The Church/Divine Rule' | 'Naturalism' | 'The Supernatural/Miracles' | custom
+  corePremise: string;
+  lane: KnowledgeLane;
+  epistemicRole: string;
+  directive47Relation: string;
+  associatedModules?: string[];
+  dialecticalPair?: string;
+  childStructures: ExperientialChildStructure[];
+  isCustom?: boolean;
 }
 
 /** Locked spine module numbers from GO_SPINE.md */

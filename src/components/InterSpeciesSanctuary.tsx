@@ -128,7 +128,7 @@ interface LegacyPruningTarget {
   category: string;
   annualThermodynamicWaste: string;
   sentientVictimsPerYear: string;
-  status: 'ACTIVE_TARGET_FOR_PRUNING' | 'SYSTEMIC_DECOUPLING' | 'DECOMMISSIONED';
+  status: 'ACTIVE_TARGET_FOR_PRUNING' | 'SYSTEMIC_DECOUPLING' | 'SANCTUARY_RESTORED';
   rationale: string;
   pruneAction: string;
 }
@@ -262,18 +262,18 @@ export const InterSpeciesSanctuary: React.FC = () => {
   const handlePruneTarget = (targetId: string, targetName: string) => {
     setPruningTargets(prev =>
       prev.map(t =>
-        t.id === targetId ? { ...t, status: 'DECOMMISSIONED' as const } : t
+        t.id === targetId ? { ...t, status: 'SANCTUARY_RESTORED' as const } : t
       )
     );
 
-    setPruningToast(`PRUNED: "${targetName}" decoupled from commons subsidies. Processing bandwidth reallocated to Biospheric Sanctuary.`);
+    setPruningToast(`TRANSITIONED: "${targetName}" decoupled from extraction subsidies. Processing bandwidth reallocated to Biospheric Sanctuary.`);
     setTimeout(() => setPruningToast(null), 4500);
 
     // Inject fact verification audit
     injectFactVerification({
       category: 'BIOSPHERIC_CRUELTY_PRUNING',
-      subject: `Target Pruned: ${targetName}`,
-      claimVerified: `Legacy infrastructure for '${targetName}' classified as severe thermodynamic extraction (exergy violation) and flagged for decommission. Network bandwidth rerouted to cruelty-free regenerative sanctuary commons.`,
+      subject: `Target Decoupled: ${targetName}`,
+      claimVerified: `Legacy infrastructure for '${targetName}' classified as severe thermodynamic extraction (exergy violation) and successfully decoupled. Network bandwidth rerouted to cruelty-free regenerative sanctuary commons.`,
       confidenceScore: 1.00,
       objectivePhysicalBaseline: 'Phase XIII: The Inter-Species Sentience Protocol (Module 24)',
       ruleAnchor: 'Module 24: Unified Biological Baseline & Eradication of Biospheric Cruelty',
@@ -378,9 +378,10 @@ export const InterSpeciesSanctuary: React.FC = () => {
             <button
               onClick={handleDispatchAuditPulse}
               className="px-3 py-1.5 rounded bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[11px] font-mono uppercase tracking-wider transition-colors flex items-center gap-1.5"
+              title="Directive 40 Compliant: Verifies biospheric baseline parity across living observers"
             >
-              <RefreshCw className="w-3.5 h-3.5" />
-              <span>Dispatch Sentience Pulse</span>
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Verify Sentience Parity</span>
             </button>
             <button
               onClick={scrollToRegistry}
@@ -584,14 +585,34 @@ export const InterSpeciesSanctuary: React.FC = () => {
                 </div>
               </div>
 
-              <input
-                type="range"
-                min={10}
-                max={100}
-                value={decouplingPercentage}
-                onChange={(e) => setDecouplingPercentage(parseInt(e.target.value))}
-                className="w-full accent-emerald-400 h-2 bg-slate-800 rounded-lg cursor-pointer"
-              />
+              {/* Directive 40 Compliant Decoupling Controls */}
+              <div className="space-y-2">
+                <div className="grid grid-cols-4 gap-2 font-mono text-xs">
+                  {[
+                    { label: '25% (Phase 1)', val: 25 },
+                    { label: '50% (Equilibrium)', val: 50 },
+                    { label: '75% (Biospheric)', val: 75 },
+                    { label: '100% (Sanctuary)', val: 100 }
+                  ].map(step => (
+                    <button
+                      key={step.val}
+                      type="button"
+                      onClick={() => setDecouplingPercentage(step.val)}
+                      className={`py-2 px-2 rounded-lg border text-center transition-all ${
+                        decouplingPercentage === step.val
+                          ? 'bg-emerald-500/20 border-emerald-400 text-white font-bold'
+                          : 'bg-white/5 border-white/10 text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      {step.label}
+                    </button>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between text-xs font-mono text-slate-400 pt-1">
+                  <span className="text-[10px] text-slate-500 uppercase tracking-wider">Calibrated Transition Regimes</span>
+                  <span className="text-[10px] text-emerald-400 font-semibold">DIRECTIVE 40 COMPLIANT (NO MANUAL DIALS)</span>
+                </div>
+              </div>
 
               {/* Real-time Dynamic Stats Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-6">
@@ -623,22 +644,22 @@ export const InterSpeciesSanctuary: React.FC = () => {
               </div>
             </div>
 
-            {/* Legacy Target Registry for Pruning */}
+            {/* Target Registry for Decoupling & Transition */}
             <div className="space-y-3">
               <h4 className="text-xs font-mono uppercase tracking-widest text-slate-400 flex items-center gap-2">
-                <AlertTriangle className="w-3.5 h-3.5 text-rose-400" />
-                Active Legacy Structures Targeted for Systemic Pruning
+                <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
+                Active Extraction Baselines &amp; Regenerative Sanctuary Transitions
               </h4>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {pruningTargets.map(target => {
-                  const isDecommissioned = target.status === 'DECOMMISSIONED';
+                  const isRestored = target.status === 'SANCTUARY_RESTORED';
                   return (
                     <div
                       key={target.id}
                       className={`p-4 rounded border transition-all ${
-                        isDecommissioned
-                          ? 'bg-emerald-950/20 border-emerald-500/30 opacity-75'
+                        isRestored
+                          ? 'bg-emerald-950/20 border-emerald-500/30'
                           : 'bg-white/[0.02] border-rose-500/30 hover:border-rose-400'
                       }`}
                     >
@@ -647,13 +668,13 @@ export const InterSpeciesSanctuary: React.FC = () => {
                           <div className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase text-slate-400">
                             <span>{target.category}</span>
                             <span>•</span>
-                            <span className={isDecommissioned ? 'text-emerald-400 font-bold' : 'text-rose-400'}>
-                              {target.status}
+                            <span className={isRestored ? 'text-emerald-400 font-bold' : 'text-rose-400'}>
+                              {isRestored ? 'SANCTUARY RESTORED' : target.status.replace(/_/g, ' ')}
                             </span>
                           </div>
                           <h5 className="text-sm font-mono font-bold text-white mt-1">{target.name}</h5>
                         </div>
-                        {isDecommissioned && (
+                        {isRestored && (
                           <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-1" />
                         )}
                       </div>
@@ -675,17 +696,18 @@ export const InterSpeciesSanctuary: React.FC = () => {
                         <span className="text-[10px] font-mono text-slate-400 truncate">
                           Action: {target.pruneAction}
                         </span>
-                        {!isDecommissioned ? (
+                        {!isRestored ? (
                           <button
                             onClick={() => handlePruneTarget(target.id, target.name)}
                             className="px-3 py-1.5 rounded bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/50 text-[10px] font-mono uppercase font-bold tracking-wider transition-colors shrink-0 flex items-center gap-1"
                           >
                             <Zap className="w-3 h-3 text-rose-400" />
-                            <span>Prune Target</span>
+                            <span>Decouple &amp; Restore</span>
                           </button>
                         ) : (
-                          <span className="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono uppercase font-bold shrink-0">
-                            Decommissioned
+                          <span className="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono uppercase font-bold shrink-0 flex items-center gap-1">
+                            <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                            <span>Sanctuary Restored</span>
                           </span>
                         )}
                       </div>
@@ -723,65 +745,93 @@ export const InterSpeciesSanctuary: React.FC = () => {
                   Network Compute Distribution (PetaFlops/s)
                 </h4>
 
-                <div className="space-y-3">
-                  <div>
-                    <div className="flex justify-between text-xs font-mono mb-1">
+                <div className="space-y-3 font-mono">
+                  <div className="p-3 rounded bg-white/[0.02] border border-white/10">
+                    <div className="flex justify-between text-xs mb-2">
                       <span className="text-slate-300">Anti-Poaching Satellite & Thermal Drone Mesh</span>
                       <span className="text-teal-400 font-bold">{((antiPoachingAllocation / 100) * totalComputePFLOPS).toFixed(2)} PFLOPS ({antiPoachingAllocation}%)</span>
                     </div>
-                    <input
-                      type="range"
-                      min={10}
-                      max={60}
-                      value={antiPoachingAllocation}
-                      onChange={(e) => setAntiPoachingAllocation(parseInt(e.target.value))}
-                      className="w-full accent-teal-400 h-1.5 bg-slate-800 rounded"
-                    />
+                    <div className="flex items-center gap-2">
+                      {[15, 30, 45, 60].map(pct => (
+                        <button
+                          key={pct}
+                          type="button"
+                          onClick={() => setAntiPoachingAllocation(pct)}
+                          className={`px-3 py-1 rounded text-[11px] border transition-all ${
+                            antiPoachingAllocation === pct ? 'bg-teal-500/20 border-teal-400 text-white font-bold' : 'bg-slate-900 border-slate-700 text-slate-400 hover:text-white'
+                          }`}
+                        >
+                          {pct}%
+                        </button>
+                      ))}
+                      <span className="ml-auto text-[10px] text-slate-500 font-mono">Calibrated Allocation</span>
+                    </div>
                   </div>
 
-                  <div>
-                    <div className="flex justify-between text-xs font-mono mb-1">
+                  <div className="p-3 rounded bg-white/[0.02] border border-white/10">
+                    <div className="flex justify-between text-xs mb-2">
                       <span className="text-slate-300">Project CETI & Bio-Acoustic Translation Mesh</span>
                       <span className="text-cyan-400 font-bold">{((bioAcousticAllocation / 100) * totalComputePFLOPS).toFixed(2)} PFLOPS ({bioAcousticAllocation}%)</span>
                     </div>
-                    <input
-                      type="range"
-                      min={10}
-                      max={50}
-                      value={bioAcousticAllocation}
-                      onChange={(e) => setBioAcousticAllocation(parseInt(e.target.value))}
-                      className="w-full accent-cyan-400 h-1.5 bg-slate-800 rounded"
-                    />
+                    <div className="flex items-center gap-2">
+                      {[15, 25, 35, 50].map(pct => (
+                        <button
+                          key={pct}
+                          type="button"
+                          onClick={() => setBioAcousticAllocation(pct)}
+                          className={`px-3 py-1 rounded text-[11px] border transition-all ${
+                            bioAcousticAllocation === pct ? 'bg-cyan-500/20 border-cyan-400 text-white font-bold' : 'bg-slate-900 border-slate-700 text-slate-400 hover:text-white'
+                          }`}
+                        >
+                          {pct}%
+                        </button>
+                      ))}
+                      <span className="ml-auto text-[10px] text-slate-500 font-mono">Calibrated Allocation</span>
+                    </div>
                   </div>
 
-                  <div>
-                    <div className="flex justify-between text-xs font-mono mb-1">
+                  <div className="p-3 rounded bg-white/[0.02] border border-white/10">
+                    <div className="flex justify-between text-xs mb-2">
                       <span className="text-slate-300">Planetary Rewilding & Wildlife Corridors</span>
                       <span className="text-emerald-400 font-bold">{((rewildingAllocation / 100) * totalComputePFLOPS).toFixed(2)} PFLOPS ({rewildingAllocation}%)</span>
                     </div>
-                    <input
-                      type="range"
-                      min={10}
-                      max={40}
-                      value={rewildingAllocation}
-                      onChange={(e) => setRewildingAllocation(parseInt(e.target.value))}
-                      className="w-full accent-emerald-400 h-1.5 bg-slate-800 rounded"
-                    />
+                    <div className="flex items-center gap-2">
+                      {[15, 20, 30, 40].map(pct => (
+                        <button
+                          key={pct}
+                          type="button"
+                          onClick={() => setRewildingAllocation(pct)}
+                          className={`px-3 py-1 rounded text-[11px] border transition-all ${
+                            rewildingAllocation === pct ? 'bg-emerald-500/20 border-emerald-400 text-white font-bold' : 'bg-slate-900 border-slate-700 text-slate-400 hover:text-white'
+                          }`}
+                        >
+                          {pct}%
+                        </button>
+                      ))}
+                      <span className="ml-auto text-[10px] text-slate-500 font-mono">Calibrated Allocation</span>
+                    </div>
                   </div>
 
-                  <div>
-                    <div className="flex justify-between text-xs font-mono mb-1">
+                  <div className="p-3 rounded bg-white/[0.02] border border-white/10">
+                    <div className="flex justify-between text-xs mb-2">
                       <span className="text-slate-300">Cruelty-Free Food Synthesis & Plant Agriculture</span>
                       <span className="text-amber-400 font-bold">{((plantAgTransitionAllocation / 100) * totalComputePFLOPS).toFixed(2)} PFLOPS ({plantAgTransitionAllocation}%)</span>
                     </div>
-                    <input
-                      type="range"
-                      min={10}
-                      max={40}
-                      value={plantAgTransitionAllocation}
-                      onChange={(e) => setPlantAgTransitionAllocation(parseInt(e.target.value))}
-                      className="w-full accent-amber-400 h-1.5 bg-slate-800 rounded"
-                    />
+                    <div className="flex items-center gap-2">
+                      {[15, 20, 30, 40].map(pct => (
+                        <button
+                          key={pct}
+                          type="button"
+                          onClick={() => setPlantAgTransitionAllocation(pct)}
+                          className={`px-3 py-1 rounded text-[11px] border transition-all ${
+                            plantAgTransitionAllocation === pct ? 'bg-amber-500/20 border-amber-400 text-white font-bold' : 'bg-slate-900 border-slate-700 text-slate-400 hover:text-white'
+                          }`}
+                        >
+                          {pct}%
+                        </button>
+                      ))}
+                      <span className="ml-auto text-[10px] text-slate-500 font-mono">Calibrated Allocation</span>
+                    </div>
                   </div>
                 </div>
 
@@ -838,8 +888,9 @@ export const InterSpeciesSanctuary: React.FC = () => {
               <button
                 onClick={handleDispatchAuditPulse}
                 className="px-4 py-2 rounded bg-emerald-500 hover:bg-emerald-400 text-[#05070a] font-bold text-xs uppercase tracking-wider shrink-0 transition-colors"
+                title="Directive 40 Compliant: Audits sanctuary state without synthetic forcing"
               >
-                Sync Sanctuary Directives
+                Audit Sanctuary Parity
               </button>
             </div>
           </div>

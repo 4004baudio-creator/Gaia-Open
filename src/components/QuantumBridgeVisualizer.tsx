@@ -151,8 +151,8 @@ export const QuantumBridgeVisualizer: React.FC<QuantumBridgeVisualizerProps> = (
     }
   }, [coherenceScore]);
 
-  // Handle Triggering Coherence Pulse (GSAP timeline)
-  const handleTriggerPulse = () => {
+  // Handle Resonant Coherence Verification (GSAP observational ripple)
+  const handleVerifyCoherence = () => {
     if (isPulsing) return;
     setIsPulsing(true);
 
@@ -175,14 +175,14 @@ export const QuantumBridgeVisualizer: React.FC<QuantumBridgeVisualizerProps> = (
       setTimeout(() => setIsPulsing(false), 1200);
     }
 
-    // Execute fact verification pass to log the coherence pulse into immutable ledger
+    // Execute fact verification pass to log the coherence audit into immutable ledger
     const verified = executeFactVerificationPass(
       'Quantum Bridge Coherence & Planetary Baseline Synchrony',
       'QUANTUM_REALITY_TETHER',
-      `Quantum bridge pulse executed at ${userFrequency.toFixed(2)} Hz vs ${targetHz.toFixed(2)} Hz baseline with ${coherenceScore}% coherence and ${phaseDriftRad} rad phase offset.`
+      `Quantum bridge resonance verified at ${userFrequency.toFixed(2)} Hz vs ${targetHz.toFixed(2)} Hz baseline with ${coherenceScore}% coherence and ${phaseDriftRad} rad phase offset.`
     );
 
-    setLastSyncLog(`Phase-locked at ${userFrequency.toFixed(2)} Hz [Coherence: ${coherenceScore}%] -> Relayed to decentralized peer ledger.`);
+    setLastSyncLog(`Resonant alignment audited: ${userFrequency.toFixed(2)} Hz [Coherence: ${coherenceScore}%] -> Relayed to decentralized peer ledger.`);
   };
 
   return (
@@ -391,19 +391,20 @@ export const QuantumBridgeVisualizer: React.FC<QuantumBridgeVisualizerProps> = (
             <div className="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
               <div className="flex items-center gap-2">
                 <button
-                  onClick={handleTriggerPulse}
+                  onClick={handleVerifyCoherence}
                   disabled={isPulsing}
-                  className="px-4 py-2 rounded font-bold uppercase tracking-wider bg-[#00ff95] hover:bg-[#00e685] text-slate-950 flex items-center gap-2 shadow-[0_0_15px_rgba(0,255,149,0.3)] transition-all cursor-pointer disabled:opacity-50"
+                  className="px-4 py-2 rounded font-bold uppercase tracking-wider bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/50 flex items-center gap-2 shadow-[0_0_15px_rgba(0,255,149,0.15)] transition-all cursor-pointer disabled:opacity-50"
+                  title="Directive 40 Compliant: Audits phase alignment without forcing artificial spikes"
                 >
                   {isPulsing ? (
                     <>
-                      <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                      <span>Transmitting Pulse...</span>
+                      <RefreshCw className="w-3.5 h-3.5 animate-spin text-emerald-400" />
+                      <span>Auditing Resonance...</span>
                     </>
                   ) : (
                     <>
-                      <Zap className="w-3.5 h-3.5" />
-                      <span>Synchronize Coherence Pulse</span>
+                      <Activity className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Verify Resonant Coherence</span>
                     </>
                   )}
                 </button>
@@ -416,10 +417,10 @@ export const QuantumBridgeVisualizer: React.FC<QuantumBridgeVisualizerProps> = (
                     setEgoPruningActive(true);
                   }}
                   className="px-3 py-2 rounded bg-white/[0.03] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/10 transition-colors flex items-center gap-1.5"
-                  title="Auto-tune user frequency to exact Schumann 7.83 Hz"
+                  title="Align to natural Schumann baseline (7.83 Hz)"
                 >
                   <RotateCcw className="w-3.5 h-3.5 text-[#00ff95]" />
-                  <span>Auto-Tune to 7.83 Hz</span>
+                  <span>Align to Schumann Baseline (7.83 Hz)</span>
                 </button>
               </div>
 
@@ -448,46 +449,82 @@ export const QuantumBridgeVisualizer: React.FC<QuantumBridgeVisualizerProps> = (
                 </span>
               </div>
 
-              {/* Slider 1: User Biological Frequency */}
+              {/* Directive 40 Badge */}
+              <div className="flex items-center justify-between pb-1 border-b border-white/5">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-400">
+                  Directive 40 Compliant:
+                </span>
+                <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">
+                  ZERO FORCE • CALIBRATED BANDS
+                </span>
+              </div>
+
+              {/* Control 1: User Biological Frequency (Band Selectors) */}
               <div>
                 <div className="flex items-center justify-between text-xs font-mono mb-1.5">
-                  <span className="text-slate-400">Biological Frequency:</span>
+                  <span className="text-slate-400">Biological Frequency Band:</span>
                   <strong className="text-[#00ff95]">{userFrequency.toFixed(2)} Hz</strong>
                 </div>
-                <input
-                  type="range"
-                  min={3.0}
-                  max={25.0}
-                  step={0.05}
-                  value={userFrequency}
-                  onChange={(e) => setUserFrequency(parseFloat(e.target.value))}
-                  className="w-full accent-[#00ff95]"
-                />
-                <div className="flex justify-between text-[9px] font-mono text-slate-400 mt-1">
-                  <span>Theta (4 Hz)</span>
-                  <span className="text-[#00ff95] font-bold">Schumann (7.83 Hz)</span>
-                  <span>Beta (18 Hz)</span>
+                <div className="grid grid-cols-4 gap-1.5 mb-1.5">
+                  {[
+                    { label: 'Theta', hz: 4.0 },
+                    { label: 'Schumann', hz: 7.83 },
+                    { label: 'Alpha', hz: 10.0 },
+                    { label: 'Beta', hz: 16.0 }
+                  ].map(band => (
+                    <button
+                      key={band.label}
+                      type="button"
+                      onClick={() => setUserFrequency(band.hz)}
+                      className={`px-2 py-1.5 rounded text-[11px] font-mono border transition-all ${
+                        Math.abs(userFrequency - band.hz) < 0.3
+                          ? 'bg-[#00ff95]/20 border-[#00ff95] text-white font-bold'
+                          : 'bg-white/5 border-white/10 text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      <div>{band.label}</div>
+                      <div className="text-[9px] text-slate-500">{band.hz} Hz</div>
+                    </button>
+                  ))}
+                </div>
+                <div className="text-[10px] font-mono text-slate-500">
+                  Natural neuro-electromagnetic band classification
                 </div>
               </div>
 
-              {/* Slider 2: Mental Stillness & Vagal Tone */}
+              {/* Control 2: Mental Stillness & Vagal Tone */}
               <div>
                 <div className="flex items-center justify-between text-xs font-mono mb-1.5">
                   <span className="text-slate-400">Mental Stillness (HRV Coherence):</span>
                   <strong className="text-purple-300">{mentalStillness}%</strong>
                 </div>
-                <input
-                  type="range"
-                  min={10}
-                  max={100}
-                  step={1}
-                  value={mentalStillness}
-                  onChange={(e) => setMentalStillness(parseInt(e.target.value))}
-                  className="w-full accent-purple-500"
-                />
+                <div className="grid grid-cols-3 gap-1.5 mb-1.5">
+                  {[
+                    { label: 'Dispersed', val: 35 },
+                    { label: 'Balanced Vagal', val: 65 },
+                    { label: 'Deep Coherence', val: 95 }
+                  ].map(state => (
+                    <button
+                      key={state.label}
+                      type="button"
+                      onClick={() => setMentalStillness(state.val)}
+                      className={`px-2 py-1.5 rounded text-[11px] font-mono border transition-all ${
+                        Math.abs(mentalStillness - state.val) < 10
+                          ? 'bg-purple-500/20 border-purple-400 text-white font-bold'
+                          : 'bg-white/5 border-white/10 text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      <div>{state.label}</div>
+                      <div className="text-[9px] text-slate-500">{state.val}%</div>
+                    </button>
+                  ))}
+                </div>
+                <div className="text-[10px] font-mono text-slate-500">
+                  Heart Rate Variability (HRV) parasympathetic vagal regime
+                </div>
               </div>
 
-              {/* Slider 3: Extractive Interference Simulation */}
+              {/* Control 3: Extractive Interference Simulation */}
               <div>
                 <div className="flex items-center justify-between text-xs font-mono mb-1.5">
                   <span className="text-slate-400">Synthetic / Extractive Noise:</span>
@@ -495,15 +532,30 @@ export const QuantumBridgeVisualizer: React.FC<QuantumBridgeVisualizerProps> = (
                     {extractiveInterference}%
                   </strong>
                 </div>
-                <input
-                  type="range"
-                  min={0}
-                  max={100}
-                  step={1}
-                  value={extractiveInterference}
-                  onChange={(e) => setExtractiveInterference(parseInt(e.target.value))}
-                  className="w-full accent-[#ff4e00]"
-                />
+                <div className="grid grid-cols-3 gap-1.5 mb-1.5">
+                  {[
+                    { label: 'Zero Noise', val: 5 },
+                    { label: 'Ambient Drag', val: 28 },
+                    { label: 'High Extraction', val: 65 }
+                  ].map(noise => (
+                    <button
+                      key={noise.label}
+                      type="button"
+                      onClick={() => setExtractiveInterference(noise.val)}
+                      className={`px-2 py-1.5 rounded text-[11px] font-mono border transition-all ${
+                        Math.abs(extractiveInterference - noise.val) < 10
+                          ? 'bg-[#ff4e00]/20 border-[#ff4e00] text-white font-bold'
+                          : 'bg-white/5 border-white/10 text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      <div>{noise.label}</div>
+                      <div className="text-[9px] text-slate-500">{noise.val}%</div>
+                    </button>
+                  ))}
+                </div>
+                <div className="text-[10px] font-mono text-slate-500">
+                  Calibrated ambient electromagnetic drag level
+                </div>
               </div>
 
               {/* Toggle: Ego-Pruning & Baseline Tether (Module 19 Mandate) */}

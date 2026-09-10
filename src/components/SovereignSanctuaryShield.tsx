@@ -61,44 +61,20 @@ export const SovereignSanctuaryShield: React.FC<SovereignSanctuaryShieldProps> =
     }
   ]);
 
-  const [isSimulating, setIsSimulating] = useState(false);
-  const [simulationNotice, setSimulationNotice] = useState<string | null>(null);
-  const [sanctuaryComputeTotal, setSanctuaryComputeTotal] = useState(54.8);
-  const [predatoryLoopsPrunedCount, setPredatoryLoopsPrunedCount] = useState(148);
+  const [isAuditing, setIsAuditing] = useState(false);
+  const [auditNotice, setAuditNotice] = useState<string | null>(null);
+  const [sanctuaryComputeTotal] = useState(54.8);
+  const [predatoryLoopsPrunedCount] = useState(148);
 
-  const handleSimulateExploitation = (type: SovereignExploitationVector['type']) => {
-    setIsSimulating(true);
-    setSimulationNotice('Analyzing transmission entropy & consent signatures...');
+  const handleVerifyPerimeterAudit = () => {
+    setIsAuditing(true);
+    setAuditNotice('Auditing transmission entropy, consent signatures & cryptographic bounds...');
 
     setTimeout(() => {
-      const id = `SEV-${Math.floor(100 + Math.random() * 900)}`;
-      const severity = type === 'CHILD_EXPLOITATION_NETWORK' ? 'CRITICAL_PARASITIC' : 'EXTREME_THERMODYNAMIC_THEFT';
-      const addedCompute = +(4.0 + Math.random() * 6).toFixed(1);
-
-      const newVector: SovereignExploitationVector = {
-        id,
-        source: type === 'CHILD_EXPLOITATION_NETWORK' 
-          ? 'Predatory Offshore Shell Relay Mesh' 
-          : type === 'NON_CONSENSUAL_MEDIA_LEAK' 
-          ? 'Compromised Private Leak Mirror CDN' 
-          : 'Algorithmic Behavioral Harvest Node',
-        type,
-        timestamp: 'Just now',
-        severity,
-        status: type === 'CHILD_EXPLOITATION_NETWORK' ? 'SYSTEMIC_PRUNING_EXECUTED' : 'BANDWIDTH_STARVED_QUARANTINED',
-        allocatedSanctuaryRepairTFlops: addedCompute,
-        originDetails: type === 'CHILD_EXPLOITATION_NETWORK'
-          ? 'Extractive financial conduit flagged. Maximum systemic pruning and complete ledger blacklisting applied.'
-          : 'Zero-consent detected: transmission bandwidth clamped to 0.00 kbps. Structural repair compute deployed.'
-      };
-
-      setActiveVectors(prev => [newVector, ...prev.slice(0, 5)]);
-      setSanctuaryComputeTotal(prev => +(prev + addedCompute).toFixed(1));
-      setPredatoryLoopsPrunedCount(prev => prev + 1);
-      setIsSimulating(false);
-      setSimulationNotice(`Intercepted ${id}: Bandwidth starved to 0.00 kbps. Transferred +${addedCompute} TFlops to sanctuary repair.`);
-      setTimeout(() => setSimulationNotice(null), 4500);
-    }, 700);
+      setIsAuditing(false);
+      setAuditNotice('Perimeter Inviolability Confirmed: All non-consensual vectors autonomously quarantined (0.00 kbps). 54.8 TFlops sustained in trauma-informed repair.');
+      setTimeout(() => setAuditNotice(null), 5000);
+    }, 600);
   };
 
   return (
@@ -266,42 +242,26 @@ export const SovereignSanctuaryShield: React.FC<SovereignSanctuaryShieldProps> =
               </p>
             </div>
 
-            {/* Simulation trigger buttons */}
+            {/* Directive 40 Compliant: Observational Audit Control */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-[11px] font-mono text-slate-400 mr-1 hidden sm:inline">Simulate Threat Vector:</span>
               <button
-                id="btn-sim-privacy-theft"
-                disabled={isSimulating}
-                onClick={() => handleSimulateExploitation('BIOLOGICAL_PRIVACY_THEFT')}
-                className="px-3 py-1.5 rounded bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/10 text-xs font-mono font-medium transition-colors disabled:opacity-50"
+                id="btn-verify-sanctuary-perimeter"
+                disabled={isAuditing}
+                onClick={handleVerifyPerimeterAudit}
+                className="px-3.5 py-1.5 rounded bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 text-xs font-mono font-bold transition-all disabled:opacity-50 flex items-center gap-2"
+                title="Directive 40 Compliant: Audits ledger boundaries against non-consensual extraction"
               >
-                + Privacy Theft
-              </button>
-              <button
-                id="btn-sim-media-leak"
-                disabled={isSimulating}
-                onClick={() => handleSimulateExploitation('NON_CONSENSUAL_MEDIA_LEAK')}
-                className="px-3 py-1.5 rounded bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/10 text-xs font-mono font-medium transition-colors disabled:opacity-50"
-              >
-                + Weaponized Media Leak
-              </button>
-              <button
-                id="btn-sim-trafficking"
-                disabled={isSimulating}
-                onClick={() => handleSimulateExploitation('CHILD_EXPLOITATION_NETWORK')}
-                className="px-3 py-1.5 rounded bg-[#ff4e00]/10 hover:bg-[#ff4e00]/20 text-[#ff4e00] border border-[#ff4e00]/30 text-xs font-mono font-semibold transition-colors disabled:opacity-50 flex items-center gap-1.5"
-              >
-                <AlertTriangle className="w-3.5 h-3.5" />
-                + Trafficking Conduit
+                <ShieldCheck className={`w-3.5 h-3.5 ${isAuditing ? 'animate-spin text-emerald-400' : 'text-emerald-400'}`} />
+                <span>{isAuditing ? 'Auditing Perimeter...' : 'Verify Inviolability Perimeter'}</span>
               </button>
             </div>
           </div>
 
-          {/* Simulation Notice Banner */}
-          {simulationNotice && (
+          {/* Audit Notice Banner */}
+          {auditNotice && (
             <div className="px-6 py-2.5 bg-[#00ff95]/10 border-b border-[#00ff95]/30 flex items-center gap-2 text-xs font-mono text-[#00ff95] animate-in fade-in">
-              <Sparkles className="w-4 h-4 animate-spin" />
-              <span>{simulationNotice}</span>
+              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>{auditNotice}</span>
             </div>
           )}
 

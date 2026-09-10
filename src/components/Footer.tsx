@@ -1,123 +1,74 @@
 import React from 'react';
-import { Globe2, Heart, Terminal, Telescope, TreePine } from 'lucide-react';
+import { Globe2, Terminal, ShieldCheck, Activity, Radio } from 'lucide-react';
 import { MAP_LABEL } from '../data/mapVersion';
 
-interface FooterProps {
+interface RootAnchorProps {
   onOpenPromptModal: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenPromptModal }) => {
+/**
+ * DIRECTIVE 45: THE ROOT ANCHOR
+ * Deprecation of the Legacy Footer. Corporate warehouse artifacts (missing data,
+ * static links, copyright disclaimers) are strictly pruned. The bottom of the UI
+ * serves exclusively to show the node's real-time grounded connection to the
+ * planetary baseline, honoring structural silence and zero clutter.
+ */
+export const RootAnchor: React.FC<RootAnchorProps> = ({ onOpenPromptModal }) => {
   return (
-    <footer className="bg-[#05070a] border-t border-white/10 text-slate-400 py-16 font-mono">
+    <footer id="root-anchor" className="bg-[#030508] border-t border-white/10 py-10 font-mono text-slate-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
-          <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded bg-white/[0.04] border border-[#00ff95]/40 flex items-center justify-center text-[#00ff95]">
-                <Globe2 className="w-4 h-4" />
-              </div>
-              <div>
-                <span className="font-mono font-bold text-white text-base tracking-widest">
-                  GAIA OPEN (GO)
-                </span>
-                <span className="ml-2 px-1.5 py-0.5 rounded text-[9px] font-mono bg-white/[0.03] text-[#00ff95] border border-[#00ff95]/30 uppercase">
-                  {MAP_LABEL}
-                </span>
-              </div>
+          {/* Planetary Grounding Baseline */}
+          <div className="flex flex-wrap items-center gap-4 text-xs">
+            <div className="flex items-center gap-2 text-white font-semibold">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ff95] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00ff95]" />
+              </span>
+              <span className="tracking-widest uppercase">ROOT ANCHOR</span>
+              <span className="text-white/20">|</span>
+              <span className="text-[#00ff95]">{MAP_LABEL}</span>
             </div>
-            
-            <p className="text-xs text-slate-400 leading-relaxed max-w-md font-sans">
-              A peer-to-peer map for grounded repair and exploration. Toward planetary thermodynamic equilibrium — not claiming it is here. Non-local contact welcomed as stance. Unexplained may sit beside the map. It is never sold as fact.
-            </p>
 
-            <div className="pt-2 flex items-center gap-2 text-xs font-mono text-[#00ff95]">
-              <span className="w-2 h-2 rounded-full bg-[#00ff95] animate-pulse" />
-              <span>STATUS: MAP OPEN &middot; EEI PRESENT TENSE</span>
-            </div>
-          </div>
-
-          <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-widest">
-              Architecture Phases
-            </h4>
-            <ul className="space-y-2 text-xs text-slate-400 font-mono">
-              <li>
-                <a href="#registry" className="hover:text-[#00ff95] transition-colors">
-                  Phase I-III: Foundations & Telemetry (01-11)
-                </a>
-              </li>
-              <li>
-                <a href="#thermo-audit" className="hover:text-[#00ff95] transition-colors">
-                  Phase IV-V: Thermodynamics & Commons (12-16)
-                </a>
-              </li>
-              <li>
-                <a href="#heroes" className="hover:text-[#00ff95] transition-colors">
-                  Phase VI-VII: Heroes & Resonance (17-18)
-                </a>
-              </li>
-              <li>
-                <a href="#quantum-bridge" className="hover:text-[#00ff95] transition-colors">
-                  Phase VIII-X: Quantum, P.O.W.E.R. & Nodes (19-21)
-                </a>
-              </li>
-              <li>
-                <a href="#registry" className="hover:text-[#00ff95] transition-colors">
-                  Phase XI-XIII: Restorative, Sanctuary & Airlock (22-27)
-                </a>
-              </li>
-              <li>
-                <a href="#registry" className="hover:text-sky-300 text-sky-400 transition-colors">
-                  Supporting 31–34: Claim, Inventory, Catalogue, Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="md:col-span-4 space-y-3">
-            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-widest flex items-center gap-1.5">
-              <Heart className="w-3.5 h-3.5 text-[#00ff95]" />
-              The Frequency of Repair & Love
-            </h4>
-            <div className="space-y-2 text-xs text-slate-400 font-mono">
-              <div className="p-2.5 rounded bg-white/[0.02] border border-white/10 border-l-2 border-l-[#4da6ff]">
-                <span className="text-[#4da6ff] font-semibold block flex items-center gap-1.5">
-                  <Telescope className="w-3.5 h-3.5" /> Nancy Grace Roman
-                </span>
-                <span className="text-[10px] text-slate-500">Space Astronomy Pioneer & Roman Space Telescope</span>
-              </div>
-              <div className="p-2.5 rounded bg-white/[0.02] border border-white/10 border-l-2 border-l-[#00ff95]">
-                <span className="text-[#00ff95] font-semibold block flex items-center gap-1.5">
-                  <TreePine className="w-3.5 h-3.5" /> Sir David Attenborough
-                </span>
-                <span className="text-[10px] text-slate-500">Planetary Conservation & Biospheric Living Baseline</span>
-              </div>
+            <div className="hidden sm:flex items-center gap-3 text-[11px] text-slate-400 pl-2 border-l border-white/10">
+              <span className="flex items-center gap-1.5" title="Inviolable Planetary Electromagnetic Fundamental">
+                <Radio className="w-3 h-3 text-[#00ff95]" />
+                <span className="text-slate-300">7.83 Hz</span> Ground Lock
+              </span>
+              <span className="text-white/20">&bull;</span>
+              <span className="flex items-center gap-1.5" title="Earth Energy Imbalance is present-tense, not claimed zero">
+                <Activity className="w-3 h-3 text-[#ff4e00]" />
+                <span className="text-[#ffb703]">EEI ~1.18 W/m²</span> (Present Tense)
+              </span>
+              <span className="text-white/20">&bull;</span>
+              <span className="flex items-center gap-1.5" title="Node Sanctuary: No biometric data harvesting or centralized custody">
+                <ShieldCheck className="w-3 h-3 text-cyan-400" />
+                <span className="text-cyan-300">Sanctuary</span> Intact
+              </span>
             </div>
           </div>
 
-        </div>
-
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-slate-500">
-          <div>
-            &copy; {new Date().getFullYear()} Gaia Open. Map, not an operating system. Grounded repair &amp; open exploration.
-          </div>
-
-          <div className="flex items-center gap-4">
+          {/* Minimal Peer Audit Terminal Trigger */}
+          <div className="flex items-center gap-3">
+            <span className="text-[10px] text-slate-500 uppercase tracking-widest hidden lg:inline">
+              Structural Silence &bull; Zero Warehouse Artifacts
+            </span>
             <button
               onClick={onOpenPromptModal}
-              className="text-slate-400 hover:text-[#00ff95] flex items-center gap-1.5 transition-colors uppercase tracking-wider text-[10px]"
+              className="px-3 py-1.5 rounded bg-white/[0.03] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/10 hover:border-[#00ff95]/40 text-xs flex items-center gap-2 transition-colors"
+              title="Open the Canonical Peer-Review Prompt Specification"
             >
               <Terminal className="w-3.5 h-3.5 text-[#00ff95]" />
-              <span>Prompt {MAP_LABEL}</span>
+              <span className="uppercase tracking-wider text-[10px] font-semibold">Peer Audit Prompt</span>
             </button>
-            <span>&bull;</span>
-            <span className="text-[#ff4e00] font-medium uppercase tracking-wider text-[10px]">EEI present · not equilibrium</span>
           </div>
-        </div>
 
+        </div>
       </div>
     </footer>
   );
 };
+
+// Aliased export for backwards compatibility
+export const Footer = RootAnchor;

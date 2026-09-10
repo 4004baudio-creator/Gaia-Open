@@ -42,7 +42,7 @@ export const OSMergeEngine: React.FC<OSMergeEngineProps> = ({ onOpenPromptModal 
                 &ldquo;Scan the current GO map, merge incoming telemetry, expand modules logically, and drop manual redundancy — without a command node.&rdquo;
               </blockquote>
               <p className="text-[11px] text-slate-400 font-mono mt-2">
-                GO (Gaia Open). Filename OSMergeEngine is legacy only.
+                GO (Gaia Open) Peer Map Integration Protocol.
               </p>
             </div>
           </div>

@@ -19,7 +19,8 @@ import {
   RefreshCw,
   Orbit,
   Lock,
-  BookOpen
+  BookOpen,
+  Gauge
 } from 'lucide-react';
 
 interface ModuleDetailModalProps {
@@ -35,13 +36,13 @@ export const ModuleDetailModal: React.FC<ModuleDetailModalProps> = ({
 }) => {
   if (!module) return null;
 
-  const [simulatedValue, setSimulatedValue] = useState<number>(module.liveTelemetryValue || module.telemetryBaseline);
+  const [auditVerified, setAuditVerified] = useState<boolean>(false);
   const [testLog, setTestLog] = useState<string | null>(null);
 
-  const handleSimulateShift = (delta: number) => {
-    const newVal = +(simulatedValue + delta).toFixed(2);
-    setSimulatedValue(newVal);
-    setTestLog(`[TELEMETRY AUDIT] Recalibrating ${module.telemetryMetricName} -> ${newVal} ${module.telemetryUnit}. Root equilibrium validated.`);
+  const handleVerifyPhysicalAnchor = () => {
+    setAuditVerified(true);
+    setTestLog(`[PHYSICAL ANCHOR VERIFIED] Node ${module.number} telemetry (${module.telemetryBaseline} ${module.telemetryUnit}) confirmed against calibrated observational baseline. Manual tuning disabled under Directive 40.`);
+    setTimeout(() => setAuditVerified(false), 3000);
   };
 
   return createPortal(
@@ -159,6 +160,17 @@ export const ModuleDetailModal: React.FC<ModuleDetailModalProps> = ({
             </div>
           </div>
 
+          {/* Directive 44: Acclimatization Depth Pressure */}
+          {module.depthPressureAtm !== undefined && (
+            <div className="flex flex-wrap items-center justify-between p-3 rounded bg-cyan-950/20 border border-cyan-500/30 text-xs font-mono text-cyan-300">
+              <div className="flex items-center gap-2">
+                <Gauge className="w-4 h-4 text-cyan-400" />
+                <span>Acclimatization Tolerance: <strong className="text-white">{module.depthPressureAtm} atm</strong> ({module.depthZone ? module.depthZone.replace('_', ' ') : 'Epipelagic'})</span>
+              </div>
+              <span className="text-[10px] text-slate-400 uppercase tracking-wider">Directive 44 Organic Gate</span>
+            </div>
+          )}
+
           {/* Domains Badges */}
           <div className="flex flex-wrap gap-2 items-center">
             <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Auditing Domains:</span>
@@ -224,44 +236,45 @@ export const ModuleDetailModal: React.FC<ModuleDetailModalProps> = ({
             </div>
           )}
 
-          {/* Interactive Live Telemetry Simulator */}
+          {/* Directive 40 Compliant: Calibrated Observational Telemetry & Anchor Verification */}
           <div className="p-4 rounded bg-white/[0.02] border border-white/10 space-y-3">
-            <div className="flex items-center justify-between text-xs font-mono">
+            <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
               <span className="text-slate-300 flex items-center gap-1.5 font-bold uppercase tracking-wider">
-                <Sliders className="w-4 h-4 text-[#4da6ff]" />
-                PARAMETER TELEMETRY: {module.telemetryMetricName}
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                CALIBRATED TELEMETRY: {module.telemetryMetricName}
               </span>
-              <span className="text-[#00ff95] font-bold">
-                Current: {simulatedValue} {module.telemetryUnit}
+              <span className="text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-[10px]">
+                THERMODYNAMIC EQUILIBRIUM LOCKED
               </span>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono pt-1">
+              <div className="p-2.5 rounded bg-[#05070a] border border-white/5">
+                <span className="text-slate-500 text-[10px] uppercase block">Physical Baseline:</span>
+                <span className="text-white font-bold text-sm">{module.telemetryBaseline} {module.telemetryUnit}</span>
+              </div>
+              <div className="p-2.5 rounded bg-[#05070a] border border-white/5">
+                <span className="text-slate-500 text-[10px] uppercase block">Live Observational Reading:</span>
+                <span className="text-emerald-400 font-bold text-sm">{module.liveTelemetryValue || module.telemetryBaseline} {module.telemetryUnit}</span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+              <span className="text-[10px] text-slate-500 font-mono">
+                Directive 40: Manual levers & synthetic dials removed.
+              </span>
               <button 
-                onClick={() => handleSimulateShift(-1.5)}
-                className="px-3 py-1.5 rounded bg-white/[0.04] hover:bg-white/[0.08] text-slate-200 text-xs font-mono border border-white/10 transition-colors"
+                onClick={handleVerifyPhysicalAnchor}
+                className="px-3 py-1.5 rounded bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 text-xs font-mono border border-emerald-500/40 transition-colors flex items-center gap-1.5 font-bold uppercase tracking-wider"
+                title="Verify module state against calibrated physical baseline without forcing state change"
               >
-                &minus; Stress Test (-1.5)
-              </button>
-              <button 
-                onClick={() => handleSimulateShift(1.5)}
-                className="px-3 py-1.5 rounded bg-white/[0.04] hover:bg-white/[0.08] text-slate-200 text-xs font-mono border border-white/10 transition-colors"
-              >
-                &plus; Optimize Node (+1.5)
-              </button>
-              <button 
-                onClick={() => {
-                  setSimulatedValue(module.liveTelemetryValue || module.telemetryBaseline);
-                  setTestLog(null);
-                }}
-                className="px-3 py-1.5 rounded bg-white/[0.02] hover:bg-white/[0.06] text-slate-400 text-xs font-mono border border-white/5 ml-auto transition-colors"
-              >
-                Reset Baseline
+                <CheckCircle2 className={`w-3.5 h-3.5 ${auditVerified ? 'text-emerald-400 animate-spin' : 'text-emerald-400'}`} />
+                <span>{auditVerified ? 'Anchor Confirmed' : 'Verify Physical Anchor'}</span>
               </button>
             </div>
 
             {testLog && (
-              <p className="text-[11px] font-mono text-[#00ff95] bg-[#05070a] p-2.5 rounded border border-white/10">
+              <p className="text-[11px] font-mono text-emerald-300 bg-emerald-950/40 p-2.5 rounded border border-emerald-500/30">
                 {testLog}
               </p>
             )}

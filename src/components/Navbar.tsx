@@ -36,6 +36,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
     { id: 'go-reality', label: 'GO & Cosmological Reality', href: '#go-multi-scalar-reality' },
     { id: 'great-filter', label: 'Great Filter Gateway', href: '#great-filter-gateway' },
     { id: 'airlock', label: 'Whistleblower Airlock', href: '#airlock' },
+    { id: 'yarning-circle', label: 'Yarning Circle', href: '#yarning-circle' },
+    { id: 'thermohaline-protocol', label: 'Thermohaline Protocol (XVIII)', href: '#thermohaline-protocol' },
+    { id: 'mirror-pit', label: 'Mirror Pit (XIX)', href: '#mirror-pit' },
+    { id: 'autonomic-alignment', label: 'Autonomic Alignment (XX)', href: '#autonomic-alignment' },
+    { id: 'acclimatization', label: 'Acclimatization (XXI)', href: '#acclimatization', highlight: true },
+    { id: 'experiential-ontology', label: 'Binocular Vision & Lineage (XXII)', href: '#experiential-ontology', highlight: true },
     { id: 'heroes', label: 'Heroes Registry', href: '#heroes' },
     { id: 'thermo-audit', label: 'Thermodynamic Audit', href: '#thermo-audit' },
     { id: 'gateway', label: 'Specialist Gateway', href: '#gateway', highlight: true }

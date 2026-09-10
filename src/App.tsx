@@ -16,20 +16,32 @@ import { InterSpeciesSanctuary } from './components/InterSpeciesSanctuary';
 import { GaiaOpenMultiScalarReality } from './components/GaiaOpenMultiScalarReality';
 import { DistributedGreatFilterGateway } from './components/DistributedGreatFilterGateway';
 import { WhistleblowerAirlock } from './components/WhistleblowerAirlock';
+import { YarningCircle } from './components/YarningCircle';
+import { ThermohalineProtocol } from './components/ThermohalineProtocol';
+import { MirrorPitProtocol } from './components/MirrorPitProtocol';
+import { AutonomicAlignmentProtocol } from './components/AutonomicAlignmentProtocol';
+import { AcclimatizationPathway } from './components/AcclimatizationPathway';
+import { ExperientialOntology } from './components/ExperientialOntology';
 import { PromptViewerModal } from './components/PromptViewerModal';
 import { Footer } from './components/Footer';
 import { DragonflyDriftContainer } from './components/DragonflyDriftContainer';
 import { AutomatedUpdateProvider } from './context/AutomatedUpdateContext';
+import { MASTER_MODULES } from './data/modulesIndex';
+import { ExperientialCategory, ExperientialChildStructure } from './types';
 
 export default function App() {
   const [isPromptModalOpen, setIsPromptModalOpen] = useState(false);
   const [selectedAuditModuleId, setSelectedAuditModuleId] = useState<string | null>(null);
   const [gatewayTargetModuleId, setGatewayTargetModuleId] = useState<string | null>(null);
+  const [adoptedChildInfo, setAdoptedChildInfo] = useState<{
+    child: ExperientialChildStructure;
+    category: ExperientialCategory;
+  } | null>(null);
   const [activeSection, setActiveSection] = useState<string>('thesis');
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['thesis', 'registry', 'quantum-bridge', 'os-engine', 'heroes', 'thermo-audit', 'sanctuary', 'inter-species-sanctuary', 'go-multi-scalar-reality', 'great-filter-gateway', 'airlock', 'gateway'];
+      const sections = ['thesis', 'registry', 'quantum-bridge', 'os-engine', 'heroes', 'thermo-audit', 'sanctuary', 'inter-species-sanctuary', 'go-multi-scalar-reality', 'great-filter-gateway', 'airlock', 'yarning-circle', 'thermohaline-protocol', 'mirror-pit', 'autonomic-alignment', 'acclimatization', 'experiential-ontology', 'gateway'];
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -63,6 +75,14 @@ export default function App() {
       requestAnimationFrame(() => setGatewayTargetModuleId(moduleId));
     } else {
       setGatewayTargetModuleId(moduleId);
+    }
+  };
+
+  const handleAdoptChildStructure = (child: ExperientialChildStructure, category: ExperientialCategory) => {
+    setAdoptedChildInfo({ child, category });
+    const gatewayEl = document.getElementById('gateway');
+    if (gatewayEl) {
+      gatewayEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -139,8 +159,49 @@ export default function App() {
           </DragonflyDriftContainer>
 
           <DragonflyDriftContainer seed={11}>
+            <YarningCircle
+              onNavigateToModule={handleOpenAuditModule}
+            />
+          </DragonflyDriftContainer>
+
+          <DragonflyDriftContainer seed={12}>
+            <ThermohalineProtocol
+              onNavigateToModule={handleOpenAuditModule}
+            />
+          </DragonflyDriftContainer>
+
+          <DragonflyDriftContainer seed={13}>
+            <MirrorPitProtocol
+              onNavigateToModule={handleOpenAuditModule}
+              modules={MASTER_MODULES}
+            />
+          </DragonflyDriftContainer>
+
+          <DragonflyDriftContainer seed={14}>
+            <AutonomicAlignmentProtocol
+              onNavigateToModule={handleOpenAuditModule}
+              modules={MASTER_MODULES}
+            />
+          </DragonflyDriftContainer>
+
+          <DragonflyDriftContainer seed={16}>
+            <AcclimatizationPathway
+              onNavigateToModule={handleOpenAuditModule}
+              modules={MASTER_MODULES}
+            />
+          </DragonflyDriftContainer>
+
+          <DragonflyDriftContainer seed={17}>
+            <ExperientialOntology
+              onAdoptChildStructure={handleAdoptChildStructure}
+              selectedChildId={adoptedChildInfo?.child.id}
+            />
+          </DragonflyDriftContainer>
+
+          <DragonflyDriftContainer seed={15}>
             <SpecialistGateway
               preSelectedModuleId={gatewayTargetModuleId}
+              adoptedChildStructure={adoptedChildInfo}
             />
           </DragonflyDriftContainer>
 

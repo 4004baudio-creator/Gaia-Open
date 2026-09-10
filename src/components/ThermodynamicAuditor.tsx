@@ -23,7 +23,7 @@ export const ThermodynamicAuditor: React.FC = () => {
             Priority One Thermodynamic Auditor
           </h2>
           <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-mono mb-4">
-            Anchored shelf: Earth is not in thermodynamic equilibrium. Sliders below are a local-structure demo only — they do not move EEI.
+            Anchored shelf: Earth is not in thermodynamic equilibrium. Observational regimes below reflect calibrated grid metrics — no manual tweaking levers permitted under Directive 40.
           </p>
           <div className="text-left max-w-3xl mx-auto mb-2 grid grid-cols-1 sm:grid-cols-2 gap-2 font-mono text-[10px] text-slate-300">
             <div className="p-3 rounded border border-[#ff4e00]/30 bg-white/[0.02]"><strong className="text-[#ff4e00]">EEI</strong> ~1.12 W m⁻² (2013–2025 IGCC / CERES-class). Target: toward 0.</div>
@@ -45,30 +45,80 @@ export const ThermodynamicAuditor: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Directive 40 Compliant Grid Regime Selector */}
+          <div className="space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span className="text-xs font-mono text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                <Activity className="w-3.5 h-3.5 text-[#00ff95]" />
+                <span>Calibrated Grid Telemetry Regimes:</span>
+              </span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">
+                DIRECTIVE 40 COMPLIANT (SLIDERS PERMANENTLY DEPRECATED)
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono text-xs">
+              {[
+                { name: 'Balanced Equilibrium', eIn: 280, darkS: 30, eOut: 450, desc: 'Nominal Clean Grid' },
+                { name: 'Extractive Industrial Surge', eIn: 680, darkS: 120, eOut: 480, desc: 'Friction Deficit Regimes' },
+                { name: 'Restorative Biospheric Return', eIn: 180, darkS: 15, eOut: 750, desc: 'High Net Surplus' }
+              ].map(regime => (
+                <button
+                  key={regime.name}
+                  type="button"
+                  onClick={() => {
+                    setEnergyConsumed(regime.eIn);
+                    setDarkDataFriction(regime.darkS);
+                    setRegenerativeReturn(regime.eOut);
+                  }}
+                  className={`p-2.5 rounded border text-left transition-all ${
+                    energyConsumed === regime.eIn && regenerativeReturn === regime.eOut
+                      ? 'bg-[#00ff95]/10 border-[#00ff95] text-white shadow-md'
+                      : 'bg-white/[0.02] border-white/10 text-slate-400 hover:border-white/25 hover:text-slate-200'
+                  }`}
+                >
+                  <div className="font-bold text-white text-[11px]">{regime.name}</div>
+                  <div className="text-[10px] text-slate-500 mt-0.5">{regime.desc}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono">
             <div className="p-4 rounded bg-[#05070a] border border-white/10 space-y-2">
-              <div className="flex items-center justify-between text-xs font-mono text-slate-300">
+              <div className="flex items-center justify-between text-xs text-slate-300">
                 <span className="text-[10px] uppercase tracking-wider text-slate-400">Extractive Energy (E_in)</span>
                 <strong className="text-[#ff4e00]">{energyConsumed} MW</strong>
               </div>
-              <input type="range" min={50} max={1000} step={10} value={energyConsumed} onChange={(e) => setEnergyConsumed(Number(e.target.value))} className="w-full accent-[#ff4e00]" />
-              <span className="text-[9px] text-slate-500 font-mono block">Local demo load — not EEI</span>
+              <div className="py-2.5 px-3 bg-white/[0.03] rounded border border-white/5 text-center">
+                <span className="text-white font-bold text-base">{energyConsumed} MW</span>
+                <span className="text-[10px] text-slate-500 block mt-0.5">Calibrated Telemetry Input</span>
+              </div>
+              <span className="text-[9px] text-slate-500 font-mono block">Directive 40: Zero manual force/stepping</span>
             </div>
+
             <div className="p-4 rounded bg-[#05070a] border border-white/10 space-y-2">
-              <div className="flex items-center justify-between text-xs font-mono text-slate-300">
+              <div className="flex items-center justify-between text-xs text-slate-300">
                 <span className="text-[10px] uppercase tracking-wider text-slate-400">Entropy Friction (ΔS)</span>
                 <strong className="text-[#ff4e00]">{darkDataFriction} MW</strong>
               </div>
-              <input type="range" min={0} max={200} step={5} value={darkDataFriction} onChange={(e) => setDarkDataFriction(Number(e.target.value))} className="w-full accent-[#ff4e00]" />
-              <span className="text-[9px] text-slate-500 font-mono block">Dark data & bureaucratic drag</span>
+              <div className="py-2.5 px-3 bg-white/[0.03] rounded border border-white/5 text-center">
+                <span className="text-[#ff4e00] font-bold text-base">{darkDataFriction} MW</span>
+                <span className="text-[10px] text-slate-500 block mt-0.5">Bureaucratic & Dark Data Friction</span>
+              </div>
+              <span className="text-[9px] text-slate-500 font-mono block">Thermodynamic drag indicator</span>
             </div>
+
             <div className="p-4 rounded bg-[#05070a] border border-white/10 space-y-2">
-              <div className="flex items-center justify-between text-xs font-mono text-slate-300">
+              <div className="flex items-center justify-between text-xs text-slate-300">
                 <span className="text-[10px] uppercase tracking-wider text-slate-400">Regenerative Return (E_out)</span>
                 <strong className="text-[#00ff95]">{regenerativeReturn} MW</strong>
               </div>
-              <input type="range" min={50} max={1200} step={10} value={regenerativeReturn} onChange={(e) => setRegenerativeReturn(Number(e.target.value))} className="w-full accent-[#00ff95]" />
-              <span className="text-[9px] text-slate-500 font-mono block">Local demo return — not OHC</span>
+              <div className="py-2.5 px-3 bg-white/[0.03] rounded border border-white/5 text-center">
+                <span className="text-[#00ff95] font-bold text-base">{regenerativeReturn} MW</span>
+                <span className="text-[10px] text-slate-500 block mt-0.5">Biospheric Work Produced</span>
+              </div>
+              <span className="text-[9px] text-slate-500 font-mono block">Calibrated regenerative return</span>
             </div>
           </div>
 

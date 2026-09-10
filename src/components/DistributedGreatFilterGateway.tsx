@@ -537,50 +537,10 @@ export const DistributedGreatFilterGateway: React.FC = () => {
                 </span>
               </div>
 
-              {/* Quick Template Buttons */}
-              <div className="pt-2">
-                <span className="text-[11px] font-mono text-gray-400 block mb-2">Load Rapid Presets:</span>
-                <div className="flex flex-wrap gap-2">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setCustomNodeName('Permaculture Mycorrhizal Biochar Array');
-                      setCustomCallsign('Node Hokkaido-08');
-                      setCustomCategory('REGENERATIVE_ECOLOGY');
-                      setCustomSummary('Deploying native fungal inoculants and slow-pyrolysis biochar to restore degraded volcanic topsoil, boosting water retention by 32%.');
-                      setCustomPoPW('IoT soil probe array + autonomous Sentinel-2 NIR band reflectance hash');
-                    }}
-                    className="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 text-xs font-mono hover:bg-emerald-500/20"
-                  >
-                    + Soil Mycorrhizae (Aligned)
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setCustomNodeName('Predatory Water Bottling Concession Bot');
-                      setCustomCallsign('Privateer-WaterCorp');
-                      setCustomCategory('FINANCIAL_EXTRACTION');
-                      setCustomSummary('Automated legal claim filings to privatize municipal aquifer overflow for branded export packaging.');
-                      setCustomPoPW('Pure financial court filings; zero biological repair telemetry');
-                    }}
-                    className="px-2.5 py-1 rounded bg-rose-500/10 text-rose-300 border border-rose-500/20 text-xs font-mono hover:bg-rose-500/20"
-                  >
-                    + Water Extraction (Violation)
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setCustomNodeName('Tidal Kinetic Micro-Turbine Cluster');
-                      setCustomCallsign('Node Hebrides-01');
-                      setCustomCategory('ENERGY_EQUILIBRIUM');
-                      setCustomSummary('Sub-surface tidal flow turbines supplying 120kW predictable clean power with bio-fouling ultrasonic deterrence for marine mammals.');
-                      setCustomPoPW('Acoustic Doppler current profiler telemetry + offshore hydrophone feed');
-                    }}
-                    className="px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 text-xs font-mono hover:bg-cyan-500/20"
-                  >
-                    + Tidal Power (Aligned)
-                  </button>
-                </div>
+              {/* Observational Telemetry Standard (Directive 40 Compliant) */}
+              <div className="p-3 rounded bg-white/[0.02] border border-white/5 text-[11px] font-mono text-slate-400">
+                <span className="text-emerald-400 font-bold block mb-1">Empirical Telemetry Verification Standard:</span>
+                Submissions are audited against physically verifiable ground instruments (such as in-situ sensor hashes, acoustic doppler profilers, or public multispectral observations). Administrative assertions and synthetic forced presets are deprecated.
               </div>
 
               <div className="pt-4">

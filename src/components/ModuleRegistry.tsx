@@ -424,7 +424,37 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-sky-500/10 text-sky-300 hover:bg-sky-500/20 border border-sky-500/30'
                 }`}
               >
-                Phase XVII: Yarning Circle & Telemetry Repair (31)
+                Claim Shelf: Yarn Stays Yarn (31)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_XVIII')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_XVIII'
+                    ? 'bg-[#06b6d4] text-[#05070a] font-bold'
+                    : 'bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20 border border-cyan-500/30'
+                }`}
+              >
+                Phase XVIII: The Thermohaline Protocol (32-36)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_XIX')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_XIX'
+                    ? 'bg-[#a855f7] text-[#05070a] font-bold'
+                    : 'bg-purple-500/10 text-purple-300 hover:bg-purple-500/20 border border-purple-500/30'
+                }`}
+              >
+                Phase XIX: The Mirror Pit (37-39)
+              </button>
+              <button
+                onClick={() => setSelectedPhase('PHASE_XX')}
+                className={`px-3 py-2 rounded text-[11px] font-mono tracking-wider uppercase transition-all shrink-0 ${
+                  selectedPhase === 'PHASE_XX'
+                    ? 'bg-[#10b981] text-[#05070a] font-bold'
+                    : 'bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 border border-emerald-500/30'
+                }`}
+              >
+                Phase XX: Autonomic Alignment (40-42)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_EXPANSION')}
@@ -538,6 +568,14 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     </div>
                     
                     <div className="flex items-center gap-1.5">
+                      {module.depthPressureAtm && (
+                        <span 
+                          className="text-[8px] font-mono px-1.5 py-0.5 rounded bg-cyan-950/40 text-cyan-300 border border-cyan-500/30 font-semibold"
+                          title={`Directive 44: Acclimatization Depth Pressure ${module.depthPressureAtm} atm`}
+                        >
+                          {module.depthPressureAtm} atm
+                        </span>
+                      )}
                       {module.knowledgeLayer && (
                         <span className={`text-[8px] font-mono px-1.5 py-0.5 rounded border uppercase tracking-wider font-semibold ${getLayerBadgeStyle(module.knowledgeLayer)}`}>
                           {module.knowledgeLayer}

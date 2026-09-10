@@ -151,9 +151,9 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
       targetModules: [28, 29, 30]
     },
     {
-      title: 'The Rogan Conspiracy Repair & Speculative Data Quarantining (Module 31)',
+      title: 'The Claim Shelf: Yarn Stays Yarn & Like-With-Like Series (Module 31)',
       source: 'DECENTRALIZED_NODES' as ProtocolTriggerSource,
-      payload: 'Phase XVII Yarning Circle active: The Campfire Mechanic quarantines exploratory narratives from physical baselines. Speculative telemetry cross-checked via AI and peer consensus against hard physics (neutrino/geology). Broadcasters bear thermodynamic responsibility of reach; Field-Clearing Protocol resets collective understanding upon public correction (Module 31).',
+      payload: 'Claim Shelf protocol active: Campfire narratives permitted to exist as hypotheses without baseline ingestion. Like-with-like testing enforced against matching instrumented series. Reach raises the epistemic cost of error without crowning the speaker. Public correction keeping old packet and series side-by-side executes transparent data repair (Module 31).',
       targetModules: [31]
     },
     {
@@ -294,16 +294,17 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
               onClick={handleRunManualPulse}
               disabled={isScanning}
               className="px-3.5 py-2 rounded text-xs font-mono uppercase tracking-widest font-bold bg-[#00ff95] hover:bg-[#00e685] text-slate-950 flex items-center gap-2 shadow-[0_0_15px_rgba(0,255,149,0.3)] transition-all disabled:opacity-50"
+              title="Directive 40: Executes calibrated observational ingest audit without synthetic forcing"
             >
               {isScanning ? (
                 <>
                   <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                  <span>Scanning...</span>
+                  <span>Auditing...</span>
                 </>
               ) : (
                 <>
-                  <Zap className="w-3.5 h-3.5" />
-                  <span>Force Update Pulse</span>
+                  <Radio className="w-3.5 h-3.5" />
+                  <span>Calibrate Observational Ingest</span>
                 </>
               )}
             </button>
@@ -318,10 +319,10 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
 
             <button
               onClick={resetToMasterBaseline}
-              className="p-2 rounded bg-white/[0.03] hover:bg-[#ff4e00]/20 text-slate-400 hover:text-[#ff4e00] border border-white/10 transition-colors"
-              title="Reset Modules to Master 2.6 Baseline"
+              className="p-2 rounded bg-white/[0.03] hover:bg-emerald-500/20 text-slate-400 hover:text-emerald-400 border border-white/10 transition-colors"
+              title="Synchronize Modules to Master 2.6 Baseline"
             >
-              <Trash2 className="w-4 h-4" />
+              <RefreshCw className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -330,19 +331,28 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1 font-mono text-xs">
           <div>
             <label className="block text-[10px] uppercase tracking-wider text-slate-400 mb-1.5 flex items-center justify-between">
-              <span>Scan Interval:</span>
+              <span>Scan Interval (Calibrated Regimes):</span>
               <strong className="text-[#00ff95]">{config.scanIntervalSeconds}s</strong>
             </label>
-            <div className="flex items-center gap-2">
-              <input
-                type="range"
-                min={3}
-                max={30}
-                step={1}
-                value={config.scanIntervalSeconds}
-                onChange={(e) => updateConfig({ scanIntervalSeconds: Number(e.target.value) })}
-                className="w-full accent-[#00ff95]"
-              />
+            <div className="flex items-center gap-1.5">
+              {[
+                { val: 5, label: '5s Rapid' },
+                { val: 10, label: '10s Nominal' },
+                { val: 20, label: '20s Conserved' }
+              ].map(s => (
+                <button
+                  key={s.val}
+                  type="button"
+                  onClick={() => updateConfig({ scanIntervalSeconds: s.val })}
+                  className={`px-2.5 py-1 rounded text-xs border transition-all ${
+                    config.scanIntervalSeconds === s.val
+                      ? 'bg-[#00ff95]/20 border-[#00ff95] text-white font-bold'
+                      : 'bg-white/5 border-white/10 text-slate-400 hover:text-white'
+                  }`}
+                >
+                  {s.label}
+                </button>
+              ))}
             </div>
           </div>
 
