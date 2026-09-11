@@ -1,0 +1,20 @@
+{
+  "schema": "gaia.packet/v1",
+  "hash_rule": "NFC normalise, trim, collapse internal whitespace to single spaces, encode UTF-8, SHA-256 (hex lowercase)",
+  "vectors": [
+    {
+      "input": "Gaia is not an OS.",
+      "sha256": "f52edbaeb8c6501585a73d4af90c06fa220dd8c00c646048e9d81e0db7a052ad"
+    },
+    {
+      "input": "Gaia  is \\n not an OS.   ",
+      "sha256": "f52edbaeb8c6501585a73d4af90c06fa220dd8c00c646048e9d81e0db7a052ad",
+      "note": "stray whitespace collapses"
+    },
+    {
+      "input": "Gaia is not a kernel.",
+      "sha256": "259c0da002f443222afe625b4927ce204052224c00b7471826c778e144b25032",
+      "note": "one word changed"
+    }
+  ]
+}
