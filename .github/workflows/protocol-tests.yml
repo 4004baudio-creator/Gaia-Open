@@ -1,0 +1,27 @@
+name: protocol-tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "protocol/**"
+      - ".github/workflows/protocol-tests.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "protocol/**"
+      - ".github/workflows/protocol-tests.yml"
+  workflow_dispatch:
+
+jobs:
+  unittest:
+    name: protocol 56
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: run kit suite (stdlib only)
+        working-directory: protocol
+        run: PYTHONPATH=impl python -m unittest discover -s tests -t .
