@@ -1,11 +1,13 @@
 /**
  * GO (Gaia Open) — living map. Not an OS.
+ * Layout law: STRUCTURE.md — Hero, Registry, four houses, Handshake.
  */
 
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroMission } from './components/HeroMission';
 import { ModuleRegistry } from './components/ModuleRegistry';
+import { HouseBand } from './components/HouseBand';
 import { QuantumBridgeVisualizer } from './components/QuantumBridgeVisualizer';
 import { SpecialistGateway } from './components/SpecialistGateway';
 import { OSMergeEngine } from './components/OSMergeEngine';
@@ -28,6 +30,7 @@ import { Footer } from './components/Footer';
 import { DragonflyDriftContainer } from './components/DragonflyDriftContainer';
 import { AutomatedUpdateProvider } from './context/AutomatedUpdateContext';
 import { MASTER_MODULES } from './data/modulesIndex';
+import { HOUSES } from './data/houses';
 import { ExperientialCategory, ExperientialChildStructure } from './types';
 
 export default function App() {
@@ -42,20 +45,25 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['thesis', 'registry', 'quantum-bridge', 'os-engine', 'heroes', 'thermo-audit', 'sanctuary', 'inter-species-sanctuary', 'go-multi-scalar-reality', 'great-filter-gateway', 'airlock', 'yarning-circle', 'thermohaline-protocol', 'mirror-pit', 'autonomic-alignment', 'acclimatization', 'experiential-ontology', 'tangible-anchor', 'gateway'];
+      const sections = [
+        'thesis',
+        'registry',
+        'house-measure',
+        'house-shelf',
+        'house-care',
+        'house-explore',
+        'gateway'
+      ];
       const scrollPosition = window.scrollY + 200;
 
+      let current = 'thesis';
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(sectionId);
-            break;
-          }
+        if (el && scrollPosition >= el.offsetTop) {
+          current = sectionId;
         }
       }
+      setActiveSection(current);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -87,6 +95,11 @@ export default function App() {
     }
   };
 
+  const measure = HOUSES.find((h) => h.id === 'measure')!;
+  const shelf = HOUSES.find((h) => h.id === 'shelf')!;
+  const care = HOUSES.find((h) => h.id === 'care')!;
+  const explore = HOUSES.find((h) => h.id === 'explore')!;
+
   return (
     <AutomatedUpdateProvider>
       <div className="min-h-screen bg-[#05070a] text-slate-300 flex flex-col font-sans selection:bg-[#00ff95]/30 selection:text-[#00ff95] relative">
@@ -115,95 +128,63 @@ export default function App() {
             />
           </DragonflyDriftContainer>
 
-          <DragonflyDriftContainer seed={2}>
-            <QuantumBridgeVisualizer
-              onNavigateToModule={handleOpenAuditModule}
-            />
-          </DragonflyDriftContainer>
-
-          <DragonflyDriftContainer seed={3}>
-            <OSMergeEngine
-              onOpenPromptModal={() => setIsPromptModalOpen(true)}
-            />
-          </DragonflyDriftContainer>
-
-          <DragonflyDriftContainer seed={4}>
-            <HeroesSection
-              onSelectHeroModule={handleOpenAuditModule}
-            />
-          </DragonflyDriftContainer>
-
+          <HouseBand house={measure} />
           <DragonflyDriftContainer seed={5}>
             <ThermodynamicAuditor />
           </DragonflyDriftContainer>
-
-          <DragonflyDriftContainer seed={6}>
-            <SovereignSanctuaryShield
-              onOpenModule={handleOpenAuditModule}
-            />
+          <DragonflyDriftContainer seed={12}>
+            <ThermohalineProtocol onNavigateToModule={handleOpenAuditModule} />
           </DragonflyDriftContainer>
-
-          <DragonflyDriftContainer seed={7}>
-            <InterSpeciesSanctuary />
-          </DragonflyDriftContainer>
-
-          <DragonflyDriftContainer seed={8}>
-            <GaiaOpenMultiScalarReality />
-          </DragonflyDriftContainer>
-
           <DragonflyDriftContainer seed={9}>
             <DistributedGreatFilterGateway />
           </DragonflyDriftContainer>
-
-          <DragonflyDriftContainer seed={10}>
-            <WhistleblowerAirlock />
+          <DragonflyDriftContainer seed={3}>
+            <OSMergeEngine onOpenPromptModal={() => setIsPromptModalOpen(true)} />
           </DragonflyDriftContainer>
-
-          <DragonflyDriftContainer seed={11}>
-            <YarningCircle
-              onNavigateToModule={handleOpenAuditModule}
-            />
-          </DragonflyDriftContainer>
-
-          <DragonflyDriftContainer seed={12}>
-            <ThermohalineProtocol
-              onNavigateToModule={handleOpenAuditModule}
-            />
-          </DragonflyDriftContainer>
-
           <DragonflyDriftContainer seed={13}>
-            <MirrorPitProtocol
-              onNavigateToModule={handleOpenAuditModule}
-              modules={MASTER_MODULES}
-            />
+            <MirrorPitProtocol onNavigateToModule={handleOpenAuditModule} modules={MASTER_MODULES} />
           </DragonflyDriftContainer>
 
-          <DragonflyDriftContainer seed={14}>
-            <AutonomicAlignmentProtocol
-              onNavigateToModule={handleOpenAuditModule}
-              modules={MASTER_MODULES}
-            />
+          <HouseBand house={shelf} />
+          <DragonflyDriftContainer seed={11}>
+            <YarningCircle onNavigateToModule={handleOpenAuditModule} />
           </DragonflyDriftContainer>
-
-          <DragonflyDriftContainer seed={16}>
-            <AcclimatizationPathway
-              onNavigateToModule={handleOpenAuditModule}
-              modules={MASTER_MODULES}
-            />
-          </DragonflyDriftContainer>
-
           <DragonflyDriftContainer seed={17}>
             <ExperientialOntology
               onAdoptChildStructure={handleAdoptChildStructure}
               selectedChildId={adoptedChildInfo?.child.id}
             />
           </DragonflyDriftContainer>
-
           <DragonflyDriftContainer seed={18}>
-            <TangibleAnchor
-              onNavigateToModule={handleOpenAuditModule}
-              modules={MASTER_MODULES}
-            />
+            <TangibleAnchor onNavigateToModule={handleOpenAuditModule} modules={MASTER_MODULES} />
+          </DragonflyDriftContainer>
+          <DragonflyDriftContainer seed={4}>
+            <HeroesSection onSelectHeroModule={handleOpenAuditModule} />
+          </DragonflyDriftContainer>
+
+          <HouseBand house={care} />
+          <DragonflyDriftContainer seed={6}>
+            <SovereignSanctuaryShield onOpenModule={handleOpenAuditModule} />
+          </DragonflyDriftContainer>
+          <DragonflyDriftContainer seed={7}>
+            <InterSpeciesSanctuary />
+          </DragonflyDriftContainer>
+          <DragonflyDriftContainer seed={14}>
+            <AutonomicAlignmentProtocol onNavigateToModule={handleOpenAuditModule} modules={MASTER_MODULES} />
+          </DragonflyDriftContainer>
+          <DragonflyDriftContainer seed={16}>
+            <AcclimatizationPathway onNavigateToModule={handleOpenAuditModule} modules={MASTER_MODULES} />
+          </DragonflyDriftContainer>
+
+          <HouseBand house={explore} />
+          <DragonflyDriftContainer seed={2}>
+            <QuantumBridgeVisualizer onNavigateToModule={handleOpenAuditModule} />
+          </DragonflyDriftContainer>
+          <DragonflyDriftContainer seed={8}>
+            <GaiaOpenMultiScalarReality />
+          </DragonflyDriftContainer>
+          <DragonflyDriftContainer seed={10}>
+            <WhistleblowerAirlock />
           </DragonflyDriftContainer>
 
           <DragonflyDriftContainer seed={15}>
@@ -212,7 +193,6 @@ export default function App() {
               adoptedChildStructure={adoptedChildInfo}
             />
           </DragonflyDriftContainer>
-
         </main>
 
         <PromptViewerModal
@@ -220,9 +200,7 @@ export default function App() {
           onClose={() => setIsPromptModalOpen(false)}
         />
 
-        <Footer
-          onOpenPromptModal={() => setIsPromptModalOpen(true)}
-        />
+        <Footer onOpenPromptModal={() => setIsPromptModalOpen(true)} />
       </div>
     </AutomatedUpdateProvider>
   );

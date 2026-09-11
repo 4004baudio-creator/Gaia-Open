@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Sparkles, Copy, Check, Globe2, Terminal } from 'lucide-react';
 import { MASTER_OS_PROMPT_V32 } from '../data/heroesData';
 import { MAP_LABEL, MAP_VERSION } from '../data/mapVersion';
+import { HOUSES } from '../data/houses';
 
 interface NavbarProps {
   onOpenPromptModal: () => void;
@@ -27,31 +28,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
   };
 
   const navLinks = [
-    { id: 'thesis', label: 'The Sovereign Thesis', href: '#thesis' },
-    { id: 'registry', label: 'Locked Spine & Modules', href: '#registry' },
-    { id: 'quantum-bridge', label: 'Quantum Bridge', href: '#quantum-bridge' },
-    { id: 'go-engine', label: 'GO Merge Protocol', href: '#go-engine' },
-    { id: 'sanctuary', label: 'Sanctuary Shield', href: '#sanctuary' },
-    { id: 'inter-species', label: 'Inter-Species Sanctuary', href: '#inter-species-sanctuary' },
-    { id: 'go-reality', label: 'GO & Cosmological Reality', href: '#go-multi-scalar-reality' },
-    { id: 'great-filter', label: 'Great Filter Gateway', href: '#great-filter-gateway' },
-    { id: 'airlock', label: 'Whistleblower Airlock', href: '#airlock' },
-    { id: 'yarning-circle', label: 'Yarning Circle', href: '#yarning-circle' },
-    { id: 'thermohaline-protocol', label: 'Thermohaline Protocol (XVIII)', href: '#thermohaline-protocol' },
-    { id: 'mirror-pit', label: 'Mirror Pit (XIX)', href: '#mirror-pit' },
-    { id: 'autonomic-alignment', label: 'Autonomic Alignment (XX)', href: '#autonomic-alignment' },
-    { id: 'acclimatization', label: 'Acclimatization (XXI)', href: '#acclimatization', highlight: true },
-    { id: 'experiential-ontology', label: 'Binocular Vision & Lineage (XXII)', href: '#experiential-ontology', highlight: true },
-    { id: 'tangible-anchor', label: 'Tangible Anchor (XXIII)', href: '#tangible-anchor', highlight: true },
-    { id: 'heroes', label: 'Heroes Registry', href: '#heroes' },
-    { id: 'thermo-audit', label: 'Thermodynamic Audit', href: '#thermo-audit' },
-    { id: 'gateway', label: 'Specialist Gateway', href: '#gateway', highlight: true }
+    { id: 'thesis', label: 'Map', href: '#thesis' },
+    { id: 'registry', label: 'Registry', href: '#registry' },
+    ...HOUSES.map((h) => ({ id: h.sectionId, label: h.label, href: `#${h.sectionId}` })),
+    { id: 'gateway', label: 'Handshake', href: '#gateway', highlight: true as const }
   ];
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-[#05070a]/85 backdrop-blur-md border-b border-white/10 shadow-2xl shadow-black/80' 
+      scrolled
+        ? 'bg-[#05070a]/85 backdrop-blur-md border-b border-white/10 shadow-2xl shadow-black/80'
         : 'bg-[#05070a]/40 backdrop-blur-sm border-b border-white/5'
     }`}>
       <div className="bg-[#05070a]/90 border-b border-white/5 px-4 sm:px-8 py-1.5 text-[11px] font-mono flex items-center justify-between text-slate-400">
@@ -72,9 +58,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
 
         <div className="flex items-center gap-3">
           <span className="hidden sm:inline text-slate-400 text-[10px] tracking-widest uppercase">
-            MERGE PROTOCOL: <span className="text-[#00ff95]">LOCKED</span>
+            HOUSES · NO PHASE ADDRESS
           </span>
-          <button 
+          <button
             onClick={onOpenPromptModal}
             className="text-[10px] uppercase tracking-wider font-mono bg-white/[0.04] hover:bg-white/[0.09] text-white px-2.5 py-0.5 rounded border border-white/10 hover:border-[#00ff95]/50 transition-colors flex items-center gap-1.5"
           >
@@ -99,15 +85,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
           </div>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-1 font-mono text-xs tracking-wider uppercase">
+        <nav className="hidden md:flex items-center gap-1 font-mono text-xs tracking-wider uppercase">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
+            const highlight = 'highlight' in link && link.highlight;
             return (
               <a
                 key={link.id}
                 href={link.href}
                 className={`px-3 py-1.5 rounded transition-all ${
-                  link.highlight
+                  highlight
                     ? 'bg-[#00ff95]/10 text-[#00ff95] border border-[#00ff95]/40 hover:bg-[#00ff95]/20 font-bold'
                     : isActive
                     ? 'text-[#00ff95] bg-white/[0.05] border border-[#00ff95]/40 font-semibold'
@@ -124,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
           <button
             onClick={handleCopyPrompt}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-mono tracking-wider uppercase bg-white/[0.03] hover:bg-white/[0.08] text-slate-200 border border-white/10 hover:border-[#00ff95]/50 transition-all"
-            title={`Copy Master GO (Gaia Open) Prompt (${MAP_VERSION})`}
+            title={`Copy Master GO Prompt (${MAP_VERSION})`}
           >
             {copied ? (
               <>
@@ -145,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
             className="flex items-center gap-1.5 px-4 py-2 rounded text-xs uppercase tracking-widest font-bold bg-[#00ff95] text-[#05070a] hover:bg-white shadow-[0_0_15px_rgba(0,255,149,0.3)] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#05070a]" />
-            <span className="hidden sm:inline">Builder Handshake</span>
+            <span className="hidden sm:inline">Handshake</span>
             <span className="sm:hidden">Attach</span>
           </a>
         </div>
