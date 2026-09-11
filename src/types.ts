@@ -1,4 +1,4 @@
-export type PhaseCategory = 'PHASE_I_III' | 'PHASE_IV_V' | 'PHASE_VI_VII' | 'PHASE_VI' | 'PHASE_VIII' | 'PHASE_IX' | 'PHASE_X' | 'PHASE_XI' | 'PHASE_XII' | 'PHASE_XIII' | 'PHASE_XIV' | 'PHASE_XV' | 'PHASE_XVI' | 'PHASE_XVII' | 'PHASE_XVIII' | 'PHASE_XIX' | 'PHASE_XX' | 'PHASE_XXI' | 'PHASE_XXII' | 'PHASE_XXIII' | 'PHASE_EXPANSION';
+export type PhaseCategory = 'PHASE_I_III' | 'PHASE_IV_V' | 'PHASE_VI_VII' | 'PHASE_VI' | 'PHASE_VIII' | 'PHASE_IX' | 'PHASE_X' | 'PHASE_XI' | 'PHASE_XII' | 'PHASE_XIII' | 'PHASE_XIV' | 'PHASE_XV' | 'PHASE_XVI' | 'PHASE_XVII' | 'PHASE_XVIII' | 'PHASE_XIX' | 'PHASE_XX' | 'PHASE_XXI' | 'PHASE_XXII' | 'PHASE_XXIII' | 'PHASE_EXPANSION' | 'SUPPORTING';
 
 export type SpineTier = 'LOCKED' | 'SUPPORTING' | 'EXPANSION';
 
@@ -6,13 +6,6 @@ export type ModuleStructureTier = 'LOCKED_SPINE' | 'SUPPORTING' | 'EXPANSION_LEA
 
 export type KnowledgeLayer = 'ANCHORED' | 'PLAUSIBLE' | 'IMAGINED' | 'OPEN_FIELD';
 
-/**
- * Phase XXII: The Binocular Vision Protocol (Directives 46-48)
- * - EMPIRICAL_LANE: Contemporary science, mathematics, thermodynamics, and physical physics.
- * - LINEAGE_WISDOM_LANE: Thousands of years of human faith, mysticism, religion, ancient history, art, culture, monuments, artifacts, and sacred texts.
- * - BINOCULAR_SYNTHESIS: The "Neo Vision" stereoscopic synthesis where both lanes coexist without friction.
- * - EXPERIENTIAL_LANE: Backwards-compatible alias for Lineage & Wisdom Lane.
- */
 export type KnowledgeLane = 'EMPIRICAL_LANE' | 'LINEAGE_WISDOM_LANE' | 'BINOCULAR_SYNTHESIS' | 'EXPERIENTIAL_LANE';
 
 export type AcclimatizationDepthZone = 'EPIPELAGIC_SURFACE' | 'MESOPELAGIC_TWILIGHT' | 'BATHYPELAGIC_MIDNIGHT' | 'HADAL_ABYSS';
@@ -355,9 +348,9 @@ export interface ExperientialChildBranch {
 
 export interface ExperientialOntologyNode {
   id: string;
-  empiricalThesis: string; // e.g. "Materialism: Only physical matter exists."
-  experientialAntithesis: string; // e.g. "The Soul / Spirituality"
-  synthesisName: string; // e.g. "Stereoscopic Consciousness & Embodied Spirit"
+  empiricalThesis: string;
+  experientialAntithesis: string;
+  synthesisName: string;
   dialecticSummary: string;
   directive47Status: 'EXEMPT_NATIVE_FLOW';
   children: ExperientialChildBranch[];
@@ -379,7 +372,7 @@ export interface ExperientialChildStructure {
 
 export interface ExperientialCategory {
   id: string;
-  name: string; // 'Materialism' | 'The Soul/Spirituality' | 'Secularism' | 'The Church/Divine Rule' | 'Naturalism' | 'The Supernatural/Miracles' | custom
+  name: string;
   corePremise: string;
   lane: KnowledgeLane;
   epistemicRole: string;
@@ -390,18 +383,13 @@ export interface ExperientialCategory {
   isCustom?: boolean;
 }
 
-/** Locked spine module numbers from GO_SPINE.md */
 export const LOCKED_SPINE_NUMBERS = [2, 11, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27] as const;
 export const EXPANSION_NUMBERS = [50, 53] as const;
 
-/**
- * Phase XXIII: The Tangible Anchor (Physical Manifestation of the Protocol)
- * Directives 49, 50, 51
- */
 export interface TangibleAnchorZone {
   id: 'UPPER_SPHERE' | 'CENTRAL_DRAGONFLY' | 'TALON_FRICTION_CORE' | 'FLANKING_SPHERES' | 'TRANSBOUNDARY_RELAY';
   name: string;
-  directiveNumber: 49 | 50 | 51;
+  directiveNumber: number;
   physicalManifestation: string;
   schematicRole: string;
   protocolMapping: string;
@@ -412,9 +400,9 @@ export interface TangibleAnchorZone {
 
 export interface TangibleArtifactOne {
   id: string;
-  designation: string; // 'One'
+  designation: string;
   title: string;
-  phase: 'PHASE_XXIII';
+  phase: PhaseCategory;
   directives: string[];
   audioTranscript: string;
   proofOfWorkHash: string;

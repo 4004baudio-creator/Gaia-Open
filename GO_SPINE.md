@@ -36,7 +36,7 @@ Rule of 27: the founder is not the only filter. Ingest public physical baselines
 
 ## Supporting (in repo, not spine)
 
-1, 3–10, 12–16, 18, 28–30, 31–49, 51–52, 54
+1, 3–10, 12–16, 18, 28–30, 31–49, 51–52, 54, 55
 
 - 28 The Open Accommodation Directive — shadow market integration & sobriety horizon (DRAGONFLY_PROTOCOL.md)
 - 29 The Internal Telemetry Engine — neurological friction processing (DRAGONFLY_PROTOCOL.md)
@@ -56,8 +56,8 @@ Rule of 27: the founder is not the only filter. Ingest public physical baselines
 - 43 Human and Machine Sensors — same atoms, different intake (HUMAN_MACHINE_SENSORS.md)
 - 44 The Hiroshima-Nagasaki Imperative — the Anti-WMD disarmament protocol (MODULE_44_HIROSHIMA.md)
 - 45 The Safe Harbor & Whistleblower Shield — Assange-Snowden ZK airlock & economic shield
-- 54 The Acclimatization Pathway — continuous pulse & cognitive depth equalization (ACCLIMATIZATION_PATHWAY.md)
-- Phase XXIII The Tangible Anchor (Directives 49–51) — physical artifact "One" anchoring Phase XVI mechanics & proof of physical work (TANGIBLE_ANCHOR.md)
+- 54 The Acclimatization Pathway — reading order, not an unlock gate (ACCLIMATIZATION_PATHWAY.md)
+- 55 Artifact One — lineage craft; mnemonic only; not Module 27 (TANGIBLE_ANCHOR.md)
 - LANE_FILTER.md + PACKET_CONTRACT.md — all-ingest gate; no extra spine number
 
 Keep them on the map. Do not let them overwrite the spine.
