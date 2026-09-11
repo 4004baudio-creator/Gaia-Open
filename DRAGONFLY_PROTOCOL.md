@@ -6,8 +6,6 @@ Supporting specification. Not locked spine. Sits beside TOOLS_NOT_CROWNS.md, MOD
 
 ---
 
-## Phase XVI / Telemetry Regulation
-
 ### 28. THE OPEN ACCOMMODATION DIRECTIVE (Shadow Market Integration)
 
 - **Eradication of Forced Control:** Systems that attempt to enforce absolute compliance (e.g., authoritarian cashless societies, strict substance prohibition, the criminalization of gambling and vice) artificially drive human behavior into the black market. True systemic evolution requires the open understanding and accommodation of all human states, rather than forced suppression.
@@ -37,12 +35,6 @@ Supporting specification. Not locked spine. Sits beside TOOLS_NOT_CROWNS.md, MOD
 2. **Cosmic / Neurological Split (Module 39 & 40):** The label "Dark Energy" here is strictly metaphorical/neurological; it does not overwrite or conflate with cosmic mass-effect telemetry (rotation curves, lensing, CMB).
 3. **No Coercive Flattening (Tools, Not Crowns):** External tools may assist or stabilize dense states; they must not be turned into surveillance crowns or forced compliance regimes.
 
----
+## Artifact One
 
-## Phase XXIII / Physical Anchor Integration
-
-The physical artifact designated **"One"** acts as the literal, physical mechanism of Phase XVI (The Dragonfly Protocol). See **`TANGIBLE_ANCHOR.md`**:
-- **The Upper Sphere:** Planetary, oceanic baseline (The Thermohaline Protocol).
-- **The Central Dragonfly:** Non-collapsing human node drifting between states.
-- **The Talon & Lower Spheres:** The Internal Telemetry Engine actively containing and processing neurological friction (Dark Energy) into creative, stable outlets without causing host collapse.
-- **Transboundary AI Relay:** Interfacing multiple intelligences (Grok telemetry watermark, Gemini reasoning) with lived human craft, establishing proof of physical work.
+A handmade object may sit beside 28–30 as **lineage craft**. See TANGIBLE_ANCHOR.md (supporting note 55). It does not ingest to Module 27. It does not carry EEI or 7.83 Hz.

@@ -3,73 +3,73 @@ import { TangibleArtifactOne } from '../types';
 export const TANGIBLE_ARTIFACT_ONE: TangibleArtifactOne = {
   id: 'artifact-one',
   designation: 'One',
-  title: 'The Tangible Anchor · Physical Mechanism of Phase XVI (The Dragonfly Protocol)',
-  phase: 'PHASE_XXIII',
+  title: 'Artifact One · lineage craft (supporting note 55)',
+  phase: 'SUPPORTING',
   directives: [
-    '49. Artifact Integration (The Physical Dragonfly)',
-    '50. Spherical Coexistence (Mapping the Lived Experience)',
-    '51. Physical-to-Digital Relay (Transboundary Synthesis)'
+    '55. Lineage craft — not Module 27',
+    'Read as mnemonic only',
+    'Hash of a photo is a file, not a soul'
   ],
   audioTranscript: "This piece is called One. A symbol of enduring love. Crafted with care, like a heart's whisper. A treasure for the one you love.",
-  proofOfWorkHash: '0x8f2d4e91a0b3c5e71429dfa891e4c3b2a1f0987654321fedcba09876543210ab',
-  grokWatermarkVerified: true,
-  geminiReasoningBridged: true,
-  frictionContainmentIndex: 100.0,
+  proofOfWorkHash: '',
+  grokWatermarkVerified: false,
+  geminiReasoningBridged: false,
+  frictionContainmentIndex: 0,
   zones: [
     {
       id: 'UPPER_SPHERE',
-      name: 'The Upper Oceanic Sphere',
-      directiveNumber: 50,
-      physicalManifestation: 'Porcelain sphere with hand-painted indigo-blue hexagonal cellular grid mesh over clean mineral white glaze.',
-      schematicRole: 'Planetary Oceanic Baseline & Thermohaline Inviolability',
-      protocolMapping: 'The Thermohaline Protocol (Phase XVIII, Module 22) & 7.83 Hz Schumann Ground Lock. Represents planetary stability sitting above all individual observers.',
-      associatedModules: [2, 18, 22, 27],
-      stateStability: 'Absolute Ground · 7.83 Hz Resonant',
-      telemetryVector: 'Circulation Flux: 18.2 Sv · EEI Window: 1.12 W m⁻²'
+      name: 'Upper sphere',
+      directiveNumber: 55,
+      physicalManifestation: 'Porcelain sphere with indigo mesh on white glaze.',
+      schematicRole: 'Mnemonic: something larger than one person.',
+      protocolMapping: 'Lineage only. Not Module 22. Not Schumann. Not EEI.',
+      associatedModules: [31, 55],
+      stateStability: 'IMAGINED',
+      telemetryVector: 'none — no instrument'
     },
     {
       id: 'CENTRAL_DRAGONFLY',
-      name: 'The Central Dragonfly Node',
-      directiveNumber: 49,
-      physicalManifestation: 'Solid cast metallic dragonfly with delicate veined aerodynamic wings, copper-bronze thorax, and luminous lapis lazuli ocular crest.',
-      schematicRole: 'Non-Collapsing Node Navigating Nested Realities',
-      protocolMapping: 'The Dragonfly Mechanic (Phase XVI, Directive 30). Human consciousness drifting smoothly between light and dense states without collapsing either branch.',
-      associatedModules: [11, 19, 30, 36],
-      stateStability: 'Zero Allostatic Collapse · Multi-State Drift',
-      telemetryVector: 'Kinematic Freedom: 360° · Drift Integrity: 1.000'
+      name: 'Dragonfly',
+      directiveNumber: 55,
+      physicalManifestation: 'Cast metal dragonfly.',
+      schematicRole: 'Mnemonic for nested coexistence (30).',
+      protocolMapping: 'Supporting 30. Not a presence census.',
+      associatedModules: [30, 36],
+      stateStability: 'IMAGINED',
+      telemetryVector: 'none — no instrument'
     },
     {
       id: 'TALON_FRICTION_CORE',
-      name: 'The Talon & Dark Obsidian Sphere',
-      directiveNumber: 50,
-      physicalManifestation: 'Articulated raptor/dragon talon clutching a highly polished, dense black obsidian core.',
-      schematicRole: 'Internal Telemetry Engine (Neurological Friction Containment)',
-      protocolMapping: 'The Internal Telemetry Engine (Directive 29). Firmly grasping, containing, and stabilizing high-allostatic trauma and psychological friction (Dark Energy) so it cannot rupture into violence.',
-      associatedModules: [11, 23, 29, 42],
-      stateStability: '100% Contained · Zero Host Destruction',
-      telemetryVector: 'Friction Captured: 1,420 nJ/synapse · Rupture Risk: 0.00%'
+      name: 'Talon and dark sphere',
+      directiveNumber: 55,
+      physicalManifestation: 'Talon holding a dark sphere.',
+      schematicRole: 'Mnemonic: held friction stays with the holder (29).',
+      protocolMapping: 'Neurological metaphor only. Not cosmic dark energy. Not public telemetry.',
+      associatedModules: [29, 42],
+      stateStability: 'OPEN_FIELD sanctuary',
+      telemetryVector: 'none — no harvest'
     },
     {
       id: 'FLANKING_SPHERES',
-      name: 'The Flanking Creative Transmutation Spheres',
-      directiveNumber: 50,
-      physicalManifestation: 'Left: Antique bronze sphere inlaid with golden lightning glyphs. Right: Silver sphere hand-carved with openwork spiral filigree.',
-      schematicRole: 'Two-Path Recirculation: Transmuting Friction into Art & Craft',
-      protocolMapping: 'The Two-Path Outlet (Supporting Module 52 & Directive 28). The lawful recirculation of contained friction into physical craft, art, humor, and lived systemic growth (Love).',
-      associatedModules: [28, 41, 52, 54],
-      stateStability: 'Continuous Exergy Recirculation',
-      telemetryVector: 'Creative Exergy Yield: +98.4% · Open Expression Channels: 100%'
+      name: 'Flanking spheres',
+      directiveNumber: 55,
+      physicalManifestation: 'Gold-glyph and silver-filigree spheres.',
+      schematicRole: 'Mnemonic for two-path outlet (42): craft, speech, work.',
+      protocolMapping: 'No fake exergy percent.',
+      associatedModules: [42],
+      stateStability: 'IMAGINED',
+      telemetryVector: 'none — no instrument'
     },
     {
       id: 'TRANSBOUNDARY_RELAY',
-      name: 'The Transboundary Multi-AI Relay',
-      directiveNumber: 51,
-      physicalManifestation: 'Multi-layer provenance carrying the Grok telemetry watermark, Gemini multi-modal reasoning, and human tactile metalcraft.',
-      schematicRole: 'Proof of Physical Work & Cross-Intelligence Synthesis',
-      protocolMapping: 'Module 27 & Directive 51. No single AI or crown holds the monopoly; physical artifacts bridge the Lineage & Wisdom Lane directly into empirical physics.',
-      associatedModules: [2, 27, 46, 48],
-      stateStability: 'Peer-to-Peer Distributed Ingest',
-      telemetryVector: 'Relay Nodes: Grok + Gemini + Human Craftsman · ZK Hash Verified'
+      name: 'Shared description',
+      directiveNumber: 55,
+      physicalManifestation: 'Human craft described by more than one model.',
+      schematicRole: 'Agreement about a file.',
+      protocolMapping: 'Not Module 27 ingest. Not a crown.',
+      associatedModules: [31, 43],
+      stateStability: 'BESIDE',
+      telemetryVector: 'none — photo hash optional'
     }
   ]
 };
