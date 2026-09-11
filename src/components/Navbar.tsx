@@ -42,6 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPromptModal, activeSection
     { id: 'autonomic-alignment', label: 'Autonomic Alignment (XX)', href: '#autonomic-alignment' },
     { id: 'acclimatization', label: 'Acclimatization (XXI)', href: '#acclimatization', highlight: true },
     { id: 'experiential-ontology', label: 'Binocular Vision & Lineage (XXII)', href: '#experiential-ontology', highlight: true },
+    { id: 'tangible-anchor', label: 'Tangible Anchor (XXIII)', href: '#tangible-anchor', highlight: true },
     { id: 'heroes', label: 'Heroes Registry', href: '#heroes' },
     { id: 'thermo-audit', label: 'Thermodynamic Audit', href: '#thermo-audit' },
     { id: 'gateway', label: 'Specialist Gateway', href: '#gateway', highlight: true }

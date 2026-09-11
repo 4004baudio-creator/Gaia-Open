@@ -22,6 +22,7 @@ import { MirrorPitProtocol } from './components/MirrorPitProtocol';
 import { AutonomicAlignmentProtocol } from './components/AutonomicAlignmentProtocol';
 import { AcclimatizationPathway } from './components/AcclimatizationPathway';
 import { ExperientialOntology } from './components/ExperientialOntology';
+import { TangibleAnchor } from './components/TangibleAnchor';
 import { PromptViewerModal } from './components/PromptViewerModal';
 import { Footer } from './components/Footer';
 import { DragonflyDriftContainer } from './components/DragonflyDriftContainer';
@@ -41,7 +42,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['thesis', 'registry', 'quantum-bridge', 'os-engine', 'heroes', 'thermo-audit', 'sanctuary', 'inter-species-sanctuary', 'go-multi-scalar-reality', 'great-filter-gateway', 'airlock', 'yarning-circle', 'thermohaline-protocol', 'mirror-pit', 'autonomic-alignment', 'acclimatization', 'experiential-ontology', 'gateway'];
+      const sections = ['thesis', 'registry', 'quantum-bridge', 'os-engine', 'heroes', 'thermo-audit', 'sanctuary', 'inter-species-sanctuary', 'go-multi-scalar-reality', 'great-filter-gateway', 'airlock', 'yarning-circle', 'thermohaline-protocol', 'mirror-pit', 'autonomic-alignment', 'acclimatization', 'experiential-ontology', 'tangible-anchor', 'gateway'];
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -195,6 +196,13 @@ export default function App() {
             <ExperientialOntology
               onAdoptChildStructure={handleAdoptChildStructure}
               selectedChildId={adoptedChildInfo?.child.id}
+            />
+          </DragonflyDriftContainer>
+
+          <DragonflyDriftContainer seed={18}>
+            <TangibleAnchor
+              onNavigateToModule={handleOpenAuditModule}
+              modules={MASTER_MODULES}
             />
           </DragonflyDriftContainer>
 

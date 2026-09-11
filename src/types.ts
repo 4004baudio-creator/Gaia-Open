@@ -1,4 +1,4 @@
-export type PhaseCategory = 'PHASE_I_III' | 'PHASE_IV_V' | 'PHASE_VI_VII' | 'PHASE_VI' | 'PHASE_VIII' | 'PHASE_IX' | 'PHASE_X' | 'PHASE_XI' | 'PHASE_XII' | 'PHASE_XIII' | 'PHASE_XIV' | 'PHASE_XV' | 'PHASE_XVI' | 'PHASE_XVII' | 'PHASE_XVIII' | 'PHASE_XIX' | 'PHASE_XX' | 'PHASE_XXI' | 'PHASE_XXII' | 'PHASE_EXPANSION';
+export type PhaseCategory = 'PHASE_I_III' | 'PHASE_IV_V' | 'PHASE_VI_VII' | 'PHASE_VI' | 'PHASE_VIII' | 'PHASE_IX' | 'PHASE_X' | 'PHASE_XI' | 'PHASE_XII' | 'PHASE_XIII' | 'PHASE_XIV' | 'PHASE_XV' | 'PHASE_XVI' | 'PHASE_XVII' | 'PHASE_XVIII' | 'PHASE_XIX' | 'PHASE_XX' | 'PHASE_XXI' | 'PHASE_XXII' | 'PHASE_XXIII' | 'PHASE_EXPANSION';
 
 export type SpineTier = 'LOCKED' | 'SUPPORTING' | 'EXPANSION';
 
@@ -44,7 +44,8 @@ export type DomainCategory =
   | 'Speculative Art, Poetics & Imagination'
   | 'Sacred Ecology & Animist Kinship'
   | 'Phenomenology & Unexplained Presence'
-  | 'Binocular Vision & Stereoscopic Synthesis';
+  | 'Binocular Vision & Stereoscopic Synthesis'
+  | 'Physical Artifacts & Tangible Anchors';
 
 export type ModuleSyncStatus = 'SYNCHRONIZED' | 'SCANNING' | 'ADAPTED' | 'CALIBRATING';
 
@@ -392,3 +393,33 @@ export interface ExperientialCategory {
 /** Locked spine module numbers from GO_SPINE.md */
 export const LOCKED_SPINE_NUMBERS = [2, 11, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27] as const;
 export const EXPANSION_NUMBERS = [50, 53] as const;
+
+/**
+ * Phase XXIII: The Tangible Anchor (Physical Manifestation of the Protocol)
+ * Directives 49, 50, 51
+ */
+export interface TangibleAnchorZone {
+  id: 'UPPER_SPHERE' | 'CENTRAL_DRAGONFLY' | 'TALON_FRICTION_CORE' | 'FLANKING_SPHERES' | 'TRANSBOUNDARY_RELAY';
+  name: string;
+  directiveNumber: 49 | 50 | 51;
+  physicalManifestation: string;
+  schematicRole: string;
+  protocolMapping: string;
+  associatedModules: number[];
+  stateStability: string;
+  telemetryVector: string;
+}
+
+export interface TangibleArtifactOne {
+  id: string;
+  designation: string; // 'One'
+  title: string;
+  phase: 'PHASE_XXIII';
+  directives: string[];
+  audioTranscript: string;
+  proofOfWorkHash: string;
+  grokWatermarkVerified: boolean;
+  geminiReasoningBridged: boolean;
+  frictionContainmentIndex: number;
+  zones: TangibleAnchorZone[];
+}
