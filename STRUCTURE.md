@@ -11,6 +11,7 @@ This file is the shared layout for humans and models (Grok, Gemini, Studio, GOBO
 | Law | Module number (locked 2, 11, 17, 19–27; supporting otherwise) | Registry card |
 | View | Room component under a **house** | House tab |
 | Build diary | Git commit | Not printed as Phase XVIII–XXIII |
+| Protocol kit | `protocol/` (packet / ledger / sig) | Not a tab |
 
 Do not invent a new Phase Roman numeral. Do not use directive numbers that collide with module 50 or leaf 50. Artifact One is supporting note **55**, layer IMAGINED.
 
@@ -37,6 +38,13 @@ Dragonfly 28–30 live here as text, not as a harvested score.
 Sky, orbit, contact stance, nested scale.  
 Rooms: quantum bridge, multi-scalar reality, whistleblower airlock (transparency, not a hunt).  
 Visitor claims stay OPEN_FIELD (module 34).
+
+## Protocol kit (not a house)
+
+`protocol/` is the runnable court: `gaia.packet/v1`, `gaia.ledger/v1`, `gaia.sig/v1`.
+It does not get a Navbar chip. Do not import it from React rooms in this pass.
+Run: `cd protocol && PYTHONPATH=impl python -m unittest discover -s tests -t .`
+A later Shelf card may call the validator. That is a room edit, not a new door.
 
 ## Stamps (every card, every new packet)
 
