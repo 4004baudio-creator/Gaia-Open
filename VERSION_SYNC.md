@@ -6,10 +6,10 @@ Three registers, one SHA.
 2. Studio only edits after pull of that SHA.
 3. Live only changes after push then Publish.
 
-## Last law SHA (update after every publish)
-`7e6232a2ea9c75298a00584484461b523cdeb384` plus the follow-up types/spine commit on this branch.
+## Last law SHA
+`2f3e5af894a7de324f796e67f068e113adde8133`
 
-After you pull and publish, replace this line with the exact `git rev-parse HEAD` you published.
+After publish, keep this SHA if live matches. If you add a commit first, replace it.
 
 ## Invariants
 - Locked spine: 2, 11, 17, 19–27.
