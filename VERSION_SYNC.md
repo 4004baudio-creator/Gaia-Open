@@ -7,12 +7,12 @@ Three registers, one SHA.
 3. Live only changes after push then Publish.
 
 ## Last law SHA
-`2f3e5af894a7de324f796e67f068e113adde8133`
+`2ddf3132bb590a8f90ece6b364d6c7c9aa064297` (houses + STRUCTURE). Follow-up pin may trail HEAD by one commit.
 
-After publish, keep this SHA if live matches. If you add a commit first, replace it.
+Public IA: STRUCTURE.md — Measure / Shelf / Care / Explore.
 
 ## Invariants
 - Locked spine: 2, 11, 17, 19–27.
 - EEI packet: ~1.12 W m⁻² (2013–2025) everywhere.
 - Artifact One = supporting note 55, IMAGINED. Not Module 27. Not leaf 50.
-- No Phase Roman numeral on hero unless MAP_VERSION.md bumps the map string.
+- No Phase Roman numeral on hero or nav.
