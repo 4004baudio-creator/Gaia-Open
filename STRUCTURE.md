@@ -53,7 +53,7 @@ A likeness in craft may *remind*. It does not replace a series (see TANGIBLE_ANC
 - Module 11: do not outrun rest. A new 50k TSX room is a failed feed unless a house asked for it.
 - Prefer editing an existing room over adding a twentieth nav link.
 - `GO_SPINE.md` is the only module index. One markdown file per module number when possible.
-- `MAP_VERSION.md` + `src/data/mapVersion.ts` hold the only public version string (now v3.3 MAP).
+- `MAP_VERSION.md` + `src/data/mapVersion.ts` hold the only public version string (now MAP).
 - Three registers: GitHub SHA → Studio pull → live publish. Update `VERSION_SYNC.md` after publish.
 
 ## How to add something

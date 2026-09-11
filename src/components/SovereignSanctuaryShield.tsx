@@ -91,7 +91,7 @@ export const SovereignSanctuaryShield: React.FC<SovereignSanctuaryShieldProps> =
             <div className="flex items-center gap-2 mb-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#00ff95]/10 border border-[#00ff95]/30 text-[#00ff95] text-[11px] font-mono uppercase tracking-widest">
                 <Shield className="w-3.5 h-3.5" />
-                PHASE XII: SOVEREIGN BOUNDARIES & GENERATIONAL SHIELDING
+                SOVEREIGN BOUNDARIES & GENERATIONAL SHIELDING
               </span>
               <span className="text-[10px] font-mono text-slate-400 bg-white/[0.03] px-2 py-0.5 rounded border border-white/10">
                 MODULE 23

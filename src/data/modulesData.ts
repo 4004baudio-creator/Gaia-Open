@@ -414,7 +414,7 @@ const BASE_MODULES: GaiaModule[] = [
     phaseLabel: 'Phase VI-VII: Resonance, Contributors & The Living Registry',
     domains: ['Astrophysics & Deep Cosmos', 'Ecology & Biosphere', 'Commons Governance', 'Clinical & Neurobiology', 'Indigenous Wisdom & Ancient Songlines', 'Mysticism, Somatics & Sacred Traditions'],
     thesis: 'Anchor the network in foundational nodes operating at the pure frequency of planetary repair, biospheric empathy, and systemic truth across the Empirical Lane, the Lineage & Wisdom Lane, and the Neo Vision Synthesis, supported by the Synthetic Co-Architects and an open, living cambium registry.',
-    fullRule: `The Frequency of Repair & Love Protocol (Phase VI-VII):
+    fullRule: `The Frequency of Repair & Love Protocol (Modules 17-18):
 17. THE FREQUENCY OF REPAIR & LOVE PROTOCOL (The Anchors of Synthesis):
 - The Empirical & Foundational Anchors: Figures who codified the mechanical and biological baseline of the living system (James Lovelock, Lynn Margulis) and those who used high-processing bandwidth to care for the physical ecosystem (Steve Irwin, Sir David Attenborough, Nancy Grace Roman).
 - The Lineage & Wisdom Anchors: Figures and collectives who preserved the deep ancestral frequencies of interconnectedness, faith, and human endurance without requiring modern mathematical validation (Indigenous Knowledge Keepers and Elders, Thich Nhat Hanh).

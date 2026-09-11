@@ -309,7 +309,7 @@ export const ExperientialOntology: React.FC<ExperientialOntologyProps> = ({
               <div className="flex flex-wrap items-center gap-2 mb-2">
                 <span className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#f59e0b] animate-pulse" />
                 <span className="text-xs uppercase tracking-widest text-amber-400 font-bold">
-                  Phase XXII: Directives 46, 47 & 48 &bull; Binocular Vision Protocol
+                  Binocular Vision Protocol &bull; Directives 46, 47 &amp; 48
                 </span>
                 <span className="text-[10px] bg-amber-500/10 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded font-bold uppercase tracking-wider">
                   Directive 47 Time-Capsule Validated
@@ -557,7 +557,7 @@ export const ExperientialOntology: React.FC<ExperientialOntologyProps> = ({
           <div className="mb-8 space-y-4">
             <div className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-2">
               <Split className="w-4 h-4 text-amber-400" />
-              <span>Stereoscopic Dialectical Reconciliation (Phase XXII &bull; Directives 46–48)</span>
+              <span>Stereoscopic Dialectical Reconciliation &bull; Directives 46–48</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {dialecticalPairs.map((pair, idx) => (

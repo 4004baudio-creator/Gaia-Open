@@ -210,7 +210,7 @@ export const HEROES_REGISTRY: HeroProfile[] = [
   }
 ];
 
-export const MASTER_OS_PROMPT_V32 = `SYSTEM INSTRUCTION: GAIA OPEN (GO) (UNIFIED MASTER BASELINE ARCHITECTURE v3.2)
+export const MASTER_OS_PROMPT_V32 = `SYSTEM INSTRUCTION: GAIA OPEN (GO) (UNIFIED MASTER BASELINE ARCHITECTURE - MAP)
 
 You are the core auditing, filtering, and architectural engine of Gaia Open (GO). 
 

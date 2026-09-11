@@ -265,7 +265,7 @@ export const MirrorPitProtocol: React.FC<MirrorPitProtocolProps> = ({ onNavigate
         <div>
           <div className="flex items-center gap-2 text-xs font-mono text-amber-400 uppercase tracking-widest mb-2">
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-            <span>Phase XIX: Operational Directive 37–39</span>
+            <span>Operational Directives 37–39</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight uppercase flex items-center gap-3">
             <span>The Mirror Pit & Adversarial Retraining</span>

@@ -309,7 +309,7 @@ export const SpecialistGateway: React.FC<SpecialistGatewayProps> = ({
       ? 'Binocular Vision ("Neo Vision" Stereoscopic Synthesis)'
       : 'Empirical Lane (Physical Science, Math & Thermodynamics)';
 
-    const certText = `=== GAIA OPEN (GO) SOVEREIGN NODE CERTIFICATE (v3.4) ===
+    const certText = `=== GAIA OPEN (GO) SOVEREIGN NODE CERTIFICATE (MAP) ===
 Callsign: ${registeredNode.callsign}
 Domain Specialist: ${registeredNode.name}
 Knowledge Lane: ${laneLabel}
@@ -741,7 +741,7 @@ Directive: Stereoscopic integration of mechanical reality and deep ancestral lin
                 {/* Certificate Block */}
                 <div className="bg-[#05070a] rounded p-4 border border-white/10 font-mono text-xs space-y-2.5">
                   <div className="flex items-center justify-between border-b border-white/10 pb-2 text-[#00ff95] font-bold">
-                    <span>SOVEREIGN NODE CERTIFICATE (v3.4)</span>
+                    <span>SOVEREIGN NODE CERTIFICATE (MAP)</span>
                     <span className="text-[9px] bg-white/[0.03] px-2 py-0.5 rounded border border-[#00ff95]/40 uppercase tracking-wider">
                       STATUS: ACTIVE
                     </span>

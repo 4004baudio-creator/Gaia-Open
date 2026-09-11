@@ -284,7 +284,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
               )}
             </div>
 
-            {/* Phase Selector */}
+            {/* Category / Module Range Selector */}
             <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
               <button
                 onClick={() => setSelectedPhase('ALL')}
@@ -294,7 +294,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-white/[0.03] text-slate-300 hover:bg-white/[0.08] border border-white/10'
                 }`}
               >
-                All Phases ({modules.length})
+                All Modules ({modules.length})
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_I_III')}
@@ -304,7 +304,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-white/[0.03] text-slate-300 hover:bg-white/[0.08] border border-white/10'
                 }`}
               >
-                Phase I-III (01-11)
+                Foundations (01-11)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_IV_V')}
@@ -314,7 +314,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-white/[0.03] text-slate-300 hover:bg-white/[0.08] border border-white/10'
                 }`}
               >
-                Phase IV-V (12-16)
+                Thermodynamics & Commons (12-16)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_VI_VII')}
@@ -324,7 +324,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-white/[0.03] text-slate-300 hover:bg-white/[0.08] border border-white/10'
                 }`}
               >
-                Phase VI-VII: Resonance (17-18)
+                Resonance & Contributors (17-18)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_VIII')}
@@ -334,7 +334,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-purple-500/10 text-purple-300 hover:bg-purple-500/20 border border-purple-500/30'
                 }`}
               >
-                Phase VIII: Quantum Bridge (19)
+                Quantum Bridge (19)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_IX')}
@@ -344,7 +344,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 border border-amber-500/30'
                 }`}
               >
-                Phase IX: P.O.W.E.R. (20)
+                P.O.W.E.R. (20)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_X')}
@@ -354,7 +354,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20 border border-cyan-500/30'
                 }`}
               >
-                Phase X: Node Security (21)
+                Node Security (21)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_XI')}
@@ -364,7 +364,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 border border-emerald-500/30'
                 }`}
               >
-                Phase XI: Restorative Justice (22)
+                Restorative Justice (22)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_XII')}
@@ -374,7 +374,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-[#00ff95]/10 text-[#00ff95] hover:bg-[#00ff95]/20 border border-[#00ff95]/30'
                 }`}
               >
-                Phase XII: Sovereign Boundaries (23)
+                Sovereign Boundaries (23)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_XIII')}
@@ -384,7 +384,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 border border-emerald-500/30'
                 }`}
               >
-                Phase XIII: Biospheric Kinship (24)
+                Biospheric Kinship (24)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_XIV')}
@@ -394,7 +394,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-purple-500/10 text-purple-300 hover:bg-purple-500/20 border border-purple-500/30'
                 }`}
               >
-                Phase XIV: GO & Multi-Scalar Reality (25-26)
+                GO & Multi-Scalar Reality (25-26)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_XV')}
@@ -404,7 +404,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 border border-emerald-500/30'
                 }`}
               >
-                Phase XV: Distributed Great Filter (27)
+                Distributed Great Filter (27)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_XVI')}
@@ -414,7 +414,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-rose-500/10 text-rose-300 hover:bg-rose-500/20 border border-rose-500/30'
                 }`}
               >
-                Phase XVI: The Dragonfly Protocol (28-30)
+                The Dragonfly Protocol (28-30)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_XVII')}
@@ -434,7 +434,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20 border border-cyan-500/30'
                 }`}
               >
-                Phase XVIII: The Thermohaline Protocol (32-36)
+                The Thermohaline Protocol (32-36)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_XIX')}
@@ -444,7 +444,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-purple-500/10 text-purple-300 hover:bg-purple-500/20 border border-purple-500/30'
                 }`}
               >
-                Phase XIX: The Mirror Pit (37-39)
+                The Mirror Pit (37-39)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_XX')}
@@ -454,7 +454,7 @@ export const ModuleRegistry: React.FC<ModuleRegistryProps> = ({
                     : 'bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 border border-emerald-500/30'
                 }`}
               >
-                Phase XX: Autonomic Alignment (40-42)
+                Autonomic Alignment (40-42)
               </button>
               <button
                 onClick={() => setSelectedPhase('PHASE_EXPANSION')}

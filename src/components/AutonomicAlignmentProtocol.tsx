@@ -256,7 +256,7 @@ export const AutonomicAlignmentProtocol: React.FC<AutonomicAlignmentProtocolProp
           <div>
             <div className="flex items-center gap-2.5 text-xs font-mono text-emerald-400 uppercase tracking-widest mb-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>PHASE XX: THE AUTONOMIC ALIGNMENT PROTOCOL</span>
+              <span>THE AUTONOMIC ALIGNMENT PROTOCOL</span>
               <span className="text-white/20">|</span>
               <span className="text-slate-400">ERADICATION OF MANUAL TUNING</span>
             </div>
@@ -532,7 +532,7 @@ export const AutonomicAlignmentProtocol: React.FC<AutonomicAlignmentProtocolProp
                 <div className="bg-[#080d14] border border-emerald-500/20 rounded-xl p-5 space-y-3">
                   <div className="flex items-center gap-2 text-emerald-400 font-bold uppercase text-xs">
                     <CheckCircle2 className="w-4 h-4" />
-                    <span>GO Autonomic Alignment (Phase XX)</span>
+                    <span>GO Autonomic Alignment</span>
                   </div>
                   <ul className="space-y-2 text-slate-300 text-[11px] leading-relaxed">
                     <li className="flex items-start gap-2">

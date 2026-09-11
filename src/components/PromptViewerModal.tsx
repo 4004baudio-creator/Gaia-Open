@@ -22,7 +22,7 @@ export const PromptViewerModal: React.FC<PromptViewerModalProps> = ({ isOpen, on
     const element = document.createElement("a");
     const file = new Blob([MASTER_OS_PROMPT_V32], { type: 'text/plain;charset=utf-8' });
     element.href = URL.createObjectURL(file);
-    element.download = "gaia-pulse-os-v3.2-master-prompt.txt";
+    element.download = "gaia-open-map-master-prompt.txt";
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
@@ -42,9 +42,9 @@ export const PromptViewerModal: React.FC<PromptViewerModalProps> = ({ isOpen, on
             </div>
             <div>
               <h3 className="font-mono font-bold text-white text-base sm:text-lg flex items-center gap-2 uppercase tracking-wide">
-                <span>Master GO (Gaia Open) Prompt (v3.2)</span>
+                <span>Master GO (Gaia Open) Prompt (MAP)</span>
                 <span className="text-[9px] font-mono font-normal bg-white/[0.03] text-[#00ff95] px-2 py-0.5 rounded border border-[#00ff95]/40 uppercase tracking-widest">
-                  PHASES I-XVII & 30 MODULES INTEGRATED
+                  LOCKED SPINE &amp; SUPPORTING MODULES
                 </span>
               </h3>
               <p className="text-xs font-mono text-slate-400">

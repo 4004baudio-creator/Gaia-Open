@@ -230,12 +230,12 @@ export const GaiaOpenMultiScalarReality: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* Phase Header */}
+        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-white/10 gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="text-[11px] font-mono uppercase tracking-widest px-2.5 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">
-                Phase XIV: GO (Gaia Open) & Multi-Scalar Reality
+                GO (Gaia Open) & Multi-Scalar Reality
               </span>
               <span className="text-[11px] font-mono text-cyan-400 flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />

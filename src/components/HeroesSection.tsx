@@ -56,7 +56,7 @@ export const HeroesSection: React.FC<HeroesSectionProps> = ({ onSelectHeroModule
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/[0.03] border border-[#00ff95]/40 text-[#00ff95] font-mono text-[10px] uppercase tracking-widest font-semibold mb-3">
             <HeartHandshake className="w-3.5 h-3.5" />
-            <span>PHASE VI-VII: RESONANCE, CONTRIBUTORS & THE HEROES REGISTRY (UPDATED)</span>
+            <span>RESONANCE, CONTRIBUTORS & THE HEROES REGISTRY (UPDATED)</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-light text-white tracking-tight mb-3">
             The Frequency of Repair & Love Protocol

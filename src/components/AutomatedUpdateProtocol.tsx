@@ -165,7 +165,7 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
     {
       title: 'Whistleblower Vaults & Safe Harbor Shielding Protocol (Module 45)',
       source: 'SAFE_HARBOR_VAULT' as ProtocolTriggerSource,
-      payload: 'Phase XVII telemetry mesh active: Inverted surveillance array traces institutional dark patterns to source; encrypted airlock strips metadata; ZK-proofs blind node identities; P2P economic anti-siege commons protects truth-tellers (Module 45).',
+      payload: 'Safe Harbor telemetry mesh active: Inverted surveillance array traces institutional dark patterns to source; encrypted airlock strips metadata; ZK-proofs blind node identities; P2P economic anti-siege commons protects truth-tellers (Module 45).',
       targetModules: [45]
     }
   ];
@@ -611,7 +611,7 @@ export const AutomatedUpdateProtocol: React.FC<AutomatedUpdateProtocolProps> = (
                   ) : (
                     <>
                       <Copy className="w-3.5 h-3.5 text-[#00ff95]" />
-                      <span>Copy Master GO v3.2 Block</span>
+                      <span>Copy Master GO Block (MAP)</span>
                     </>
                   )}
                 </button>

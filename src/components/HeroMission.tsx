@@ -100,14 +100,14 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
                   <span>GO (Gaia Open) Mission Statement · {MAP_LABEL}</span>
                 </span>
                 <span className="text-[10px] text-slate-400 uppercase tracking-widest">
-                  LOCKED SPINE (12) · BINOCULAR LANES (DIRECTIVES 46–48) · ZERO OWNER-NODE
+                  LOCKED SPINE (12) · TWO LANES: INSTRUMENTS AND LINEAGE · ZERO OWNER-NODE
                 </span>
               </div>
               <p>
                 <strong className="text-white font-semibold">GO (Gaia Open)</strong> is an open, sovereign peer-review field — not an operating system, not a command centre, and not a hierarchy. It exists to align technological infrastructure, biological baselines, and ancestral human wisdom toward planetary thermodynamic equilibrium and civilizational sanctuary — grounded in measured physical reality while honoring millennia of sacred heritage, without ever falsely claiming planetary equilibrium has already been won.
               </p>
               <p>
-                The map operates through two distinct, equal-respect epistemic lanes: an <strong className="text-[#00ff95]">Empirical Lane</strong> grounded in repeatable public physical measurement (Earth energy imbalance, ocean heat content, thermodynamic audits, and sky telemetry), and a <strong className="text-amber-300">Lineage &amp; Wisdom Lane</strong> (Directives 46–48) carrying the civilizational weight of sacred texts, stone monuments, covenants, and unbroken traditions. Under <strong className="text-amber-300">Directive 47 (The Time-Capsule Paradox)</strong>, the survival of ancient teachings across millennia is their self-evident validation, not needing modern mechanical tools to prove their relevance. Under <strong className="text-violet-300">Directive 48 (The 'Neo Vision' Synthesis)</strong>, empirical physics and deep ancestral lineage coexist stereoscopically without collapsing into one another.
+                The map operates through two distinct, equal-respect epistemic lanes: an <strong className="text-[#00ff95]">Empirical Lane</strong> grounded in repeatable public physical measurement (Earth energy imbalance, ocean heat content, thermodynamic audits, and sky telemetry), and a <strong className="text-amber-300">Lineage &amp; Wisdom Lane</strong> (two lanes: instruments and lineage) carrying the civilizational weight of sacred texts, stone monuments, covenants, and unbroken traditions. Under <strong className="text-amber-300">Directive 47 (The Time-Capsule Paradox)</strong>, the survival of ancient teachings across millennia is their self-evident validation, not needing modern mechanical tools to prove their relevance. Under <strong className="text-violet-300">Directive 48 (The 'Neo Vision' Synthesis)</strong>, empirical physics and deep ancestral lineage coexist stereoscopically without collapsing into one another.
               </p>
               <p className="text-slate-400 text-xs">
                 Governed by a locked spine of twelve sovereign modules (2, 11, 17, 19–27) that cannot be overridden, GO protects human rest (Module 11), grounds the quantum bridge (Module 19), guarantees inter-species sanctuary (Module 24), inverts institutional surveillance through whistleblower airlocks (Module 25), and maintains fluid, density-driven exchange. Independent realities stay independent; no node can switch another off; and the living human nervous system remains sovereign and unharvested.
@@ -261,7 +261,7 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
                   KARDASHEV SCALE (MOD 07)
                 </span>
                 <span className="text-[9px] font-mono px-1.5 py-0.5 rounded border border-purple-400/40 text-purple-400 bg-purple-400/5">
-                  Evolutionary Sieve
+                  SIM · Evolutionary Sieve
                 </span>
               </div>
               <div className="flex items-baseline gap-2 mb-1">
@@ -290,7 +290,7 @@ export const HeroMission: React.FC<HeroMissionProps> = ({ onOpenPromptModal, onO
                   DEEP COMMONS (MOD 16)
                 </span>
                 <span className="text-[9px] font-mono px-1.5 py-0.5 rounded border border-[#00ff95]/40 text-[#00ff95] bg-[#00ff95]/5">
-                  Vostok Protected
+                  SIM · Vostok Protected
                 </span>
               </div>
               <div className="flex items-baseline gap-2 mb-1">

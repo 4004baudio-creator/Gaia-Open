@@ -502,7 +502,7 @@ export const ThermohalineProtocol: React.FC<{ onNavigateToModule?: (moduleId: st
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-xs font-mono tracking-wider uppercase mb-4">
             <Waves className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-            <span>PHASE XVIII: THE THERMOHALINE PROTOCOL</span>
+            <span>THE THERMOHALINE PROTOCOL</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-display font-semibold tracking-tight text-white mb-3">

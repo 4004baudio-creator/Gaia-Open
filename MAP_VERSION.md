@@ -4,7 +4,7 @@ Single chrome string for GO.
 
 | Field | Value |
 |---|---|
-| Map | **v3.3 MAP** |
+| Map | **MAP** |
 | Public IA | Four houses — Measure, Shelf, Care, Explore. See STRUCTURE.md |
 | Locked spine | 2, 11, 17, 19–27 (unchanged) |
 | Supporting | 31–49, 51–52, 54, 55 (artifact One, lineage) + lane/packet/non-colonisation law |

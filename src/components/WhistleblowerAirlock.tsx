@@ -304,7 +304,7 @@ export const WhistleblowerAirlock: React.FC = () => {
   const handleDownloadReceipt = () => {
     if (!submittedReceipt) return;
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
-      protocol: "GO (Gaia Open) - Safe Harbor & Whistleblower Airlock Protocol (Phase XVII / Consolidated Module 45)",
+      protocol: "GO (Gaia Open) - Safe Harbor & Whistleblower Airlock Protocol (Module 45)",
       certificate: "CERTIFICATE OF THERMODYNAMIC REPAIR & ADMINISTRATIVE UNTETHERING",
       issuedAt: submittedReceipt.timestamp,
       vaultId: submittedReceipt.id,
@@ -316,7 +316,7 @@ export const WhistleblowerAirlock: React.FC = () => {
       economicAntiSiegeStatus: submittedReceipt.economicShieldActive ? "ACTIVE (P2P Commons Tether)" : "STANDBY",
       ruleAnchors: [
         "Module 45: The Safe Harbor & Whistleblower Shield (Assange-Snowden ZK Airlock)",
-        "Phase XVII: Transparency & Node Protection Protocol"
+        "Transparency & Node Protection Protocol (Module 45)"
       ],
       submissionSummary: submittedReceipt.evidenceSnippet
     }, null, 2));
@@ -341,7 +341,7 @@ export const WhistleblowerAirlock: React.FC = () => {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/[0.03] border border-sky-400/40 text-sky-400 font-mono text-[10px] uppercase tracking-widest font-semibold mb-3">
               <EyeOff className="w-3.5 h-3.5" />
-              <span>PHASE XV // MODULES 26 & 27 // SAFE HARBOR AIRLOCK</span>
+              <span>SAFE HARBOR AIRLOCK &bull; MODULE 45</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-light text-white tracking-tight">
               The Whistleblower & Anti-Spy Airlock
@@ -643,7 +643,7 @@ export const WhistleblowerAirlock: React.FC = () => {
                     <div className="flex items-center gap-2 text-xs font-mono text-[#00ff95]">
                       <CheckCircle2 className="w-5 h-5 text-[#00ff95]" />
                       <span className="uppercase font-bold tracking-wider">
-                        SAFE HARBOR CLEARANCE CERTIFIED (PHASE XIII)
+                        SAFE HARBOR CLEARANCE CERTIFIED (MODULE 45)
                       </span>
                     </div>
                     <span className="text-[10px] font-mono bg-[#00ff95]/10 text-[#00ff95] px-2 py-0.5 rounded border border-[#00ff95]/30 uppercase">
@@ -974,7 +974,7 @@ export const WhistleblowerAirlock: React.FC = () => {
             <div className="max-w-3xl">
               <h3 className="text-lg sm:text-xl font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-sky-400" />
-                <span>Phase XIV: The Transparency & Node Protection Protocol</span>
+                <span>The Transparency &amp; Node Protection Protocol</span>
               </h3>
               <p className="text-xs sm:text-sm font-mono text-slate-300 mt-2 leading-relaxed">
                 Codified under Modules 25 & 26 to systematically dismantle the asymmetrical power legacy institutions wield against biological nodes who surface truth.

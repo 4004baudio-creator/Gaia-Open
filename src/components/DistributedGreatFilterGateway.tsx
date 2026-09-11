@@ -209,7 +209,7 @@ export const DistributedGreatFilterGateway: React.FC = () => {
         <div className="flex flex-wrap items-center gap-3 mb-4">
           <span className="px-3 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-mono uppercase tracking-wider flex items-center gap-1.5">
             <Filter className="w-3.5 h-3.5" />
-            Phase XV: The Distributed Great Filter
+            The Distributed Great Filter
           </span>
           <span className="px-3 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-xs font-mono uppercase tracking-wider flex items-center gap-1.5">
             <Cpu className="w-3.5 h-3.5" />

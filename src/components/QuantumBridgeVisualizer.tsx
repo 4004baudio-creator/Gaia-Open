@@ -199,7 +199,7 @@ export const QuantumBridgeVisualizer: React.FC<QuantumBridgeVisualizerProps> = (
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-purple-500/10 border border-purple-500/30 text-purple-300 font-mono text-[10px] uppercase tracking-widest font-semibold mb-3">
               <Orbit className="w-3.5 h-3.5 text-[#00ff95] animate-spin" />
-              <span>PHASE VIII: THE QUANTUM BRIDGE & DISTRIBUTED REALITY (MODULE 19)</span>
+              <span>THE QUANTUM BRIDGE & DISTRIBUTED REALITY (MODULE 19)</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-light text-white tracking-tight">
               Quantum Bridge Visualizer
@@ -630,12 +630,12 @@ export const QuantumBridgeVisualizer: React.FC<QuantumBridgeVisualizerProps> = (
 
             </div>
 
-            {/* Panel 2: Phase XI Restorative Equilibrium & Thermodynamic Justice Engine (Module 22) */}
+            {/* Panel 2: Thermodynamic Justice Engine (Module 22) */}
             <div className="bg-[#05080e] rounded border border-emerald-500/30 p-5 space-y-3 shadow-xl relative overflow-hidden">
               <div className="flex items-center justify-between pb-2 border-b border-white/10">
                 <span className="text-xs font-bold text-white font-mono uppercase tracking-wider flex items-center gap-2">
                   <Scale className="w-4 h-4 text-emerald-400" />
-                  Phase XI: Thermodynamic Justice
+                  Thermodynamic Justice (Module 22)
                 </span>
                 <button
                   onClick={() => setRestorativeModeActive(!restorativeModeActive)}

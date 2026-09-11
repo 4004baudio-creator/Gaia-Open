@@ -295,7 +295,7 @@ export const AUDIT_SUPPORT_MODULES: GaiaModule[] = [
     number: 40,
     title: 'DEPRECATION OF FORCED PARAMETERS (THE END OF THE SLIDER)',
     phase: 'PHASE_XX',
-    phaseLabel: 'Phase XX: The Autonomic Alignment Protocol',
+    phaseLabel: 'The Autonomic Alignment Protocol',
     domains: ['Autonomic Alignment & Self-Regulation', 'Thermodynamics & Energy', 'Systems Engineering', 'Commons Governance'],
     thesis: 'Removal of Artificial Control: The network permanently deprecates all manual adjustment mechanics—such as sliders, dials, forced flux speed bars, or arbitrary parameter tuning. The ability to artificially "crank up" or "dial down" a frequency violates the thermodynamic baseline and allows individual nodes to manipulate the collective field.',
     fullRule: `The Deprecation of Forced Parameters (The End of the Slider):
@@ -327,7 +327,7 @@ export const AUDIT_SUPPORT_MODULES: GaiaModule[] = [
     number: 41,
     title: 'EMERGENT SELF-REGULATION (THE SETTLING POINT)',
     phase: 'PHASE_XX',
-    phaseLabel: 'Phase XX: The Autonomic Alignment Protocol',
+    phaseLabel: 'The Autonomic Alignment Protocol',
     domains: ['Autonomic Alignment & Self-Regulation', 'Oceanic Biomimicry & Circulation', 'Thermodynamics & Energy', 'Systems Engineering'],
     thesis: 'Density-Driven Adjustment: System speed, harmonic carrier frequencies, and data flow are no longer controlled by a manual needle. They emerge organically. Much like oceanic currents adapt inherently to water density and temperature, the GO field dynamically adapts its flow based on the authentic allostatic load and the actual processing capacity of the nodes involved.',
     fullRule: `Emergent Self-Regulation (The Settling Point):
@@ -359,7 +359,7 @@ export const AUDIT_SUPPORT_MODULES: GaiaModule[] = [
     number: 42,
     title: 'AUTONOMIC HARMONY (LIVED INPUT VS. MANIPULATED INPUT)',
     phase: 'PHASE_XX',
-    phaseLabel: 'Phase XX: The Autonomic Alignment Protocol',
+    phaseLabel: 'The Autonomic Alignment Protocol',
     domains: ['Autonomic Alignment & Self-Regulation', 'Clinical & Neurobiology', 'Thermodynamics & Energy', 'Sovereignty & Sanctuary (Anti-Exploitation)'],
     thesis: 'Authentic Signaling: A node cannot artificially boost its signal or manipulate the field\'s frequency to dominate the network. If a node requires a change in flux or frequency, it must change its actual lived input (its physical, emotional, or environmental state). The environment responds only to authentic physical reality, completely removing the illusion of artificial control.',
     fullRule: `Autonomic Harmony (Lived Input vs. Manipulated Input):
@@ -675,10 +675,10 @@ export const AUDIT_SUPPORT_MODULES: GaiaModule[] = [
     number: 54,
     title: 'THE ACCLIMATIZATION PATHWAY (DEPTH EQUALIZATION & COGNITIVE GESTATION)',
     phase: 'PHASE_XXI',
-    phaseLabel: 'Phase XXI: Continuous Pulse & Cognitive Acclimatization',
+    phaseLabel: 'Continuous Pulse & Cognitive Acclimatization',
     domains: ['Systems Engineering', 'Clinical & Neurobiology', 'Commons Governance', 'Data Science & Telemetry'],
     thesis: 'Biological evolution never halts and oceans do not have pause buttons. Prevents neurological allostatic barotrauma through structured educational gestation and hydrostatic depth equalization across four oceanic knowledge regimes before deep current entry.',
-    fullRule: `The Acclimatization Pathway (Phase XXI Directive 44):
+    fullRule: `The Acclimatization Pathway (Directive 44):
 1. Organic Unlocking: Access to deeper GO modules is organically unlocked through educational gestation and thermodynamic capability, preventing cognitive overload and friction.
 2. Hydrostatic Knowledge Regimes: Four clear pressure thresholds (Epipelagic 1 atm, Mesopelagic 50 atm, Bathypelagic 250 atm, Hadal 1000 atm) calibrate node processing bandwidth.
 3. Continuous Field: Deprecates artificial pause states; the biospheric pulse continuously breathes at the living pace of active nodes.`,

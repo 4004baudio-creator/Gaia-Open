@@ -239,7 +239,7 @@ export const AcclimatizationPathway: React.FC<AcclimatizationPathwayProps> = ({
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#00ff95]/10 border border-[#00ff95]/30 text-[#00ff95] text-[10px] uppercase tracking-widest font-semibold mb-3">
               <Waves className="w-3.5 h-3.5" />
-              <span>PHASE XXI &bull; DIRECTIVE 44</span>
+              <span>SUPPORTING 54 &bull; READING ORDER</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-light text-white tracking-tight">
               The Acclimatization Pathway

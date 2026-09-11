@@ -275,7 +275,7 @@ export const InterSpeciesSanctuary: React.FC = () => {
       subject: `Target Decoupled: ${targetName}`,
       claimVerified: `Legacy infrastructure for '${targetName}' classified as severe thermodynamic extraction (exergy violation) and successfully decoupled. Network bandwidth rerouted to cruelty-free regenerative sanctuary commons.`,
       confidenceScore: 1.00,
-      objectivePhysicalBaseline: 'Phase XIII: The Inter-Species Sentience Protocol (Module 24)',
+      objectivePhysicalBaseline: 'The Inter-Species Sentience Protocol (Module 24)',
       ruleAnchor: 'Module 24: Unified Biological Baseline & Eradication of Biospheric Cruelty',
       notes: 'Automated audit confirmed: Nociceptive pain and emotional trauma capacity equivalent to human baseline. Subsidies quarantined.'
     });
@@ -318,7 +318,7 @@ export const InterSpeciesSanctuary: React.FC = () => {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 font-mono text-[10px] uppercase tracking-widest font-semibold mb-3">
               <HeartHandshake className="w-3.5 h-3.5 text-emerald-400" />
-              <span>PHASE XIII // MODULE 24 // THE BIOSPHERIC WELFARE DIRECTIVE</span>
+              <span>MODULE 24 // THE BIOSPHERIC WELFARE DIRECTIVE</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-light text-white tracking-tight">
               Biospheric Kinship & Inter-Species Sanctuary
@@ -589,7 +589,7 @@ export const InterSpeciesSanctuary: React.FC = () => {
               <div className="space-y-2">
                 <div className="grid grid-cols-4 gap-2 font-mono text-xs">
                   {[
-                    { label: '25% (Phase 1)', val: 25 },
+                    { label: '25% (Initial)', val: 25 },
                     { label: '50% (Equilibrium)', val: 50 },
                     { label: '75% (Biospheric)', val: 75 },
                     { label: '100% (Sanctuary)', val: 100 }
