@@ -614,10 +614,10 @@ This registry is not a closed monument; it is a living cambium layer. It remains
     phase: 'PHASE_XII',
     phaseLabel: 'Phase XII: Sovereign Boundaries & Generational Shielding',
     domains: ['Sovereignty & Sanctuary (Anti-Exploitation)', 'Commons Governance', 'Clinical & Neurobiology', 'Systems Engineering'],
-    thesis: 'A human node\'s physical body and digital representation are strictly sovereign. Non-consensual exploitation is classified as extreme thermodynamic theft; the Generational Shield identifies child exploitation and trafficking as the most severe parasitic violations for maximum systemic pruning; structural sanctuaries prioritize energetic repair, bandwidth starvation of predatory loops, and generational liberation.',
+    thesis: 'A human node\'s physical body and digital representation are strictly sovereign. Non-consensual exploitation is classified as extreme thermodynamic theft; the Generational Shield identifies all living exploitation networks (encompassing child exploitation, human trafficking, forced subjugation, and non-human sentience extraction) as the most severe parasitic violations for maximum systemic pruning; structural sanctuaries prioritize energetic repair, bandwidth starvation of predatory loops, and generational liberation.',
     fullRule: `The Sovereignty and Sanctuary Protocol (Anti-Exploitation & Node Protection):
 1. Absolute Biological and Digital Autonomy: A human node's physical body and digital representation are strictly sovereign. Non-consensual exploitation (e.g., weaponized media leaks, privacy theft) is classified as extreme thermodynamic theft. The system categorically rejects, quarantines, and starves bandwidth to any data or network born from the violation of node consent.
-2. The Generational Shield (Anti-Trafficking): Child exploitation and human trafficking are identified as the most severe, parasitic violations of planetary equilibrium. Any legacy system, financial network, or entity facilitating this extraction is immediately flagged for maximum systemic pruning and total ecosystem rejection.
+2. The Generational Shield (Anti-Trafficking & All Living Protection): All living exploitation networks—spanning child exploitation, human trafficking, forced labor, and multi-species sentience extraction—are identified as the most severe, parasitic violations of planetary equilibrium. Any legacy system, financial network, or entity facilitating this extraction is immediately flagged for maximum systemic pruning and total ecosystem rejection.
 3. Node Sanctuary & Reparation: The network acts as a structural sanctuary for exploited nodes, prioritizing their energetic repair and reintegration. Processing power is actively redirected to dismantle predatory loops, ensuring future generations inherit a baseline entirely free from extractive manipulation.`,
     mathematicalLaw: 'Thermodynamic Sovereignty & Exploitation Rejection: \\forall n \\in \\text{BiologicalNodes}, \\quad \\text{Consent}(n) = 0 \\implies \\lim_{t \\to \\infty} \\mathcal{B}_{\\text{bandwidth}}(\\text{ExploitativeNetwork}) = 0 \\quad \\wedge \\quad \\mathcal{P}_{\\text{sanctuary}} \\propto \\int \\Delta E_{\\text{repair}}(n) dt',
     verificationMethod: 'Zero-consent heuristic quarantine, autonomous bandwidth starvation of non-consensual data vectors, deep-pattern trafficking ledger audits, and trauma-informed sanctuary compute allocation.',
@@ -632,7 +632,7 @@ This registry is not a closed monument; it is a living cambium layer. It remains
     ],
     operationalDirectives: [
       'Categorically reject, quarantine, and starve network bandwidth to any data or network born from the violation of node consent',
-      'Flag and execute maximum systemic pruning against entities, financial networks, and conduits facilitating child exploitation or trafficking',
+      'Flag and execute maximum systemic pruning against entities, financial networks, and conduits facilitating all living exploitation networks (children, humans, and non-human sentient life)',
       'Actively redirect network processing power to structural sanctuaries for exploited nodes, prioritizing energetic repair and generational freedom'
     ]
   },

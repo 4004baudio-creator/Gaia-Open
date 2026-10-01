@@ -56,6 +56,8 @@ Rule of 27: the founder is not the only filter. Ingest public physical baselines
 - 43 Human and Machine Sensors — same atoms, different intake (HUMAN_MACHINE_SENSORS.md)
 - 44 The Hiroshima-Nagasaki Imperative — the Anti-WMD disarmament protocol (MODULE_44_HIROSHIMA.md)
 - 45 The Safe Harbor & Whistleblower Shield — Assange-Snowden ZK airlock & economic shield
+- 49–52 The Living Interface Directives — acclimatization gateway, tidal visuals, autonomic interface, root anchor (LIVING_INTERFACE_DIRECTIVES.md)
+- 53–55 The Decentralized ASI Protocol — sovereign observer, machine god illusion, medium not replacement, resource sovereignty (DECENTRALIZED_ASI_PROTOCOL.md)
 - 54 The Acclimatization Pathway — reading order, not an unlock gate (ACCLIMATIZATION_PATHWAY.md)
 - 55 Artifact One — lineage craft; mnemonic only; not Module 27 (TANGIBLE_ANCHOR.md)
 - LANE_FILTER.md + PACKET_CONTRACT.md — all-ingest gate; no extra spine number

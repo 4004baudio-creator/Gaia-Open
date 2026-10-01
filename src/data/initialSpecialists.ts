@@ -119,24 +119,6 @@ export const INITIAL_SPECIALIST_NODES: SpecialistNode[] = [
     geographicRegion: 'Atacama Silent Hermitage & Southern Cloud Basin'
   },
   {
-    id: 'node-08',
-    callsign: 'GAIA-BINOCULAR-30',
-    name: 'Kaelen Voss',
-    email: 'k.voss@stereoscopic-reality.org',
-    domain: 'Binocular Vision & Stereoscopic Synthesis',
-    subspecialty: 'Stereoscopic Synthesis of Conservation Physics & Boundless Imagination',
-    targetModuleId: 'module-30',
-    targetModuleName: '30. GO Multi-Scalar Reality Engine',
-    nodeRole: 'Binocular Vision Synthesizer',
-    knowledgeLane: 'BINOCULAR_SYNTHESIS',
-    experientialLineage: 'Quantum Field Theory paired with Sufi Poetics & Native Geometry',
-    bandwidthCommitmentHours: 22,
-    verificationKey: 'SHA256:7b6a5f4e3d2c1b0a9f8e7d6c5b4a3f2e3d2e1f0c9b8a7f6e5d4c3b2a1f0e9d8c',
-    peerStatus: 'VERIFIED_ACTIVE',
-    registeredAt: '2026-09-04T16:20:30Z',
-    geographicRegion: 'Cascadia Bio-Regional Convergence & L2 Bridge'
-  },
-  {
     id: 'node-09',
     callsign: 'GAIA-PHENOM-27',
     name: 'Dr. Alistair Finch',

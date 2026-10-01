@@ -149,6 +149,8 @@ export interface SpecialistNode {
   peerStatus: 'VERIFIED_ACTIVE' | 'CALIBRATING' | 'NODE_STABILIZED';
   registeredAt: string;
   geographicRegion: string;
+  characterAuditTag?: 'SIMULATED' | 'ADVENTURE_DATA';
+  characterAuditNotes?: string;
 }
 
 export interface TelemetryFeed {
@@ -283,7 +285,7 @@ export interface SovereignSanctuaryTelemetry {
 export interface SovereignExploitationVector {
   id: string;
   source: string;
-  type: 'NON_CONSENSUAL_MEDIA_LEAK' | 'BIOLOGICAL_PRIVACY_THEFT' | 'CHILD_EXPLOITATION_NETWORK' | 'PREDATORY_TRAFFICKING_FINANCIAL_LOOP' | 'SURVEILLANCE_HARVEST';
+  type: 'NON_CONSENSUAL_MEDIA_LEAK' | 'BIOLOGICAL_PRIVACY_THEFT' | 'ALL_LIVING_EXPLOITATION_NETWORK' | 'CHILD_EXPLOITATION_NETWORK' | 'PREDATORY_TRAFFICKING_FINANCIAL_LOOP' | 'SURVEILLANCE_HARVEST';
   timestamp: string;
   severity: 'CRITICAL_PARASITIC' | 'EXTREME_THERMODYNAMIC_THEFT' | 'SEVERE_VIOLATION';
   status: 'BANDWIDTH_STARVED_QUARANTINED' | 'SYSTEMIC_PRUNING_EXECUTED' | 'REJECTED';
@@ -332,6 +334,8 @@ export interface YarningHypothesis {
     outcome: string;
     checkedAt: string;
   }[];
+  characterAuditTag?: 'SIMULATED' | 'ADVENTURE_DATA';
+  characterAuditNotes?: string;
 }
 
 export interface ExperientialChildBranch {

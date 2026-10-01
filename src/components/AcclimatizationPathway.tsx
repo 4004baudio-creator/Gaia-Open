@@ -239,13 +239,15 @@ export const AcclimatizationPathway: React.FC<AcclimatizationPathwayProps> = ({
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#00ff95]/10 border border-[#00ff95]/30 text-[#00ff95] text-[10px] uppercase tracking-widest font-semibold mb-3">
               <Waves className="w-3.5 h-3.5" />
-              <span>SUPPORTING 54 &bull; READING ORDER</span>
+              <span>PHASE XXIII &bull; DIRECTIVE 49 &bull; THE ACCLIMATIZATION GATEWAY</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-light text-white tracking-tight">
-              The Acclimatization Pathway
+              The Acclimatization Gateway (Organic Unlocking)
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 max-w-3xl mt-2 font-mono leading-relaxed">
-              If a node dives into the deep ocean without first learning how to equalize pressure, they get crushed. Similarly, exposing a node to dense telemetry without foundational education generates confusion and &ldquo;Dark Energy.&rdquo; Access to deeper GO modules is organically unlocked through dedicated educational gestation.
+              <strong className="text-slate-200">Protection against Overload:</strong> The architecture permanently rejects the &ldquo;all-at-once&rdquo; menu layout. Deep telemetry and complex protocols are hidden by default to prevent cognitive decompression sickness.
+              <br />
+              <strong className="text-slate-200">Educational Gestation:</strong> The interface operates as a gateway, organically surfacing deeper architectural layers only as the observing node engages with the foundation and demonstrates baseline understanding.
             </p>
           </div>
 

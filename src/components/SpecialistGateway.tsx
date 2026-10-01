@@ -22,7 +22,8 @@ import {
   Feather,
   Flame,
   Heart,
-  BookOpen
+  BookOpen,
+  ShieldAlert
 } from 'lucide-react';
 import { 
   SpecialistNode, 
@@ -35,6 +36,7 @@ import {
 } from '../types';
 import { MASTER_MODULES } from '../data/modulesIndex';
 import { INITIAL_SPECIALIST_NODES } from '../data/initialSpecialists';
+import { auditClaimForAdventureOrSimulated } from '../data/characterAudit';
 
 interface SpecialistGatewayProps {
   preSelectedModuleId?: string | null;
@@ -263,6 +265,10 @@ export const SpecialistGateway: React.FC<SpecialistGatewayProps> = ({
 
       const isLineageLane = knowledgeLane === 'LINEAGE_WISDOM_LANE' || (knowledgeLane as string) === 'EXPERIENTIAL_LANE';
 
+      // Audit registration text against non-standard RPG / fictional character profiles
+      const fullTextToAudit = `${name} ${callsign} ${email} ${subspecialty} ${experientialLineage}`;
+      const auditResult = auditClaimForAdventureOrSimulated(fullTextToAudit);
+
       const newNode: SpecialistNode = {
         id: `node-${Date.now()}`,
         callsign: generatedCallsign,
@@ -279,7 +285,9 @@ export const SpecialistGateway: React.FC<SpecialistGatewayProps> = ({
         verificationKey,
         peerStatus: 'VERIFIED_ACTIVE',
         registeredAt: new Date().toISOString(),
-        geographicRegion: geographicRegion.trim() || 'Decentralized Sovereign Node'
+        geographicRegion: geographicRegion.trim() || 'Decentralized Sovereign Node',
+        characterAuditTag: auditResult.detected ? auditResult.recommendedStamp : undefined,
+        characterAuditNotes: auditResult.detected ? auditResult.quarantineReason : undefined
       };
 
       setNodes(prev => [newNode, ...prev]);
@@ -928,8 +936,21 @@ Directive: Stereoscopic integration of mechanical reality and deep ancestral lin
                         </div>
                       </div>
 
-                      <div className="text-xs font-bold text-white mb-0.5">
-                        {node.name}
+                      <div className="text-xs font-bold text-white mb-0.5 flex items-center justify-between">
+                        <span>{node.name}</span>
+                        {node.characterAuditTag && (
+                          <span
+                            title={node.characterAuditNotes || 'Tagged by claim verification audit'}
+                            className={`text-[9px] px-1.5 py-0.5 rounded font-mono uppercase tracking-wider flex items-center gap-1 border ${
+                              node.characterAuditTag === 'ADVENTURE_DATA'
+                                ? 'bg-purple-500/15 text-purple-300 border-purple-500/40'
+                                : 'bg-amber-500/15 text-amber-300 border-amber-500/40'
+                            }`}
+                          >
+                            <ShieldAlert className="w-2.5 h-2.5" />
+                            <span>{node.characterAuditTag}</span>
+                          </span>
+                        )}
                       </div>
 
                       <div className="text-[11px] text-slate-400 mb-1.5">

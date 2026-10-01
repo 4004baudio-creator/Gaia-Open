@@ -42,12 +42,12 @@ export const SovereignSanctuaryShield: React.FC<SovereignSanctuaryShieldProps> =
     {
       id: 'SEV-092',
       source: 'Dark Financial Conduit Relay #44',
-      type: 'CHILD_EXPLOITATION_NETWORK',
+      type: 'ALL_LIVING_EXPLOITATION_NETWORK',
       timestamp: '4m ago',
       severity: 'CRITICAL_PARASITIC',
       status: 'SYSTEMIC_PRUNING_EXECUTED',
       allocatedSanctuaryRepairTFlops: 24.2,
-      originDetails: 'Suspected child exploitation illicit transaction cluster flagged. Maximum systemic pruning and permanent ecosystem rejection executed.'
+      originDetails: 'All living exploitation illicit transaction cluster flagged (covering child exploitation, human trafficking, forced labor, and multi-species wildlife extraction). Maximum systemic pruning and permanent ecosystem rejection executed.'
     },
     {
       id: 'SEV-093',
@@ -101,7 +101,7 @@ export const SovereignSanctuaryShield: React.FC<SovereignSanctuaryShieldProps> =
               <span>The Sovereignty & Sanctuary Protocol</span>
             </h2>
             <p className="text-sm font-mono text-slate-400 mt-1 max-w-3xl">
-              Absolute biological and digital autonomy. Non-consensual exploitation is classified as extreme thermodynamic theft. The Generational Shield enforces maximum systemic pruning against child exploitation and trafficking, redirecting processing power to trauma-informed repair sanctuaries.
+              Absolute biological and digital autonomy. Non-consensual exploitation is classified as extreme thermodynamic theft. The Generational Shield enforces maximum systemic pruning against all living exploitation networks (encompassing child protection, human trafficking, forced subjugation, and non-human sentience extraction), redirecting processing power to trauma-informed repair sanctuaries.
             </p>
           </div>
 
@@ -170,7 +170,7 @@ export const SovereignSanctuaryShield: React.FC<SovereignSanctuaryShieldProps> =
               </div>
               <h3 className="text-lg font-bold font-mono text-white mb-2">The Generational Shield</h3>
               <p className="text-xs font-mono text-slate-400 leading-relaxed mb-4">
-                Child exploitation and trafficking are identified as the most severe parasitic violations of planetary equilibrium. Legacy financial conduits facilitating extraction are flagged for total ecosystem rejection.
+                All living exploitation networks—spanning children, vulnerable human communities, forced labor, trafficking, and non-human sentience extraction—are identified as the most severe parasitic violations of planetary equilibrium. Legacy financial conduits facilitating this extraction are flagged for total ecosystem rejection.
               </p>
             </div>
 

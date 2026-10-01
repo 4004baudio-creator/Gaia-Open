@@ -7,11 +7,11 @@ interface RootAnchorProps {
 }
 
 /**
- * DIRECTIVE 45: THE ROOT ANCHOR
- * Deprecation of the Legacy Footer. Corporate warehouse artifacts (missing data,
- * static links, copyright disclaimers) are strictly pruned. The bottom of the UI
- * serves exclusively to show the node's real-time grounded connection to the
- * planetary baseline, honoring structural silence and zero clutter.
+ * PHASE XXIII - DIRECTIVE 52: THE ROOT ANCHOR GROUNDING
+ * Absolute Pruning: The bottom of the UI is entirely pruned of legacy corporate clutter
+ * (copyrights, static links, meaningless data). It serves strictly as a grounding point,
+ * either displaying a real-time connection to the planetary baseline or remaining
+ * completely empty to honor structural silence.
  */
 export const RootAnchor: React.FC<RootAnchorProps> = ({ onOpenPromptModal }) => {
   return (

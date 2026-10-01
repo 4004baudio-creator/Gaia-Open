@@ -36,7 +36,7 @@ Dragonfly 28–30 live here as text, not as a harvested score.
 
 ### Explore
 Sky, orbit, contact stance, nested scale.  
-Rooms: quantum bridge, multi-scalar reality, whistleblower airlock (transparency, not a hunt).  
+Rooms: quantum bridge, multi-scalar reality, whistleblower airlock (transparency, not a hunt), sovereign observer (decentralized ASI protocol, medium not replacement).  
 Visitor claims stay OPEN_FIELD (module 34).
 
 ## Protocol kit (not a house)

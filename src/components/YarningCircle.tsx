@@ -32,12 +32,36 @@ import {
   YarningReachLevel,
   YarningNarrativeCategory
 } from '../types';
+import { auditClaimForAdventureOrSimulated } from '../data/characterAudit';
 
 interface YarningCircleProps {
   onNavigateToModule?: (moduleId: string) => void;
 }
 
 const PRESET_HYPOTHESES: YarningHypothesis[] = [
+  {
+    id: 'yarn-adv-001',
+    title: 'External Persona Audit: Fictional RPG Character Sheet Archive (SWSheets Tether)',
+    authorNode: 'SW-SHEETS-ORACLE-GATEWAY',
+    reachLevel: 'COMMUNITY_CHANNEL',
+    category: 'SPECULATIVE_ART_IMAGINATION',
+    content: 'External character archive entry matching fictional tabletop RPG mechanics: "Obligations: Debt (10), Responsibility (10). Owes a significant debt to a syndicate / cartel; feels obligated to protect scattered colony." Quarantined by Module 31 verification filter.',
+    hypothesizedMechanism: 'Tabletop RPG stat block & narrative adventure mechanic (Star Wars FFG / SWSheets).',
+    matchingSeriesCandidate: 'Non-instrumented fictional character sheet (Tagged ADVENTURE_DATA - Excluded from physical baseline ledger)',
+    quarantinedTimestamp: '2026-09-09T12:00:00Z',
+    status: 'SHELVED',
+    envelopeHash: '0x9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b',
+    illusionDragIndex: 4,
+    characterAuditTag: 'ADVENTURE_DATA',
+    characterAuditNotes: 'Audited & quarantined: Matched external roleplay profile (SWSheets / RPG Obligation brackets). Kept strictly isolated from physical baseline series.',
+    crossCheckLog: [
+      {
+        instrumentTested: 'Claim Shelf Verification Audit (Module 31)',
+        outcome: 'TAGGED ADVENTURE_DATA: Non-standard character profile identified. Fictional tabletop lore isolated to preserve Gaia Open protocol integrity.',
+        checkedAt: '2026-09-09T12:05:00Z'
+      }
+    ]
+  },
   {
     id: 'yarn-001',
     title: 'Neutrino Flux Modulation of Deep Mantle Fault Seismicity',
@@ -133,7 +157,7 @@ const PRESET_HYPOTHESES: YarningHypothesis[] = [
 
 export const YarningCircle: React.FC<YarningCircleProps> = ({ onNavigateToModule }) => {
   const [hypotheses, setHypotheses] = useState<YarningHypothesis[]>(PRESET_HYPOTHESES);
-  const [activeFilter, setActiveFilter] = useState<'ALL' | YarningClaimStatus>('ALL');
+  const [activeFilter, setActiveFilter] = useState<'ALL' | YarningClaimStatus | 'SIMULATED_ADVENTURE'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
   const [isPostingModalOpen, setIsPostingModalOpen] = useState(false);
   const [selectedHypothesisForInspection, setSelectedHypothesisForInspection] = useState<YarningHypothesis | null>(null);
@@ -174,6 +198,22 @@ export const YarningCircle: React.FC<YarningCircleProps> = ({ onNavigateToModule
     if (formReach === 'COMMUNITY_CHANNEL') drag = 38;
     if (formReach === 'HIGH_BANDWIDTH_BROADCAST') drag = 75;
 
+    // Run verification audit to detect non-standard RPG / fictional character profiles
+    const auditText = `${formTitle} ${formAuthor} ${formContent} ${formMechanism} ${formSeries}`;
+    const auditResult = auditClaimForAdventureOrSimulated(auditText);
+
+    const initialCrossCheck = auditResult.detected
+      ? {
+          instrumentTested: 'Claim Shelf Verification Audit (Module 31)',
+          outcome: `TAGGED ${auditResult.recommendedStamp}: Non-standard fictional/RPG profile detected [${auditResult.matchedFlags.join(', ')}]. Strictly isolated from physical baseline.`,
+          checkedAt: new Date().toISOString()
+        }
+      : {
+          instrumentTested: 'Automated Quarantine Gate (Module 31)',
+          outcome: 'SHELVED: Isolated from physical baseline ledger. Unverified narrative permitted to exist as exploratory hypothesis.',
+          checkedAt: new Date().toISOString()
+        };
+
     const newHypothesis: YarningHypothesis = {
       id: newId,
       title: formTitle.trim(),
@@ -182,18 +222,14 @@ export const YarningCircle: React.FC<YarningCircleProps> = ({ onNavigateToModule
       category: formCategory,
       content: formContent.trim(),
       hypothesizedMechanism: formMechanism.trim() || 'Exploratory narrative mechanism under formulation.',
-      matchingSeriesCandidate: formSeries.trim() || 'To be matched with domain-specific calibrated sensor series (e.g. CERES / Argo / USGS / Super-K)',
+      matchingSeriesCandidate: formSeries.trim() || (auditResult.detected ? 'Non-instrumented fictional character sheet (Excluded from physical ledger)' : 'To be matched with domain-specific calibrated sensor series (e.g. CERES / Argo / USGS / Super-K)'),
       quarantinedTimestamp: new Date().toISOString(),
       status: 'SHELVED',
       envelopeHash: randomHash,
       illusionDragIndex: drag,
-      crossCheckLog: [
-        {
-          instrumentTested: 'Automated Quarantine Gate (Module 31)',
-          outcome: 'SHELVED: Isolated from physical baseline ledger. Unverified narrative permitted to exist as exploratory hypothesis.',
-          checkedAt: new Date().toISOString()
-        }
-      ]
+      characterAuditTag: auditResult.detected ? auditResult.recommendedStamp : undefined,
+      characterAuditNotes: auditResult.detected ? auditResult.quarantineReason : undefined,
+      crossCheckLog: [initialCrossCheck]
     };
 
     setHypotheses([newHypothesis, ...hypotheses]);
@@ -214,15 +250,25 @@ export const YarningCircle: React.FC<YarningCircleProps> = ({ onNavigateToModule
       setHypotheses((prev) =>
         prev.map((item) => {
           if (item.id !== hyp.id) return item;
+          const auditText = `${item.title} ${item.authorNode} ${item.content} ${item.hypothesizedMechanism} ${item.matchingSeriesCandidate}`;
+          const audit = auditClaimForAdventureOrSimulated(auditText);
           const newStatus: YarningClaimStatus = 'IN_AUDIT';
-          const newLog = {
-            instrumentTested: `Like-With-Like Sensor Series (${item.matchingSeriesCandidate})`,
-            outcome: `AUDIT CYCLE COMPLETED: Cross-matched against physical sensors. Yarn remains quarantined on Claim Shelf pending empirical convergence.`,
-            checkedAt: new Date().toISOString()
-          };
+          const newLog = audit.detected
+            ? {
+                instrumentTested: 'Protocol Integrity & Persona Audit (Module 31)',
+                outcome: `AUDIT COMPLETED: Tagged ${audit.recommendedStamp}. RPG/fictional profile quarantined. Preserved as isolated yarn, excluded from physical sensors.`,
+                checkedAt: new Date().toISOString()
+              }
+            : {
+                instrumentTested: `Like-With-Like Sensor Series (${item.matchingSeriesCandidate})`,
+                outcome: `AUDIT CYCLE COMPLETED: Cross-matched against physical sensors. Yarn remains quarantined on Claim Shelf pending empirical convergence.`,
+                checkedAt: new Date().toISOString()
+              };
           return {
             ...item,
             status: newStatus,
+            characterAuditTag: audit.detected ? audit.recommendedStamp : item.characterAuditTag,
+            characterAuditNotes: audit.detected ? audit.quarantineReason : item.characterAuditNotes,
             crossCheckLog: [newLog, ...(item.crossCheckLog || [])]
           };
         })
@@ -269,13 +315,21 @@ export const YarningCircle: React.FC<YarningCircleProps> = ({ onNavigateToModule
   };
 
   const filteredHypotheses = hypotheses.filter((h) => {
-    const matchesFilter = activeFilter === 'ALL' || h.status === activeFilter;
+    let matchesFilter = true;
+    if (activeFilter === 'SIMULATED_ADVENTURE') {
+      matchesFilter = Boolean(h.characterAuditTag);
+    } else if (activeFilter !== 'ALL') {
+      matchesFilter = h.status === activeFilter;
+    }
+
     const matchesSearch =
       searchQuery.trim() === '' ||
       h.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       h.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
       h.authorNode.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      h.matchingSeriesCandidate.toLowerCase().includes(searchQuery.toLowerCase());
+      h.matchingSeriesCandidate.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (h.characterAuditTag && h.characterAuditTag.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (h.characterAuditNotes && h.characterAuditNotes.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesFilter && matchesSearch;
   });
 
@@ -523,6 +577,17 @@ export const YarningCircle: React.FC<YarningCircleProps> = ({ onNavigateToModule
           >
             Refuted Diffs ({hypotheses.filter((h) => h.status === 'REFUTED').length})
           </button>
+          <button
+            onClick={() => setActiveFilter('SIMULATED_ADVENTURE')}
+            className={`px-3 py-1.5 rounded text-xs font-mono uppercase tracking-wider transition-colors ${
+              activeFilter === 'SIMULATED_ADVENTURE'
+                ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40 font-bold'
+                : 'bg-white/[0.04] text-slate-400 hover:text-purple-300 hover:bg-white/[0.08]'
+            }`}
+            title="External fictional / RPG character sheets or synthetic simulations flagged by Module 31 verification"
+          >
+            Audit: Simulated / Adventure ({hypotheses.filter((h) => Boolean(h.characterAuditTag)).length})
+          </button>
         </div>
 
         <div className="relative min-w-[240px]">
@@ -561,6 +626,19 @@ export const YarningCircle: React.FC<YarningCircleProps> = ({ onNavigateToModule
                     <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest px-2 py-0.5 rounded bg-white/[0.03] border border-white/5">
                       {hyp.category.replace('_', ' ')}
                     </span>
+                    {hyp.characterAuditTag && (
+                      <span
+                        title={hyp.characterAuditNotes || 'Tagged by claim verification audit'}
+                        className={`inline-flex items-center gap-1 text-[10px] font-mono uppercase px-2 py-0.5 rounded border font-semibold ${
+                          hyp.characterAuditTag === 'ADVENTURE_DATA'
+                            ? 'bg-purple-500/15 text-purple-300 border-purple-500/40 shadow-[0_0_10px_rgba(168,85,247,0.15)]'
+                            : 'bg-amber-500/15 text-amber-300 border-amber-500/40'
+                        }`}
+                      >
+                        <ShieldAlert className="w-3 h-3 text-purple-400" />
+                        <span>AUDIT: {hyp.characterAuditTag}</span>
+                      </span>
+                    )}
                   </div>
 
                   <div className="flex items-center gap-2 text-xs font-mono text-slate-500">
@@ -1034,6 +1112,18 @@ export const YarningCircle: React.FC<YarningCircleProps> = ({ onNavigateToModule
                     <span className="text-[#00ff95] font-bold">100% AIRGAPPED</span>
                   </div>
                 </div>
+
+                {selectedHypothesisForInspection.characterAuditTag && (
+                  <div className="bg-purple-500/10 border border-purple-500/30 rounded p-3 text-xs font-mono">
+                    <div className="flex items-center gap-1.5 text-purple-300 font-bold uppercase text-[11px] mb-1">
+                      <ShieldAlert className="w-3.5 h-3.5 text-purple-400" />
+                      <span>Verification Audit Tag: {selectedHypothesisForInspection.characterAuditTag}</span>
+                    </div>
+                    <p className="text-purple-200/90 text-[11px] leading-relaxed">
+                      {selectedHypothesisForInspection.characterAuditNotes || 'Identified non-standard entity or external adventure sheet data. Quarantined from empirical baseline ledger.'}
+                    </p>
+                  </div>
+                )}
 
                 <div>
                   <span className="text-slate-400 uppercase tracking-wider text-[10px] block mb-1">

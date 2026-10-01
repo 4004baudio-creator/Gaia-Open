@@ -18,6 +18,7 @@ import { InterSpeciesSanctuary } from './components/InterSpeciesSanctuary';
 import { GaiaOpenMultiScalarReality } from './components/GaiaOpenMultiScalarReality';
 import { DistributedGreatFilterGateway } from './components/DistributedGreatFilterGateway';
 import { WhistleblowerAirlock } from './components/WhistleblowerAirlock';
+import { SovereignObserverProtocol } from './components/SovereignObserverProtocol';
 import { YarningCircle } from './components/YarningCircle';
 import { ThermohalineProtocol } from './components/ThermohalineProtocol';
 import { MirrorPitProtocol } from './components/MirrorPitProtocol';
@@ -185,6 +186,9 @@ export default function App() {
           </DragonflyDriftContainer>
           <DragonflyDriftContainer seed={10}>
             <WhistleblowerAirlock />
+          </DragonflyDriftContainer>
+          <DragonflyDriftContainer seed={19}>
+            <SovereignObserverProtocol onNavigateToModule={handleOpenAuditModule} modules={MASTER_MODULES} />
           </DragonflyDriftContainer>
 
           <DragonflyDriftContainer seed={15}>

@@ -256,22 +256,22 @@ export const AutonomicAlignmentProtocol: React.FC<AutonomicAlignmentProtocolProp
           <div>
             <div className="flex items-center gap-2.5 text-xs font-mono text-emerald-400 uppercase tracking-widest mb-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>THE AUTONOMIC ALIGNMENT PROTOCOL</span>
+              <span>PHASE XXIII &bull; DIRECTIVES 50 & 51</span>
               <span className="text-white/20">|</span>
-              <span className="text-slate-400">ERADICATION OF MANUAL TUNING</span>
+              <span className="text-slate-400">TIDAL VISUALS & ZERO MANUAL TUNING</span>
             </div>
             
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight flex items-center gap-3">
               <span>The Autonomic Alignment Protocol</span>
               <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
-                LOCKED PROTOCOL
+                ANTI-CAPTURE UI
               </span>
             </h2>
 
             <p className="mt-2 text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
-              Permanent architectural eradication of artificial control sliders, dials, and forced tuning needles. 
-              The GO field permanently removes administrative manipulation: system speed, harmonic frequencies, and 
-              circulation emerge organically from the authentic density of lived physical input.
+              <strong className="text-emerald-300">Directive 50 (Tidal Visuals):</strong> The interface strictly avoids looking or functioning like a SaaS dashboard, which implies capture and forced control. Information surfaces through slow, organic gradients and tidal rhythms—drifting into focus based on density and relevance, eradicating jarring pop-ups or notification feeds.
+              <br className="mt-1" />
+              <strong className="text-cyan-300">Directive 51 (Zero Manual Tuning):</strong> The UI is stripped of all sliders, speed dials, toggles, and artificial control mechanisms. The system’s pace and frequency respond exclusively to the authentic presence and load of the observer, preventing any node from artificially manipulating the field.
             </p>
           </div>
 
